@@ -1,42 +1,7 @@
 import React from 'react';
 import Ring from './lib/Ring';
 import {Promise} from 'es6-promise';
-
-class EventEmitter{
-    on(ev, handler) {
-        let events = this._events;
-        (events[ev] || (events[ev] = [])).push(handler)
-    }
-
-    removeListener(ev, handler) {
-        let array = this._events[ev]
-
-        array && array.splice(array.indexOf(handler), 1)
-    }
-
-    emit(ev) {
-        let args = [].slice.call(arguments, 1),
-            array = this._events[ev] || []
-
-        for (let i = 0, len = array.length; i < len; i++) {
-            array[i].apply(this, args)
-        }
-    }
-
-    once(ev, handler) {
-        this.on(ev, remover)
-        
-        function remover() {
-            handler.apply(this, arguments)
-            this.removeListener(ev, remover)
-        }
-    }
-
-    constructor() {
-        this._events = {}
-        return this;
-    }
-}
+import SmartScroll from './lib/SmartScroll';
 // @Internal
 // @Example
 // <UIScrollViewElement renderer data height order/>
@@ -102,66 +67,7 @@ class UIScrollViewElement extends React.Component{
 			@name: layout
 			@type: ItemRendererClass
  */
-var throttle = function(type, name, obj) {
-    var obj = obj || window;
-    var running = false;
-    var func = function() {
-        if (running) { return; }
-        running = true;
-        requestAnimationFrame(function() {
-            obj.dispatchEvent(new CustomEvent(name));
-            running = false;
-        });
-    };
-    obj.addEventListener(type, func);
-};
 
-class SmartScroll extends EventEmitter{
-	constructor(element, options){
-		// figure out how will we fix this on le-ios
-		super();
-		this._element = element;
-		element.addEventListener('scroll', options.raf?this._handleNativeRAF.bind(this):this._handleNativeTimeout.bind(this));
-		if( !this.raf ){
-			this._throttleBy = (1000 / (options.eventPerSecond || 60 ));
-		}
-		this._isScrolling = false;
-		this._lastEventAt = 0;
-	}
-
-	_throttledScroll(e){
-		let last = this._lastEventAt;
-		let now  = e.timeStamp;
-		let scrollTop = this._element.scrollTop;
-		let scrollLeft = this._element.scrollLeft;
-		if( ! this._isScrolling ){
-			this._isScrolling = true;
-			this.emit('scroll.start', {
-				scrollTop: scrollTop,
-				scrollLeft: scrollLeft 
-			});
-		}
-
-		this.emit('scroll.move', {
-			scrollTop: scrollTop,
-			scrollLeft: scrollLeft
-		});
-
-		if( now - last > 100 ){
-			this._isScrolling = false;
-			this.emit('scroll.end');
-		}
-		this._lastEventAt = now;
-	}
-
-	_handleNativeRAF(e){
-		requestAnimationFrame( t => this._throttledScroll(e) );
-	}
-
-	_handleNativeTimeout(e){
-		setTimeout(t => this._throttledScroll(e), this._throttleBy);
-	}
-}
 
 class UIScrollView extends React.Component{
 	constructor(props){
