@@ -113,15 +113,15 @@ var UIHeaderView = (function (_React$Component2) {
 				'div',
 				{ className: 'HeaderView' },
 				_react2['default'].createElement(
-					Layout,
+					_reactUiComponents.Layout,
 					{ horizontal: true, alignItems: 'center' },
 					_react2['default'].createElement(
-						FixedCell,
+						_reactUiComponents.FixedCell,
 						null,
 						this.props.primaryButton
 					),
 					_react2['default'].createElement(
-						FlexCell,
+						_reactUiComponents.FlexCell,
 						null,
 						_react2['default'].createElement(
 							'h1',
@@ -130,7 +130,7 @@ var UIHeaderView = (function (_React$Component2) {
 						)
 					),
 					_react2['default'].createElement(
-						FixedCell,
+						_reactUiComponents.FixedCell,
 						null,
 						this.props.secondaryButtons
 					)
@@ -142,93 +142,7 @@ var UIHeaderView = (function (_React$Component2) {
 	return UIHeaderView;
 })(_react2['default'].Component);
 
-var Layout = (function (_React$Component3) {
-	function Layout() {
-		_classCallCheck(this, Layout);
-
-		_get(Object.getPrototypeOf(Layout.prototype), 'constructor', this).apply(this, arguments);
-	}
-
-	_inherits(Layout, _React$Component3);
-
-	_createClass(Layout, [{
-		key: 'render',
-		value: function render() {
-			var cname = (0, _classnames2['default'])({ 'Vertical-Layout': this.props.vertical }, { 'Horizontal-Layout': this.props.horizontal });
-
-			var styles = {
-				alignItems: this.props.alignItems
-			};
-
-			return _react2['default'].createElement(
-				'div',
-				{ className: cname, style: styles },
-				this.props.children
-			);
-		}
-	}]);
-
-	return Layout;
-})(_react2['default'].Component);
-
-var FlexCell = (function (_React$Component4) {
-	function FlexCell() {
-		_classCallCheck(this, FlexCell);
-
-		_get(Object.getPrototypeOf(FlexCell.prototype), 'constructor', this).apply(this, arguments);
-	}
-
-	_inherits(FlexCell, _React$Component4);
-
-	_createClass(FlexCell, [{
-		key: 'render',
-		value: function render() {
-			if (this.props.fillFix === true) {
-				return _react2['default'].createElement(
-					'div',
-					{ className: 'Cell-Flex' },
-					_react2['default'].createElement(
-						'div',
-						{ className: 'flex-fill-fix' },
-						this.props.children
-					)
-				);
-			}
-			return _react2['default'].createElement(
-				'div',
-				{ className: 'Cell-Flex' },
-				this.props.children
-			);
-		}
-	}]);
-
-	return FlexCell;
-})(_react2['default'].Component);
-
-var FixedCell = (function (_React$Component5) {
-	function FixedCell() {
-		_classCallCheck(this, FixedCell);
-
-		_get(Object.getPrototypeOf(FixedCell.prototype), 'constructor', this).apply(this, arguments);
-	}
-
-	_inherits(FixedCell, _React$Component5);
-
-	_createClass(FixedCell, [{
-		key: 'render',
-		value: function render() {
-			return _react2['default'].createElement(
-				'div',
-				{ className: 'Cell-Fixed' },
-				this.props.children
-			);
-		}
-	}]);
-
-	return FixedCell;
-})(_react2['default'].Component);
-
-var App = (function (_React$Component6) {
+var App = (function (_React$Component3) {
 	function App(p) {
 		_classCallCheck(this, App);
 
@@ -239,7 +153,7 @@ var App = (function (_React$Component6) {
 		};
 	}
 
-	_inherits(App, _React$Component6);
+	_inherits(App, _React$Component3);
 
 	_createClass(App, [{
 		key: 'toggleDrawer',
@@ -253,11 +167,6 @@ var App = (function (_React$Component6) {
 		value: function render() {
 			var _this = this;
 
-			// return				<UIScrollView
-			// 		              dataSource={this.dataSource}
-			// 		              elementRenderer={Random}
-			// 		              elementHeight={540}
-			// 					/>
 			var primaryButton = _react2['default'].createElement(
 				'button',
 				{ onClick: function (e) {
@@ -300,10 +209,10 @@ var App = (function (_React$Component6) {
 				_reactUiComponents.UIDrawerView,
 				{ navOpen: this.state.navOpen, links: links, header: header },
 				_react2['default'].createElement(
-					Layout,
+					_reactUiComponents.Layout,
 					{ vertical: true },
 					_react2['default'].createElement(
-						FixedCell,
+						_reactUiComponents.FixedCell,
 						null,
 						_react2['default'].createElement(UIHeaderView, {
 							primaryButton: primaryButton,
@@ -311,13 +220,23 @@ var App = (function (_React$Component6) {
 						})
 					),
 					_react2['default'].createElement(
-						FlexCell,
+						_reactUiComponents.FlexCell,
 						{ fillFix: true },
-						_react2['default'].createElement(_reactUiComponents.UIScrollView, {
-							dataSource: this.dataSource,
-							elementRenderer: Random,
-							elementHeight: 540
-						})
+						_react2['default'].createElement(
+							_reactUiComponents.UITabsView,
+							null,
+							_react2['default'].createElement(_reactUiComponents.UIScrollView, {
+								title: 'Timeline',
+								dataSource: this.dataSource,
+								elementRenderer: Random,
+								elementHeight: 540
+							}),
+							_react2['default'].createElement(
+								'div',
+								{ title: 'Fake Tab' },
+								'The cake is a lie'
+							)
+						)
 					)
 				)
 			);
