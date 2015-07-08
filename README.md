@@ -27,7 +27,7 @@ The easiest way to use react-ui-scroll-view is to install it from NPM and includ
 You can also use the standalone build by including `dist/react-ui-scroll-view.js` in your page. If you use this, make sure you have already included React, and it is available as a global variable.
 
 ```
-npm install react-ui-scroll-view --save
+npm install react-ui-components --save
 ```
 
 
