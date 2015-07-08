@@ -1,11 +1,14 @@
-# UIScrollView
+# React-UI-Components
+	- UITabsView
+	- UIScrollView
+	- UIFlipView
+	- UIDrawerView
 
-__COMPONENT DESCRIPTION GOES HERE__
 
 
 ## Demo & Examples
 
-Live demo: [darkyen00.github.io/react-ui-scroll-view](http://darkyen00.github.io/react-ui-scroll-view/)
+Live demo: [darkyen00.github.io/react-ui-components](http://darkyen.github.io/react-ui-components/)
 
 To build the examples locally, run:
 
