@@ -1,0 +1,198 @@
+/* 
+// Examples Stylesheet
+// -------------------
+*/
+body {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+#container {
+  height: 100vh;
+  width: 100vw;
+  max-width: 480px;
+}
+* {
+  box-sizing: border-box;
+}
+.Number {
+  transform: rotateZ(0deg);
+  height: 120px;
+  background: #fff;
+  border-bottom: 1px solid #d8d8d8;
+  font-family: Helvetica;
+  line-height: 120px;
+  font-size: 48px;
+  text-align: center;
+}
+.ListView {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  overflow-y: scroll;
+}
+.ListView--Inner {
+  display: flex;
+  flex-direction: column;
+}
+.Random {
+  height: 540px;
+  background: #fff;
+  padding: 0px 10px;
+}
+.Random--Image {
+  width: 100%;
+  height: 300px;
+}
+.Random--Details {
+  height: 240px;
+}
+.Random--Title {
+  height: 40px;
+  font-size: 18px;
+  line-height: 40px;
+  font-family: 'Helvetica';
+}
+.Random--Content {
+  font-size: 16px;
+  height: 200px;
+  font-family: 'Helvetica';
+  text-align: justify;
+}
+.DrawerView {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+.DrawerView--Nav,
+.DrawerView--Contents {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  top: 0px;
+  transition: transform 400ms;
+  -webkit-transition: -webkit-transform 400ms;
+}
+.DrawerView--drawer-open .DrawerView--Contents {
+  transform: translateY(5%) translateX(55%) scale(0.65);
+  -webkit-transform: translateY(5%) translateX(55%) scale(0.65);
+  box-shadow: 0px 0px 25px #000;
+}
+.DrawerView--Nav {
+  padding: 0px 0px;
+  -ms-user-select: none;
+  user-select: none;
+}
+.DrawerView--NavLinks {
+  position: absolute;
+  height: 65%;
+  width: 100%;
+  top: 20%;
+  padding: 0px;
+  list-style: none;
+  display: block;
+}
+.DrawerView--NavLink,
+.DrawerView--NavMast {
+  transition: transform 200ms, opacity 150ms;
+  padding: 0px 35px;
+}
+.DrawerView--NavLink:nth-of-type(10) {
+  transition-delay: 250ms;
+}
+.DrawerView--NavLink:nth-of-type(9) {
+  transition-delay: 225ms;
+}
+.DrawerView--NavLink:nth-of-type(8) {
+  transition-delay: 200ms;
+}
+.DrawerView--NavLink:nth-of-type(7) {
+  transition-delay: 175ms;
+}
+.DrawerView--NavLink:nth-of-type(6) {
+  transition-delay: 150ms;
+}
+.DrawerView--NavLink:nth-of-type(5) {
+  transition-delay: 125ms;
+}
+.DrawerView--NavLink:nth-of-type(4) {
+  transition-delay: 100ms;
+}
+.DrawerView--NavLink:nth-of-type(3) {
+  transition-delay: 75ms;
+}
+.DrawerView--NavLink:nth-of-type(2) {
+  transition-delay: 50ms;
+}
+.DrawerView--NavLink:nth-of-type(1) {
+  transition-delay: 25ms;
+}
+.DrawerView--NavLink {
+  line-height: 48px;
+  font-size: 18px;
+  font-weight: 300;
+  display: block;
+}
+.DrawerView--NavMast {
+  font-size: 32px;
+}
+.DrawerView .DrawerView--NavLink,
+.DrawerView .DrawerView--NavMast {
+  opacity: 0;
+  transform: translateX(-25px);
+}
+.DrawerView--drawer-open .DrawerView--NavLink,
+.DrawerView--drawer-open .DrawerView--NavMast {
+  opacity: 1;
+  transform: translateX(0px);
+}
+.HeaderView {
+  background: #f0697b;
+  border-bottom: 1px solid #d0392b;
+  -ms-user-select: none;
+  user-select: none;
+}
+.Layout {
+  position: relative;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+.Horizontal-Layout {
+  position: relative;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+.Vertical-Layout {
+  position: relative;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+}
+.Cell {
+  position: relative;
+  min-height: 0px;
+}
+.Cell-Flex {
+  flex: 1;
+  position: relative;
+  min-height: 0px;
+}
+.HeaderView {
+  position: relative;
+  padding: 0.01em;
+  height: 64px;
+}
+.flex-fill-fix {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
