@@ -103,6 +103,13 @@ class App extends React.Component{
 		}];
 		let header = <h2>App</h2>;
 
+								// <UIScrollView 
+								//   title={'Timeline'}
+					   //            dataSource={this.dataSource} 
+					   //            elementRenderer={Random}
+					   //            elementHeight={540}
+								// />
+
 		return  <UIDrawerView navOpen={this.state.navOpen} links={links} header={header}>
 					<Layout vertical={true}>
 						<FixedCell>
@@ -113,12 +120,7 @@ class App extends React.Component{
 						</FixedCell>
 						<FlexCell fillFix={true}>
 							<UITabsView>
-								<UIScrollView 
-								  title={'Timeline'}
-					              dataSource={this.dataSource} 
-					              elementRenderer={Random}
-					              elementHeight={540}
-								/>
+								<div title={"I love"}>Only sneha</div>
 								<div title={"Fake Tab"}>The cake is a lie</div>
 							</UITabsView>
 						</FlexCell>

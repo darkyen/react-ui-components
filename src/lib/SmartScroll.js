@@ -10,6 +10,7 @@ class SmartScroll extends EventEmitter{
 		}
 		this._isScrolling = false;
 		this._lastEventAt = 0;
+		console.log(element);
 	}
 
 	_throttledScroll(e){
@@ -32,7 +33,10 @@ class SmartScroll extends EventEmitter{
 
 		if( now - last > 100 ){
 			this._isScrolling = false;
-			this.emit('scroll.end');
+			this.emit('scroll.end',{
+				scrollTop: scrollTop,
+				scrollLeft: scrollLeft				
+			});
 		}
 		this._lastEventAt = now;
 	}
