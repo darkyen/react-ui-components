@@ -1,4 +1,3 @@
-
 class EventEmitter{
     on(ev, handler) {
         let events = this._events;

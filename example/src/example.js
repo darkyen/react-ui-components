@@ -103,7 +103,6 @@ class App extends React.Component{
 		}];
 		let header = <h2>App</h2>;
 
-
 		return  <UIDrawerView navOpen={this.state.navOpen} links={links} header={header}>
 					<Layout vertical={true}>
 						<FixedCell>
