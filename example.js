@@ -73,7 +73,7 @@ var Random = (function (_React$Component) {
 			return _react2['default'].createElement(
 				'div',
 				{ className: 'Random' },
-				_react2['default'].createElement('img', { className: 'Random--Image', src: random.image }),
+				_react2['default'].createElement('img', { className: 'Random--Image' }),
 				_react2['default'].createElement(
 					'div',
 					{ className: 'Random--Details' },
@@ -233,6 +233,11 @@ var App = (function (_React$Component3) {
 							}),
 							_react2['default'].createElement(
 								'div',
+								{ title: 'My Bestie' },
+								'Only Chikipoo'
+							),
+							_react2['default'].createElement(
+								'div',
 								{ title: 'Fake Tab' },
 								'The cake is a lie'
 							)
@@ -252,7 +257,7 @@ _react2['default'].render(_react2['default'].createElement(App, null), document.
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
-  value: true
+    value: true
 });
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -266,26 +271,26 @@ var _DataSourceElementErrorsJs = require('./DataSourceElementErrors.js');
 var _DataSourceElementErrorsJs2 = _interopRequireDefault(_DataSourceElementErrorsJs);
 
 var __unImpl = function __unImpl(methodName) {
-  throw new Error('Unimplemented method' + methodName);
+    throw new Error('Unimplemented method' + methodName);
 };
 
 var DataSource = (function () {
-  function DataSource() {
-    _classCallCheck(this, DataSource);
+    function DataSource() {
+        _classCallCheck(this, DataSource);
 
-    if (this.constructor === DataSource.prototype.constructor) {
-      throw new Error('Abstract class, don\'t create object of this');
+        if (this.constructor === DataSource.prototype.constructor) {
+            throw new Error('Abstract class, don\'t create object of this');
+        }
     }
-  }
 
-  _createClass(DataSource, [{
-    key: 'getItemAtIndex',
-    value: function getItemAtIndex(index) {
-      __unImpl('Promise getItemAtIndex(index)');
-    }
-  }]);
+    _createClass(DataSource, [{
+        key: 'getItemAtIndex',
+        value: function getItemAtIndex(index) {
+            __unImpl('Promise getItemAtIndex(index)');
+        }
+    }]);
 
-  return DataSource;
+    return DataSource;
 })();
 
 exports['default'] = DataSource;
@@ -297,7 +302,7 @@ module.exports = exports['default'];
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
-  value: true
+    value: true
 });
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -305,26 +310,26 @@ var _createClass = (function () { function defineProperties(target, props) { for
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 var DataSourceElementError = (function () {
-  function DataSourceElementError(type, message) {
-    _classCallCheck(this, DataSourceElementError);
+    function DataSourceElementError(type, message) {
+        _classCallCheck(this, DataSourceElementError);
 
-    this._type = type;
-  }
-
-  _createClass(DataSourceElementError, [{
-    key: 'type',
-    get: function get() {
-      return this._type;
+        this._type = type;
     }
-  }]);
 
-  return DataSourceElementError;
+    _createClass(DataSourceElementError, [{
+        key: 'type',
+        get: function get() {
+            return this._type;
+        }
+    }]);
+
+    return DataSourceElementError;
 })();
 
 ;
 
 var DataSourceElementErrors = {
-  IndexOutOfBound: new DataSourceElementError('IndexOutOfBound')
+    IndexOutOfBound: new DataSourceElementError('IndexOutOfBound')
 };
 
 exports['default'] = DataSourceElementErrors;

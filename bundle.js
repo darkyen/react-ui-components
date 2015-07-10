@@ -1070,7 +1070,7 @@ process.umask = function() { return 0; };
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
-  value: true
+    value: true
 });
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -1088,98 +1088,98 @@ var _react = require('react');
 var _react2 = _interopRequireDefault(_react);
 
 if (!Object.assign) {
-  Object.defineProperty(Object, 'assign', {
-    enumerable: false,
-    configurable: true,
-    writable: true,
-    value: function value(target) {
-      'use strict';
-      if (target === undefined || target === null) {
-        throw new TypeError('Cannot convert first argument to object');
-      }
+    Object.defineProperty(Object, 'assign', {
+        enumerable: false,
+        configurable: true,
+        writable: true,
+        value: function value(target) {
+            'use strict';
+            if (target === undefined || target === null) {
+                throw new TypeError('Cannot convert first argument to object');
+            }
 
-      var to = Object(target);
-      for (var i = 1; i < arguments.length; i++) {
-        var nextSource = arguments[i];
-        if (nextSource === undefined || nextSource === null) {
-          continue;
-        }
-        nextSource = Object(nextSource);
+            var to = Object(target);
+            for (var i = 1; i < arguments.length; i++) {
+                var nextSource = arguments[i];
+                if (nextSource === undefined || nextSource === null) {
+                    continue;
+                }
+                nextSource = Object(nextSource);
 
-        var keysArray = Object.keys(Object(nextSource));
-        for (var nextIndex = 0, len = keysArray.length; nextIndex < len; nextIndex++) {
-          var nextKey = keysArray[nextIndex];
-          var desc = Object.getOwnPropertyDescriptor(nextSource, nextKey);
-          if (desc !== undefined && desc.enumerable) {
-            to[nextKey] = nextSource[nextKey];
-          }
+                var keysArray = Object.keys(Object(nextSource));
+                for (var nextIndex = 0, len = keysArray.length; nextIndex < len; nextIndex++) {
+                    var nextKey = keysArray[nextIndex];
+                    var desc = Object.getOwnPropertyDescriptor(nextSource, nextKey);
+                    if (desc !== undefined && desc.enumerable) {
+                        to[nextKey] = nextSource[nextKey];
+                    }
+                }
+            }
+            return to;
         }
-      }
-      return to;
-    }
-  });
+    });
 }
 
 // Use inline-style completely
 
 var DrawerView = (function (_React$Component) {
-  function DrawerView(props) {
-    _classCallCheck(this, DrawerView);
+    function DrawerView(props) {
+        _classCallCheck(this, DrawerView);
 
-    _get(Object.getPrototypeOf(DrawerView.prototype), 'constructor', this).call(this, props);
-  }
-
-  _inherits(DrawerView, _React$Component);
-
-  _createClass(DrawerView, [{
-    key: 'render',
-    value: function render() {
-      return _react2['default'].createElement(
-        'div',
-        { className: 'DrawerView ' + (this.props.navOpen ? 'DrawerView--drawer-open' : '') },
-        _react2['default'].createElement(
-          'div',
-          { className: 'DrawerView--Nav' },
-          _react2['default'].createElement(
-            'div',
-            { className: 'DrawerView--NavMast' },
-            this.props.header
-          ),
-          _react2['default'].createElement(
-            'ul',
-            { className: 'DrawerView--NavLinks' },
-            this.props.links.map(function (link) {
-              return _react2['default'].createElement(
-                'li',
-                { className: 'DrawerView--NavLink' },
-                _react2['default'].createElement(
-                  'a',
-                  { href: link.href },
-                  link.name
-                )
-              );
-            })
-          )
-        ),
-        _react2['default'].createElement(
-          'div',
-          { className: 'DrawerView--Contents' },
-          this.props.children
-        )
-      );
+        _get(Object.getPrototypeOf(DrawerView.prototype), 'constructor', this).call(this, props);
     }
-  }]);
 
-  return DrawerView;
+    _inherits(DrawerView, _React$Component);
+
+    _createClass(DrawerView, [{
+        key: 'render',
+        value: function render() {
+            return _react2['default'].createElement(
+                'div',
+                { className: 'DrawerView ' + (this.props.navOpen ? 'DrawerView--drawer-open' : '') },
+                _react2['default'].createElement(
+                    'div',
+                    { className: 'DrawerView--Nav' },
+                    _react2['default'].createElement(
+                        'div',
+                        { className: 'DrawerView--NavMast' },
+                        this.props.header
+                    ),
+                    _react2['default'].createElement(
+                        'ul',
+                        { className: 'DrawerView--NavLinks' },
+                        this.props.links.map(function (link) {
+                            return _react2['default'].createElement(
+                                'li',
+                                { className: 'DrawerView--NavLink' },
+                                _react2['default'].createElement(
+                                    'a',
+                                    { href: link.href },
+                                    link.name
+                                )
+                            );
+                        })
+                    )
+                ),
+                _react2['default'].createElement(
+                    'div',
+                    { className: 'DrawerView--Contents' },
+                    this.props.children
+                )
+            );
+        }
+    }]);
+
+    return DrawerView;
 })(_react2['default'].Component);
 
 DrawerView.defaultProps = {
-  links: []
+    links: []
 };
 
 DrawerView.propTypes = {
-  links: _react2['default'].PropTypes.array,
-  header: _react2['default'].PropTypes.element
+    links: _react2['default'].PropTypes.array,
+    header: _react2['default'].PropTypes.element
 };
 exports['default'] = DrawerView;
 module.exports = exports['default'];
@@ -1657,6 +1657,10 @@ var _libRingJs2 = _interopRequireDefault(_libRingJs);
 
 var _UILayoutJs = require('./UILayout.js');
 
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
 // shall we use UIScrollView ?
 // maybe but not now.
 
@@ -1671,7 +1675,7 @@ var UITabsView = (function (_React$Component) {
 
 		_get(Object.getPrototypeOf(UITabsView.prototype), 'constructor', this).call(this, props);
 		this.state = {
-			selected: 0
+			selectedTab: 0
 		};
 	}
 
@@ -1680,23 +1684,45 @@ var UITabsView = (function (_React$Component) {
 	_createClass(UITabsView, [{
 		key: 'componentDidMount',
 		value: function componentDidMount() {
+			var _this = this;
+
 			var domNode = _react2['default'].findDOMNode(this);
-			this.scroller = new _libSmartScrollJs2['default'](domNode, {
+			var scrollerNode = _react2['default'].findDOMNode(this.refs.foo);
+			this.scroller = new _libSmartScrollJs2['default'](scrollerNode, {
 				raf: false,
 				eventPerSecond: 10
 			});
-
 			this.viewPortWidth = domNode.offsetWidth;
-			this.scroller.on('scroll.end', this._handleScrollEnd.bind(this));
+			window.x = scrollerNode;
+			this.scroller.on('scroll.end', function (e) {
+				return _this._handleScrollEnd(e);
+			});
+			this.setState({
+				mounted: true
+			});
 		}
 	}, {
 		key: '_handleScrollEnd',
-		value: function _handleScrollEnd() {}
+		value: function _handleScrollEnd(e) {
+			console.log(e);
+			var viewPortWidth = this.viewPortWidth;
+			var scrollX = e.scrollLeft + this.viewPortWidth / 2;
+			this.setState({
+				selectedTab: Math.floor(scrollX / viewPortWidth)
+			});
+		}
 	}, {
 		key: 'render',
 
-		// Tabs must support swipe gesture if enabled.ntrn
+		// Tabs must support swipe gesture if enabled
+		// @todo: use width via css.
+
 		value: function render() {
+			var _this2 = this;
+
+			var containerWidth = this.viewPortWidth * _react2['default'].Children.count(this.props.children);
+			var contentWidth = this.viewPortWidth;
+			console.log(this.viewPortWidth);
 			return _react2['default'].createElement(
 				'div',
 				{ className: 'TabView' },
@@ -1709,11 +1735,13 @@ var UITabsView = (function (_React$Component) {
 						_react2['default'].createElement(
 							'ul',
 							{ className: 'TabView--Headers' },
-							_react2['default'].Children.map(this.props.children, function (element) {
-								console.log(element.props);
+							_react2['default'].Children.map(this.props.children, function (element, index) {
+								var className = (0, _classnames2['default'])('TabView--TabHeader', {
+									'TabView--TabHeader-active': index === _this2.state.selectedTab
+								});
 								return _react2['default'].createElement(
 									'li',
-									{ className: 'TabView--TabHeader' },
+									{ className: className },
 									element.props.title
 								);
 							})
@@ -1724,14 +1752,18 @@ var UITabsView = (function (_React$Component) {
 						{ fillFix: true },
 						_react2['default'].createElement(
 							'div',
-							{ className: 'TabView--TabsContainer' },
-							_react2['default'].Children.map(this.props.children, function (element) {
-								return _react2['default'].createElement(
-									'div',
-									{ className: 'TabView--TabWrapper' },
-									element
-								);
-							})
+							{ className: 'TabView--ScrollContainer', ref: 'foo' },
+							_react2['default'].createElement(
+								'div',
+								{ className: 'TabView--TabsContainer', style: { width: containerWidth } },
+								_react2['default'].Children.map(this.props.children, function (element) {
+									return _react2['default'].createElement(
+										'div',
+										{ className: 'TabView--TabWrapper', style: { width: contentWidth } },
+										element
+									);
+								})
+							)
 						)
 					)
 				)
@@ -1745,10 +1777,7 @@ var UITabsView = (function (_React$Component) {
 exports['default'] = UITabsView;
 module.exports = exports['default'];
 
-// handleth the scroll
-// smoothet it if possibru.
-
-},{"./UILayout.js":4,"./lib/Ring.js":8,"./lib/SmartScroll.js":9,"react":undefined}],7:[function(require,module,exports){
+},{"./UILayout.js":4,"./lib/Ring.js":8,"./lib/SmartScroll.js":9,"classnames":undefined,"react":undefined}],7:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1810,17 +1839,17 @@ module.exports = exports["default"];
 
 },{}],8:[function(require,module,exports){
 /* 
-  @class : Ring
-   @desc  : A circular linked list like data structure
-            only implemented as per our needs no need to
-            implement all methods. you must not play 
-            with this._elements treat it as pure immutable 
-            datastructure.
+    @class : Ring
+     @desc  : A circular linked list like data structure
+                        only implemented as per our needs no need to
+                        implement all methods. you must not play 
+                        with this._elements treat it as pure immutable 
+                        datastructure.
 */
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -1828,143 +1857,143 @@ var _createClass = (function () { function defineProperties(target, props) { for
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Ring = (function () {
-  function Ring(length) {
-    _classCallCheck(this, Ring);
+    function Ring(length) {
+        _classCallCheck(this, Ring);
 
-    // For link list
-    // now the problem is how to make the
-    // constructor work faster better stronger
-    this._start = null;
-    this._originalStart = null;
-    this._originalEnd = null;
-    this._end = null;
-  }
+        // For link list
+        // now the problem is how to make the
+        // constructor work faster better stronger
+        this._start = null;
+        this._originalStart = null;
+        this._originalEnd = null;
+        this._end = null;
+    }
 
-  _createClass(Ring, [{
-    key: "_wrap",
-    value: function _wrap(data, next, prev) {
-      return { data: data, next: next, prev: prev };
-    }
-  }, {
-    key: "push",
-    value: function push(data) {
-      var el = this._wrap(data, this._start, this._end);
+    _createClass(Ring, [{
+        key: "_wrap",
+        value: function _wrap(data, next, prev) {
+            return { data: data, next: next, prev: prev };
+        }
+    }, {
+        key: "push",
+        value: function push(data) {
+            var el = this._wrap(data, this._start, this._end);
 
-      if (this._end) {
-        this._end.next = el;
-      }
-      this._originalEnd = this._end = el;
+            if (this._end) {
+                this._end.next = el;
+            }
+            this._originalEnd = this._end = el;
 
-      if (!this._start) {
-        this._originalStart = this._start = this._end;
-      }
-      this._adjust();
-    }
-  }, {
-    key: "_adjust",
-    value: function _adjust() {
-      this._end.next = this._start;
-      this._start.prev = this._end;
-    }
-  }, {
-    key: "pop",
-    value: function pop() {
-      this._end = this._end.prev;
-      this._adjust();
-    }
-  }, {
-    key: "shift",
-    value: function shift() {
-      this._start = this._start.next;
-      this._adjust();
-    }
-  }, {
-    key: "unshift",
+            if (!this._start) {
+                this._originalStart = this._start = this._end;
+            }
+            this._adjust();
+        }
+    }, {
+        key: "_adjust",
+        value: function _adjust() {
+            this._end.next = this._start;
+            this._start.prev = this._end;
+        }
+    }, {
+        key: "pop",
+        value: function pop() {
+            this._end = this._end.prev;
+            this._adjust();
+        }
+    }, {
+        key: "shift",
+        value: function shift() {
+            this._start = this._start.next;
+            this._adjust();
+        }
+    }, {
+        key: "unshift",
 
-    // just for the lulz
-    value: function unshift(data) {
-      var el = this._wrap(data, this._start, this._end);
-      if (this._start) {
-        this._start.prev = el;
-      }
-      this._start = el;
-      if (!this._end) {
-        this._end = this._start;
-      }
-      this._adjust();
-    }
-  }, {
-    key: "turnAntiClockwise",
-    value: function turnAntiClockwise(times, visitFn) {
-      var el = null;
-      for (var i = 0; i < times; i++) {
-        el = this._end;
-        this._start = el;
-        this._end = el.prev;
-        visitFn && visitFn(el.data, i);
-      }
-    }
-  }, {
-    key: "turnClockwise",
-    value: function turnClockwise(times, visitFn) {
-      var el = null;
-      for (var i = 0; i < times; i++) {
-        el = this._start;
-        this._end = el;
-        this._start = el.next;
-        visitFn && visitFn(el.data, i);
-      }
-    }
-  }, {
-    key: "travelClockwise",
+        // just for the lulz
+        value: function unshift(data) {
+            var el = this._wrap(data, this._start, this._end);
+            if (this._start) {
+                this._start.prev = el;
+            }
+            this._start = el;
+            if (!this._end) {
+                this._end = this._start;
+            }
+            this._adjust();
+        }
+    }, {
+        key: "turnAntiClockwise",
+        value: function turnAntiClockwise(times, visitFn) {
+            var el = null;
+            for (var i = 0; i < times; i++) {
+                el = this._end;
+                this._start = el;
+                this._end = el.prev;
+                visitFn && visitFn(el.data, i);
+            }
+        }
+    }, {
+        key: "turnClockwise",
+        value: function turnClockwise(times, visitFn) {
+            var el = null;
+            for (var i = 0; i < times; i++) {
+                el = this._start;
+                this._end = el;
+                this._start = el.next;
+                visitFn && visitFn(el.data, i);
+            }
+        }
+    }, {
+        key: "travelClockwise",
 
-    // travellers work irrespective
-    // of teh alignment
-    value: function travelClockwise(visitor) {
-      var el = this._originalStart;
-      var i = 0;
-      do {
-        visitor(el, i++);
-        el = el.next;
-      } while (el !== this._originalStart);
-    }
-  }, {
-    key: "travelAnticlockwise",
-    value: function travelAnticlockwise(visitor) {
-      var el = this._originalEnd;
-      var i = 0;
-      do {
-        visitor(el, i);
-        el = el.prev;
-      } while (el !== this._originalEnd);
-    }
-  }, {
-    key: "mapClockwise",
-    value: function mapClockwise(visitor) {
-      var el = this._originalStart,
-          i = 0,
-          arr = [];
-      do {
-        arr.push(visitor(el.data, i++));
-        el = el.next;
-      } while (el !== this._originalStart);
-      return arr;
-    }
-  }, {
-    key: "mapAntiClockwise",
-    value: function mapAntiClockwise(visitor) {
-      var el = this._originalEnd,
-          i = 0,
-          arr = [];
-      do {
-        arr.push(visitor(el.data, i++));
-        el = el.prev;
-      } while (el !== this._originalEnd);
-      return arr;
-    }
-  }]);
+        // travellers work irrespective
+        // of teh alignment
+        value: function travelClockwise(visitor) {
+            var el = this._originalStart;
+            var i = 0;
+            do {
+                visitor(el, i++);
+                el = el.next;
+            } while (el !== this._originalStart);
+        }
+    }, {
+        key: "travelAnticlockwise",
+        value: function travelAnticlockwise(visitor) {
+            var el = this._originalEnd;
+            var i = 0;
+            do {
+                visitor(el, i);
+                el = el.prev;
+            } while (el !== this._originalEnd);
+        }
+    }, {
+        key: "mapClockwise",
+        value: function mapClockwise(visitor) {
+            var el = this._originalStart,
+                i = 0,
+                arr = [];
+            do {
+                arr.push(visitor(el.data, i++));
+                el = el.next;
+            } while (el !== this._originalStart);
+            return arr;
+        }
+    }, {
+        key: "mapAntiClockwise",
+        value: function mapAntiClockwise(visitor) {
+            var el = this._originalEnd,
+                i = 0,
+                arr = [];
+            do {
+                arr.push(visitor(el.data, i++));
+                el = el.prev;
+            } while (el !== this._originalEnd);
+            return arr;
+        }
+    }]);
 
-  return Ring;
+    return Ring;
 })();
 
 ;
@@ -2001,24 +2030,56 @@ var SmartScroll = (function (_EventEmitter) {
 		_get(Object.getPrototypeOf(SmartScroll.prototype), 'constructor', this).call(this);
 		this._element = element;
 		element.addEventListener('scroll', options.raf ? this._handleNativeRAF.bind(this) : this._handleNativeTimeout.bind(this));
+		if ('ontouchstart' in window) {
+			element.addEventListener('touchstart', this._handleTouchStart);
+			element.addEventListener('touchend', this._handleTouchEnd);
+		} else {
+			element.addEventListener('mousedown', this._handleTouchStart);
+			element.addEventListener('mouseup', this._handleTouchEnd);
+		}
 		if (!this.raf) {
 			this._throttleBy = 1000 / (options.eventPerSecond || 60);
 		}
 		this._isScrolling = false;
 		this._lastEventAt = 0;
+		this._lastTop = 0;
+		this._lastLeft = 0;
 	}
 
 	_inherits(SmartScroll, _EventEmitter);
 
 	_createClass(SmartScroll, [{
+		key: '_handleTouchStart',
+		value: function _handleTouchStart(e) {
+			console.log('TouchStart');
+		}
+	}, {
+		key: '_handleTouchEnd',
+		value: function _handleTouchEnd(e) {
+			console.log('Touch End');
+		}
+	}, {
+		key: '_sendStopped',
+		value: function _sendStopped(t) {
+			console.log('Stopped');
+			this.emit('scroll.end', {
+				scrollTop: this._lastTop,
+				scrollLeft: this._lastLeft
+			});
+		}
+	}, {
 		key: '_throttledScroll',
 		value: function _throttledScroll(e) {
+			var _this = this;
+
 			var last = this._lastEventAt;
 			var now = e.timeStamp;
 			var scrollTop = this._element.scrollTop;
 			var scrollLeft = this._element.scrollLeft;
+
 			if (!this._isScrolling) {
 				this._isScrolling = true;
+				last = now;
 				this.emit('scroll.start', {
 					scrollTop: scrollTop,
 					scrollLeft: scrollLeft
@@ -2030,28 +2091,30 @@ var SmartScroll = (function (_EventEmitter) {
 				scrollLeft: scrollLeft
 			});
 
-			if (now - last > 100) {
-				this._isScrolling = false;
-				this.emit('scroll.end');
-			}
+			this._lastTop = scrollTop;
+			this._lastLeft = scrollLeft;
+			clearTimeout(this._interval);
+			this._interval = setTimeout(function (tx) {
+				return _this._sendStopped(tx);
+			}, this._throttleBy);
 			this._lastEventAt = now;
 		}
 	}, {
 		key: '_handleNativeRAF',
 		value: function _handleNativeRAF(e) {
-			var _this = this;
+			var _this2 = this;
 
 			requestAnimationFrame(function (t) {
-				return _this._throttledScroll(e);
+				return _this2._throttledScroll(e);
 			});
 		}
 	}, {
 		key: '_handleNativeTimeout',
 		value: function _handleNativeTimeout(e) {
-			var _this2 = this;
+			var _this3 = this;
 
 			setTimeout(function (t) {
-				return _this2._throttledScroll(e);
+				return _this3._throttledScroll(e);
 			}, this._throttleBy);
 		}
 	}]);

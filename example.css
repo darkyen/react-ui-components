@@ -196,6 +196,7 @@ body {
   left: 0;
   top: 0;
 }
+.TabView--ScrollContainer,
 .TabView,
 .TabView--TabsContainer,
 .TabView--TabWrapper {
@@ -209,6 +210,12 @@ body {
   white-space: nowrap;
   font-size: 0;
 }
+.TabView--ScrollContainer {
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+  overflow-x: scroll;
+  -ms-scroll-snap-x: mandatory snapInterval(0%, 100%);
+}
 .TabView--Headers {
   height: 48px;
   font-size: 18px;
@@ -221,8 +228,13 @@ body {
   font-size: 16px;
   display: inline-block;
   white-space: normal;
+  vertical-align: top;
 }
 .TabView--TabHeader {
   display: inline-block;
+  color: #545454;
   padding: 0px 10px;
+}
+.TabView--TabHeader-active {
+  color: #f0697b;
 }
