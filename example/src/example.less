@@ -34,14 +34,19 @@ body{
 }
 
 .ListView{
-  position: relative;
-  overflow: hidden;
-  height: 100%;
-  overflow-y: scroll;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+    -ms-scroll-chaining: none;
 }
 
 .ListView--Inner{
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-direction: column;
   flex-direction: column;
 }
 
@@ -100,6 +105,7 @@ body{
 
 .DrawerView--Nav{
 	padding: 0px 0px;
+    -webkit-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
 }
@@ -167,7 +173,8 @@ body{
 
 .Layout{
 	position: relative;
-	display: flex;
+    display: -webkit-flex;
+    display: flex;
 	height: 100%;
 	width: 100%;
 }
@@ -178,6 +185,7 @@ body{
 
 .Vertical-Layout{
 	.Layout;
+    -webkit-flex-direction: column;
 	flex-direction: column;
 }
 
@@ -188,6 +196,7 @@ body{
 }
 
 .Cell-Flex{
+    -webkit-flex: 1;
 	flex: 1;
 	.Cell;
 }
@@ -207,23 +216,26 @@ body{
 }
 
 .TabView--ScrollContainer,
-.TabView, .TabView--TabsContainer, .TabView--TabWrapper{
+.TabView, .TabView--TabWrapper{
 	position: relative;
 	height: 100%;
 	width: 100%;
 }
 
-.TabView--Headers,
-.TabView--TabsContainer{
+.TabView--Headers{
 	width: auto;
 	white-space: nowrap;
 	font-size: 0;
 }
 
 .TabView--ScrollContainer{
-	overflow-x: scroll;
-	-webkit-overflow-scrolling: touch;
-	overflow-scrolling: touch;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    -ms-scroll-snap-x: mandatory snapInterval(0%, 100%);
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -wekbit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+    -ms-scroll-chaining: none;
 }
 
 .TabView--Headers{
@@ -236,10 +248,9 @@ body{
 }
 
 .TabView--TabWrapper{
-	font-size: 16px;
-	display: inline-block;
-	white-space: normal;
-	vertical-align: top;
+    position: absolute;
+    top: 0;
+    left:;
 }
 
 .TabView--TabHeader{

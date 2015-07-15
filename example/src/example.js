@@ -1,4 +1,4 @@
-import React from 'react'	;
+import React from 'react';
 import {
 	UIScrollView, 
 	UIDrawerView, 
@@ -38,7 +38,7 @@ class Random extends React.Component{
     return <div className="Random">
 
 
-              <img className="Random--Image" src={random.image} />
+              <img className="Random--Image" />
               <div className="Random--Details">
                  <h2 className="Random--Title">{random.title}</h2>
                  <p className="Random--Content">{random.descp}</p>
@@ -119,7 +119,6 @@ class App extends React.Component{
 					              elementRenderer={Random}
 					              elementHeight={540}
 								/>
-								<div title={"I love"}>Only sneha</div>
 								<div title={"Fake Tab"}>The cake is a lie</div>
 							</UITabsView>
 						</FlexCell>

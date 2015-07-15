@@ -2,9 +2,11 @@ import React from 'react';
 import Ring from './lib/Ring';
 import {Promise} from 'es6-promise';
 import SmartScroll from './lib/SmartScroll';
+
 // @Internal
 // @Example
 // <UIScrollViewElement renderer data height order/>
+
 class UIScrollViewElement extends React.Component{
 	constructor(props){
 		super(props);
@@ -22,6 +24,7 @@ class UIScrollViewElement extends React.Component{
 		let styling = {
 			height: this.props.height,
 			order : this.props.order,
+			WebkitOrder: this.props.order
 		};
 				
 		return <div className="ListView--Element" style={styling}>
