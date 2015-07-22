@@ -10739,6 +10739,7 @@ body {
   flex: 1;
 }
 .mdl-tabs__tab-bar {
+  user-select: none;
   position: relative;
   z-index: 1000;
 }
@@ -10813,6 +10814,19 @@ body {
   font-family: 'Helvetica';
   text-align: justify;
 }
+.AppUser-Header {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.AppUser-Header .AppUser__UserImage {
+  width: 64px;
+  height: 64px;
+  border-radius: 64px;
+}
+.AppUser-Header .mdl-text {
+  margin: 5px 10px;
+}
 .DrawerView {
   position: relative;
   overflow: hidden;
@@ -10822,6 +10836,7 @@ body {
 .DrawerView--Nav,
 .DrawerView--Contents {
   position: absolute;
+  background: #fff;
   height: 100%;
   width: 100%;
   z-index: 100;
@@ -10832,9 +10847,9 @@ body {
 .DrawerView--drawer-open .DrawerView--Contents {
   transform: translateY(5%) translateX(55%) scale(0.65);
   -webkit-transform: translateY(5%) translateX(55%) scale(0.65);
-  box-shadow: 0px 0px 25px #000;
 }
 .DrawerView--Nav {
+  background: #f9db00;
   padding: 0px 0px;
   -webkit-user-select: none;
   -ms-user-select: none;
@@ -10853,6 +10868,9 @@ body {
 .DrawerView--NavMast {
   transition: transform 200ms, opacity 150ms;
   padding: 0px 35px;
+}
+.DrawerView--NavMast {
+  height: 20%;
 }
 .DrawerView--NavLink:nth-of-type(10) {
   transition-delay: 250ms;
@@ -10886,12 +10904,10 @@ body {
 }
 .DrawerView--NavLink {
   line-height: 48px;
-  font-size: 18px;
-  font-weight: 300;
   display: block;
 }
-.DrawerView--NavMast {
-  font-size: 32px;
+.DrawerView--NavLink > .Link--Native {
+  color: #000;
 }
 .DrawerView .DrawerView--NavLink,
 .DrawerView .DrawerView--NavMast {
@@ -10904,8 +10920,8 @@ body {
   transform: translateX(0px);
 }
 .HeaderView {
-  background: #f9db00;
-  border-bottom: 1px solid #d0392b;
+  background: #fff;
+  border-bottom: 1px solid #d8d8d8;
   -ms-user-select: none;
   user-select: none;
 }
@@ -10943,9 +10959,14 @@ body {
   min-height: 0px;
 }
 .HeaderView {
+  overflow: hidden;
   position: relative;
   padding: 0.01em;
+  padding-top: 20px;
   height: 64px;
+}
+.header-icon {
+  line-height: 36px;
 }
 .flex-fill-fix {
   position: absolute;

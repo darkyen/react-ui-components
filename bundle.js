@@ -17294,6 +17294,75 @@ w.animating=!1,w.setWrapperTransition(0),"undefined"==typeof e&&(e=!0),w.lazy&&w
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
+	value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _materialDesignLite = require('material-design-lite');
+
+var _materialDesignLite2 = _interopRequireDefault(_materialDesignLite);
+
+var UIButtonView = (function (_React$Component) {
+	function UIButtonView(man) {
+		_classCallCheck(this, UIButtonView);
+
+		_get(Object.getPrototypeOf(UIButtonView.prototype), 'constructor', this).call(this, man);
+	}
+
+	_inherits(UIButtonView, _React$Component);
+
+	_createClass(UIButtonView, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			var el = _react2['default'].findDOMNode(this);
+			_materialDesignLite2['default'].upgradeElement(el);
+		}
+	}, {
+		key: 'componentWillUnmount',
+		value: function componentWillUnmount() {
+			var el = _react2['default'].findDOMnode(this);
+			_materialDesignLite2['default'].downgradeElements(el);
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			return _react2['default'].createElement(
+				'button',
+				_extends({}, this.props, { className: 'mdl-button mdl-js-button' }),
+				_react2['default'].createElement(
+					'i',
+					{ className: 'material-icons header-icon' },
+					'menu'
+				)
+			);
+		}
+	}]);
+
+	return UIButtonView;
+})(_react2['default'].Component);
+
+exports['default'] = UIButtonView;
+module.exports = exports['default'];
+
+},{"material-design-lite":3,"react":undefined}],7:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
     value: true
 });
 
@@ -17375,10 +17444,10 @@ var DrawerView = (function (_React$Component) {
                         this.props.links.map(function (link) {
                             return _react2['default'].createElement(
                                 'li',
-                                { className: 'DrawerView--NavLink' },
+                                { className: 'DrawerView--NavLink mdl-typography--subhead' },
                                 _react2['default'].createElement(
                                     'a',
-                                    { href: link.href },
+                                    { className: 'Link--Native', href: link.href },
                                     link.name
                                 )
                             );
@@ -17408,7 +17477,7 @@ DrawerView.propTypes = {
 exports['default'] = DrawerView;
 module.exports = exports['default'];
 
-},{"react":undefined}],7:[function(require,module,exports){
+},{"react":undefined}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -17520,7 +17589,7 @@ var FixedCell = (function (_React$Component3) {
 exports['default'] = { Layout: Layout, FixedCell: FixedCell, FlexCell: FlexCell };
 module.exports = exports['default'];
 
-},{"classnames":undefined,"react":undefined}],8:[function(require,module,exports){
+},{"classnames":undefined,"react":undefined}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -17851,7 +17920,7 @@ var UIScrollView = (function (_React$Component2) {
 exports['default'] = { UIScrollView: UIScrollView, UIScrollViewElement: UIScrollViewElement };
 module.exports = exports['default'];
 
-},{"./lib/Ring":12,"./lib/SmartScroll":13,"es6-promise":1,"react":undefined}],9:[function(require,module,exports){
+},{"./lib/Ring":13,"./lib/SmartScroll":14,"es6-promise":1,"react":undefined}],10:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -17949,9 +18018,7 @@ var MDLSwiperTabsView = (function (_React$Component) {
 		}
 	}, {
 		key: 'slideMove',
-		value: function slideMove(e) {
-			console.log(-e.translate);
-		}
+		value: function slideMove(e) {}
 	}, {
 		key: 'openTab',
 		value: function openTab(index) {
@@ -18124,7 +18191,7 @@ var UITabsView = (function (_React$Component2) {
 exports['default'] = MDLSwiperTabsView;
 module.exports = exports['default'];
 
-},{"./UILayout.js":7,"./lib/Ring.js":12,"./lib/SmartScroll.js":13,"classnames":undefined,"material-design-lite":3,"react":undefined,"swiper":5}],10:[function(require,module,exports){
+},{"./UILayout.js":8,"./lib/Ring.js":13,"./lib/SmartScroll.js":14,"classnames":undefined,"material-design-lite":3,"react":undefined,"swiper":5}],11:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -18223,7 +18290,7 @@ var Textfield = (function (_React$Component) {
 exports['default'] = Textfield;
 module.exports = exports['default'];
 
-},{"classnames":undefined,"lodash":2,"material-design-lite":3,"react":undefined}],11:[function(require,module,exports){
+},{"classnames":undefined,"lodash":2,"material-design-lite":3,"react":undefined}],12:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -18283,7 +18350,7 @@ var EventEmitter = (function () {
 exports["default"] = EventEmitter;
 module.exports = exports["default"];
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 /* 
     @class : Ring
      @desc  : A circular linked list like data structure
@@ -18447,7 +18514,7 @@ var Ring = (function () {
 exports["default"] = Ring;
 module.exports = exports["default"];
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -18588,7 +18655,7 @@ var SmartScroll = (function (_EventEmitter) {
 exports['default'] = SmartScroll;
 module.exports = exports['default'];
 
-},{"./EventEmitter":11}],"react-ui-components":[function(require,module,exports){
+},{"./EventEmitter":12}],"react-ui-components":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -18613,6 +18680,10 @@ var _UITextField = require('./UITextField');
 
 var _UITextField2 = _interopRequireDefault(_UITextField);
 
+var _UIButtonView = require('./UIButtonView');
+
+var _UIButtonView2 = _interopRequireDefault(_UIButtonView);
+
 exports['default'] = {
 	UIDrawerView: _UIDrawerView2['default'],
 	UIScrollView: _UIScrollView.UIScrollView,
@@ -18621,8 +18692,9 @@ exports['default'] = {
 	Layout: _UILayoutJs.Layout,
 	FixedCell: _UILayoutJs.FixedCell,
 	FlexCell: _UILayoutJs.FlexCell,
-	UITextField: _UITextField2['default']
+	UITextField: _UITextField2['default'],
+	UIButtonView: _UIButtonView2['default']
 };
 module.exports = exports['default'];
 
-},{"./UIDrawerView":6,"./UILayout.js":7,"./UIScrollView":8,"./UITabsView.js":9,"./UITextField":10}]},{},[]);
+},{"./UIButtonView":6,"./UIDrawerView":7,"./UILayout.js":8,"./UIScrollView":9,"./UITabsView.js":10,"./UITextField":11}]},{},[]);

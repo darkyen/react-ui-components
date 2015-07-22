@@ -112,7 +112,7 @@ var UIHeaderView = (function (_React$Component2) {
 		value: function render() {
 			return _react2['default'].createElement(
 				'div',
-				{ className: 'HeaderView mdl-layout ' },
+				{ className: 'HeaderView mdl-layout' },
 				_react2['default'].createElement(
 					_reactUiComponents.Layout,
 					{ horizontal: true, alignItems: 'center' },
@@ -126,7 +126,7 @@ var UIHeaderView = (function (_React$Component2) {
 						null,
 						_react2['default'].createElement(
 							'h2',
-							{ 'class': 'mdl-typography--title' },
+							{ className: 'mdl-typography--title' },
 							this.props.title
 						)
 					),
@@ -169,8 +169,8 @@ var App = (function (_React$Component3) {
 			var _this = this;
 
 			var primaryButton = _react2['default'].createElement(
-				'button',
-				{ className: 'mdl-button mdl-layout__drawer-button', onClick: function (e) {
+				_reactUiComponents.UIButtonView,
+				{ onClick: function (e) {
 						return _this.toggleDrawer(e);
 					} },
 				's'
@@ -183,9 +183,31 @@ var App = (function (_React$Component3) {
 				link: '/tatti/'
 			}];
 			var header = _react2['default'].createElement(
-				'h2',
-				null,
-				'App'
+				'div',
+				{ className: 'AppUser-Header' },
+				_react2['default'].createElement(
+					_reactUiComponents.Layout,
+					{ horizontal: true, alignItems: 'center' },
+					_react2['default'].createElement(
+						_reactUiComponents.FixedCell,
+						null,
+						_react2['default'].createElement('img', { className: 'AppUser__UserImage', src: 'https://randomuser.me/api/portraits/med/men/55.jpg' })
+					),
+					_react2['default'].createElement(
+						_reactUiComponents.FlexCell,
+						null,
+						_react2['default'].createElement(
+							'h2',
+							{ className: 'mdl-text mdl-typography--title' },
+							'Ruben Jennings'
+						),
+						_react2['default'].createElement(
+							'h4',
+							{ className: 'mdl-text mdl-typography--body-1' },
+							'+1-(227)-939-2910'
+						)
+					)
+				)
 			);
 
 			return _react2['default'].createElement(
@@ -211,21 +233,21 @@ var App = (function (_React$Component3) {
 									slidesPerView: 1
 								} },
 							_react2['default'].createElement(_reactUiComponents.UIScrollView, {
-								title: 'Pay',
+								title: 'Recents',
 								dataSource: this.dataSource,
 								elementRenderer: Random,
 								elementHeight: 540
 							}),
 							_react2['default'].createElement(
 								'div',
-								{ title: 'Input' },
+								{ title: 'Contacts' },
 								_react2['default'].createElement(_reactUiComponents.UITextField, { floating: true, label: 'Zortan', onChange: function (e) {
 										return console.log(e);
 									} })
 							),
 							_react2['default'].createElement(
 								'div',
-								{ title: 'Demo' },
+								{ title: 'Nearby' },
 								_react2['default'].createElement(
 									'p',
 									null,
