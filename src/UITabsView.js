@@ -46,7 +46,6 @@ class MDLSwiperTabsView extends React.Component{
 	}
 
 	slideMove(e){
-		console.log(-e.translate);
 	}
 	
 	openTab(index){

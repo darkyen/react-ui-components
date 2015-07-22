@@ -47,7 +47,7 @@ class DrawerView extends React.Component{
                         </div>
                         <ul className='DrawerView--NavLinks'>
                             {this.props.links.map(link => {
-                                return <li className="DrawerView--NavLink"><a href={link.href}>{link.name}</a></li>
+                                return <li className="DrawerView--NavLink mdl-typography--subhead"><a className="Link--Native" href={link.href}>{link.name}</a></li>
                             })}
                         </ul>
                     </div>

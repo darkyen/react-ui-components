@@ -11,8 +11,7 @@ class UIScrollViewElement extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {};
-		
-		if( props.element instanceof Promise ){
+		if( props.data instanceof Promise ){
 			this.state.isPromised = true;
 			props.data.then(data => this.setState({data}));
 			return;
@@ -26,10 +25,14 @@ class UIScrollViewElement extends React.Component{
 			order : this.props.order,
 			WebkitOrder: this.props.order
 		};
-				
-		return <div className="ListView--Element" style={styling}>
-							<this.props.renderer data={this.props.data} />
-					 </div>;
+		
+		if( this.state.isPromised && !this.state.data ){
+			return <div className="ListView--Element" style={styling} />
+		}		
+
+		return 	<div className="ListView--Element" style={styling}>
+					<this.props.renderer data={this.props.data} />
+				</div>;
 	}
 }
 
@@ -103,14 +106,22 @@ class UIScrollView extends React.Component{
 		let inViewPort    = Math.ceil(viewPortHeight/elementHeight);
 		let outOfViewPort = inViewPort;
 		let startPoint    = Math.max(Math.floor(scrollTop / elementHeight) - outOfViewPort, 0);
-		let totalElements = inViewPort + outOfViewPort + outOfViewPort;
-		let endPoint      = startPoint + totalElements;
 		let length  = this.props.dataSource.length;
+
+		let totalElements = inViewPort + outOfViewPort + outOfViewPort;
+		
+		if( totalElements >= length ){
+			totalElements = length - 1;	
+		}
+
+		let endPoint      = startPoint + totalElements;
+		
 		if( endPoint >= length ){
-			startPoint  -= outOfViewPort;
 			endPoint = length - 1;
+			startPoint  =  endPoint - totalElements;
 		}
 		// run updates via batching.
+		console.log(startPoint, endPoint, inViewPort, totalElements, scrollTop);
 		return {startPoint, endPoint, inViewPort, totalElements, scrollTop};
 	}
 	
@@ -135,10 +146,9 @@ class UIScrollView extends React.Component{
 				let startPoint = goingUp ? newRange.startPoint : newRange.endPoint;
 				let length = dataSource.length;
 				let noop = (s) => {};
-				
 				let mapData = (element, index) => {
 						let itemIndex = goingUp ? startPoint + index : startPoint - index;
-						if( length < itemIndex ){ return element.node = '';};
+						if( itemIndex > newRange.endPoint ){ console.error("OUT OF BOUND") };
 						element.node =  <UIScrollViewElement 
 											key={element.i} order={itemIndex} 
 											data={dataSource.getItemAtIndex(itemIndex)} 
