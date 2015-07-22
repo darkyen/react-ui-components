@@ -21,11 +21,36 @@ body{
 	display: flex;
 	flex-direction: column;
 	
+	.mdl-tabs__tab{
+		z-index: 1000;
+		cursor: pointer;	
+	}
+	
 	.swiper-container{
 		position: relative;
 		width: 100%;
 		flex: 1;
 	}
+}
+
+.mdl-tabs__tab-bar{
+	position: relative;
+	z-index: 1000;	
+}
+.mdl-tabs__custom-line{
+	z-index: 1200;
+	position: relative;
+	height: 2px;
+	width: 100%;
+	margin-top: -2px;
+}
+
+.mdl-tabs__custom-line__drag{
+	width: 20%;
+	height: 2px;
+	position: absolute;
+	transition: all 100ms;
+	background: @app-yellow;
 }
 
 

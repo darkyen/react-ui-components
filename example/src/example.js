@@ -38,9 +38,6 @@ class Random extends React.Component{
   render(){
     let random = this.props.data;
     return <div className="Random">
-
-
-              <img className="Random--Image" />
               <div className="Random--Details">
                  <h2 className="Random--Title">{random.title}</h2>
                  <p className="Random--Content">{random.descp}</p>
@@ -101,12 +98,12 @@ class App extends React.Component{
 								slidesPerView: 1								
 							}}>
 								<UIScrollView 
-								  title={'Timeline'}
+								  title={'Pay'}
 					              dataSource={this.dataSource} 
 					              elementRenderer={Random}
 					              elementHeight={540}
 								/>
-								<div title={"Input Component"}>
+								<div title={"Input"}>
 									<UITextField floating={true} label="Zortan" onChange={e => console.log(e)}/>
 								</div>
 								<div title={"Demo"}>

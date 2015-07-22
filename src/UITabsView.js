@@ -22,27 +22,53 @@ class MDLSwiperTabsView extends React.Component{
 		let tabs    = React.findDOMNode(this);
 
 		this.swiper = new Swiper(element, this.props.options);
-		this.swiper.on('slideChangeEnd',  () => this.setState({
-			d: Date.now()
-		}));
-		componentHandler.upgradeElement(tabs);
+		this.swiper.on('slideChangeEnd',  (e) => this.updateMagicLinePosition(e));
+		this.swiper.on('sliderMove', (e) => this.slideMove(e));
+		this.updateMagicLinePosition(this.swiper);
 	}
 
 	componentWillUnmount(){
 		let element = React.findDOMNode(this.refs.swipeContainer);
 		this.swiper.destroy();
 	}
+	
+	updateMagicLinePosition(e){
+		let activeIndex = e.activeIndex;
+		let tabHeaders = React.findDOMNode(this.refs.tabHeaders);
+		let magicHandle = React.findDOMNode(this.refs.magicHandle);
+
+		let activeHeader = tabHeaders.children[activeIndex];
+		let newWidth = activeHeader.offsetWidth;
+		let newLeft = activeHeader.offsetLeft;
+
+		magicHandle.style.width =  newWidth + 'px';
+		magicHandle.style.left = newLeft + 'px';
+	}
+
+	slideMove(e){
+		console.log(-e.translate);
+	}
+	
+	openTab(index){
+		this.swiper.slideTo(index, 300);
+	}
 
 	render(){
-		return 	<div className="mdl-tabs mdl-swipe-tabs mdl-js-tabs mdl-js-ripple-effect">
-					<div className="mdl-tabs__tab-bar">
+		return 	<div className="mdl-tabs mdl-js-tabs mdl-js-ripple-effect mdl-swipe-tabs">
+					<ul className="mdl-tabs__tab-bar" ref="tabHeaders">
 						{React.Children.map(this.props.children, (element, index) => {
-							let className = classnames('mdl-tabs__tab', {
-								'is-active': index === this.swiper.activeIndex
-							});
-							return <li onClick={e => this.openTab(index)} className={className}>{element.props.title}</li>
+							let className = classnames('mdl-tabs__tab');
+							return <li 
+										onClick={e => this.openTab(index)} 
+										className={className}
+									>{element.props.title}</li>
 						})}
+					</ul>
+					
+					<div className="mdl-tabs__custom-line">
+						<div ref="magicHandle" className="mdl-tabs__custom-line__drag"></div>
 					</div>
+
 					<div ref="swipeContainer" className="swiper-container">
 						<div className="swiper-wrapper flex-fill-fix">
 							{React.Children.map(this.props.children, (element, index) => {

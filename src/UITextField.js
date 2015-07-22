@@ -6,13 +6,10 @@ import componentHandler from 'material-design-lite';
 class Textfield extends React.Component {
 	constructor(man){
 		super(man);
-		console.log("foo");
 	}
 
 	componentDidMount(){
 		let el = React.findDOMNode(this);
-		console.log(componentHandler);
-		console.log(el);
 		componentHandler.upgradeElement(el);
 	}
 
@@ -26,7 +23,6 @@ class Textfield extends React.Component {
 	// }
 
     render() {
-    	console.log("Rendering");
         let id = 'textfield-' + this.props.label.replace(/\s+/g, '-');
         let {floating, expandable, key, multiline, className, ...props} = this.props;
         let cname = classNames("mdl-textfield", "mdl-js-textfield", {
