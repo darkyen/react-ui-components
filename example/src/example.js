@@ -5,10 +5,12 @@ import {
 	UITabsView,
 	Layout,
 	FixedCell,
-	FlexCell
+	FlexCell,
+	UITextField
 } from 'react-ui-components';
 import DataSource from '../../src/lib/DataSource.js';
 import classNames from 'classnames';
+import 'material-design-lite';
 
 class Feed extends DataSource{
   constructor(length){
@@ -47,13 +49,14 @@ class Random extends React.Component{
   }
 };
 
+
 class UIHeaderView extends React.Component{
 	render(){
-		return  <div className='HeaderView'>
+		return  <div className='HeaderView mdl-layout '>
 					<Layout horizontal={true} alignItems={'center'}>
 						<FixedCell>{this.props.primaryButton}</FixedCell>
 						<FlexCell>
-							<h1>{this.props.title}</h1>
+							<h2 class="mdl-typography--title">{this.props.title}</h2>
 						</FlexCell>
 						<FixedCell>{this.props.secondaryButtons}</FixedCell>
 					</Layout>
@@ -75,30 +78,12 @@ class App extends React.Component{
 		});
 	}
 	render () {
-		let primaryButton = <button onClick={e => this.toggleDrawer(e)}>s</button>
+		let primaryButton = <button className="mdl-button mdl-layout__drawer-button" onClick={e => this.toggleDrawer(e)}>s</button>
 		let links = [{
-			name: 'Home',
+			name: 'Pay',
 			link: "/"
 		},{
-			name: 'Promise',
-			link: '/tatti/'
-		},{
-			name: 'Promise',
-			link: '/tatti/'
-		},{
-			name: 'Promise',
-			link: '/tatti/'
-		},{
-			name: 'Promise',
-			link: '/tatti/'
-		},{
-			name: 'Promise',
-			link: '/tatti/'
-		},{
-			name: 'Promise',
-			link: '/tatti/'
-		},{
-			name: 'Promise',
+			name: 'Request',
 			link: '/tatti/'
 		}];
 		let header = <h2>App</h2>;
@@ -112,14 +97,21 @@ class App extends React.Component{
 							/>
 						</FixedCell>
 						<FlexCell fillFix={true}>
-							<UITabsView>
+							<UITabsView options={{
+								slidesPerView: 1								
+							}}>
 								<UIScrollView 
 								  title={'Timeline'}
 					              dataSource={this.dataSource} 
 					              elementRenderer={Random}
 					              elementHeight={540}
 								/>
-								<div title={"Fake Tab"}>The cake is a lie</div>
+								<div title={"Input Component"}>
+									<UITextField floating={true} label="Zortan" onChange={e => console.log(e)}/>
+								</div>
+								<div title={"Demo"}>
+									<p>Some div</p>
+								</div>
 							</UITabsView>
 						</FlexCell>
 					</Layout>

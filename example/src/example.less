@@ -2,6 +2,11 @@
 // Examples Stylesheet
 // -------------------
 */
+@import "../../node_modules/material-design-lite/material.less";
+@import "../../node_modules/swiper/dist/css/swiper.less";
+
+@app-yellow: rgb(249, 219, 0);
+
 
 body{
 	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -9,6 +14,18 @@ body{
 	color: #333;
 	margin: 0;
 	padding: 0;
+}
+
+.mdl-swipe-tabs{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	
+	.swiper-container{
+		position: relative;
+		width: 100%;
+		flex: 1;
+	}
 }
 
 
@@ -165,7 +182,7 @@ body{
 }
 
 .HeaderView{
-	background: #f0697b;
+	background: @app-yellow;
 	border-bottom: 1px solid #d0392b;
 	-ms-user-select: none;
 	user-select: none;
@@ -263,3 +280,27 @@ body{
 	color: #f0697b;
 }
 
+.UIInput{
+	font-size: 18px;
+}
+
+.UIInput--NativeInput,
+.UICCInput--Expiry--Seperator{
+	font-size: inherit;
+	display: block;
+}
+
+.UICCInput--Expiry--Seperator{
+	display: block;
+	min-width: 40px;
+	text-align: center;
+}
+
+.UIInput--NativeInput{
+	width: 100%;
+	border: 0;
+}
+
+.UIInput--NativeInput:focus{
+	outline: none;
+}

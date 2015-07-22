@@ -3,8 +3,59 @@ import SmartScroll from './lib/SmartScroll.js';
 import Ring from './lib/Ring.js';
 import {Layout, FlexCell, FixedCell} from './UILayout.js';
 import classnames from 'classnames';
+import Swiper from 'swiper';
+import componentHandler from 'material-design-lite';
 // shall we use UIScrollView ?
 // maybe but not now.
+
+class MDLSwiperTabsView extends React.Component{
+	constructor(props){
+		super(props);
+		this.props.options = this.props.options || {};
+		this.swiper = {
+			activeIndex: 0
+		};
+	}
+	
+	componentDidMount(){
+		let element = React.findDOMNode(this.refs.swipeContainer);
+		let tabs    = React.findDOMNode(this);
+
+		this.swiper = new Swiper(element, this.props.options);
+		this.swiper.on('slideChangeEnd',  () => this.setState({
+			d: Date.now()
+		}));
+		componentHandler.upgradeElement(tabs);
+	}
+
+	componentWillUnmount(){
+		let element = React.findDOMNode(this.refs.swipeContainer);
+		this.swiper.destroy();
+	}
+
+	render(){
+		return 	<div className="mdl-tabs mdl-swipe-tabs mdl-js-tabs mdl-js-ripple-effect">
+					<div className="mdl-tabs__tab-bar">
+						{React.Children.map(this.props.children, (element, index) => {
+							let className = classnames('mdl-tabs__tab', {
+								'is-active': index === this.swiper.activeIndex
+							});
+							return <li onClick={e => this.openTab(index)} className={className}>{element.props.title}</li>
+						})}
+					</div>
+					<div ref="swipeContainer" className="swiper-container">
+						<div className="swiper-wrapper flex-fill-fix">
+							{React.Children.map(this.props.children, (element, index) => {
+								return 	<div key={index} className='swiper-slide'>
+											{element}
+									   	</div>
+							})}
+						</div>
+					</div>
+				</div>
+	}
+}
+
 class UITabsView extends React.Component{
 	/*  
 		This will do a lot more than we think,
@@ -82,4 +133,4 @@ class UITabsView extends React.Component{
 	}
 }
 
-export default UITabsView;
+export default MDLSwiperTabsView;
