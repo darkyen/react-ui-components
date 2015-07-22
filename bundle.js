@@ -15883,7 +15883,7 @@ componentHandler.register({
  */
 function MaterialTabs(element) {
   'use strict';
-
+  console.log(element);
   // Stores the HTML element.
   this.element_ = element;
 
@@ -17919,12 +17919,13 @@ var MDLSwiperTabsView = (function (_React$Component) {
 			var tabs = _react2['default'].findDOMNode(this);
 
 			this.swiper = new _swiper2['default'](element, this.props.options);
-			this.swiper.on('slideChangeEnd', function () {
-				return _this.setState({
-					d: Date.now()
-				});
+			this.swiper.on('slideChangeEnd', function (e) {
+				return _this.updateMagicLinePosition(e);
 			});
-			_materialDesignLite2['default'].upgradeElement(tabs);
+			this.swiper.on('sliderMove', function (e) {
+				return _this.slideMove(e);
+			});
+			this.updateMagicLinePosition(this.swiper);
 		}
 	}, {
 		key: 'componentWillUnmount',
@@ -17933,28 +17934,58 @@ var MDLSwiperTabsView = (function (_React$Component) {
 			this.swiper.destroy();
 		}
 	}, {
+		key: 'updateMagicLinePosition',
+		value: function updateMagicLinePosition(e) {
+			var activeIndex = e.activeIndex;
+			var tabHeaders = _react2['default'].findDOMNode(this.refs.tabHeaders);
+			var magicHandle = _react2['default'].findDOMNode(this.refs.magicHandle);
+
+			var activeHeader = tabHeaders.children[activeIndex];
+			var newWidth = activeHeader.offsetWidth;
+			var newLeft = activeHeader.offsetLeft;
+
+			magicHandle.style.width = newWidth + 'px';
+			magicHandle.style.left = newLeft + 'px';
+		}
+	}, {
+		key: 'slideMove',
+		value: function slideMove(e) {
+			console.log(-e.translate);
+		}
+	}, {
+		key: 'openTab',
+		value: function openTab(index) {
+			this.swiper.slideTo(index, 300);
+		}
+	}, {
 		key: 'render',
 		value: function render() {
 			var _this2 = this;
 
 			return _react2['default'].createElement(
 				'div',
-				{ className: 'mdl-tabs mdl-swipe-tabs mdl-js-tabs mdl-js-ripple-effect' },
+				{ className: 'mdl-tabs mdl-js-tabs mdl-js-ripple-effect mdl-swipe-tabs' },
 				_react2['default'].createElement(
-					'div',
-					{ className: 'mdl-tabs__tab-bar' },
+					'ul',
+					{ className: 'mdl-tabs__tab-bar', ref: 'tabHeaders' },
 					_react2['default'].Children.map(this.props.children, function (element, index) {
-						var className = (0, _classnames2['default'])('mdl-tabs__tab', {
-							'is-active': index === _this2.swiper.activeIndex
-						});
+						var className = (0, _classnames2['default'])('mdl-tabs__tab');
 						return _react2['default'].createElement(
 							'li',
-							{ onClick: function (e) {
+							{
+								onClick: function (e) {
 									return _this2.openTab(index);
-								}, className: className },
+								},
+								className: className
+							},
 							element.props.title
 						);
 					})
+				),
+				_react2['default'].createElement(
+					'div',
+					{ className: 'mdl-tabs__custom-line' },
+					_react2['default'].createElement('div', { ref: 'magicHandle', className: 'mdl-tabs__custom-line__drag' })
 				),
 				_react2['default'].createElement(
 					'div',
@@ -18135,7 +18166,6 @@ var Textfield = (function (_React$Component) {
 		_classCallCheck(this, Textfield);
 
 		_get(Object.getPrototypeOf(Textfield.prototype), 'constructor', this).call(this, man);
-		console.log('foo');
 	}
 
 	_inherits(Textfield, _React$Component);
@@ -18144,8 +18174,6 @@ var Textfield = (function (_React$Component) {
 		key: 'componentDidMount',
 		value: function componentDidMount() {
 			var el = _react2['default'].findDOMNode(this);
-			console.log(_materialDesignLite2['default']);
-			console.log(el);
 			_materialDesignLite2['default'].upgradeElement(el);
 		}
 	}, {
@@ -18162,7 +18190,6 @@ var Textfield = (function (_React$Component) {
 		// }
 
 		value: function render() {
-			console.log('Rendering');
 			var id = 'textfield-' + this.props.label.replace(/\s+/g, '-');
 			var _props = this.props;
 			var floating = _props.floating;

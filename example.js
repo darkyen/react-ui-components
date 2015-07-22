@@ -75,7 +75,6 @@ var Random = (function (_React$Component) {
 			return _react2['default'].createElement(
 				'div',
 				{ className: 'Random' },
-				_react2['default'].createElement('img', { className: 'Random--Image' }),
 				_react2['default'].createElement(
 					'div',
 					{ className: 'Random--Details' },
@@ -212,14 +211,14 @@ var App = (function (_React$Component3) {
 									slidesPerView: 1
 								} },
 							_react2['default'].createElement(_reactUiComponents.UIScrollView, {
-								title: 'Timeline',
+								title: 'Pay',
 								dataSource: this.dataSource,
 								elementRenderer: Random,
 								elementHeight: 540
 							}),
 							_react2['default'].createElement(
 								'div',
-								{ title: 'Input Component' },
+								{ title: 'Input' },
 								_react2['default'].createElement(_reactUiComponents.UITextField, { floating: true, label: 'Zortan', onChange: function (e) {
 										return console.log(e);
 									} })
@@ -2799,7 +2798,7 @@ componentHandler.register({
  */
 function MaterialTabs(element) {
   'use strict';
-
+  console.log(element);
   // Stores the HTML element.
   this.element_ = element;
 
