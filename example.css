@@ -10949,6 +10949,9 @@ body {
   height: 100%;
   width: 100%;
 }
+.DrawerView .swiper-slide {
+  transform-style: flat;
+}
 .DrawerView--Nav,
 .DrawerView--Contents {
   overflow: hidden;
@@ -10964,9 +10967,6 @@ body {
 .DrawerView--drawer-open .DrawerView--Contents {
   transform: translateY(5%) translateX(55%) scale(0.65);
   -webkit-transform: translateY(5%) translateX(55%) scale(0.65);
-}
-.DrawerView--drawer-open .swiper-slide {
-  transform-style: flat;
 }
 .DrawerView--Nav {
   background: #f9db00;
