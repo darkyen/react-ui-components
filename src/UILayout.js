@@ -28,7 +28,7 @@ class FlexCell extends React.Component{
 
 class FixedCell extends React.Component{
 	render(){
-		return <div className='Cell-Fixed'>{this.props.children}</div>
+		return <div className={'Cell-Fixed ' + this.props.className}>{this.props.children}</div>
 	}
 }
 

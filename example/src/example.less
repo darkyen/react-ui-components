@@ -56,6 +56,11 @@ body{
 	margin: 0.1em 0;
 }
 
+.header-button{
+  text-align: center;
+  width: 64px;
+}
+
 .mdl-padded{
 	padding: 8px;
 }
@@ -83,6 +88,9 @@ body{
 	}
 }
 
+.react-router-component{
+	height: 100%;	
+}
 
 .mdl-swipe-tabs{
 	height: 100%;
@@ -133,6 +141,10 @@ body{
   box-sizing: border-box;
 }
 
+.full--height{
+	height: 100%;
+}
+
 .Number{
   transform: rotateZ(0deg);
   height: 120px;
@@ -143,21 +155,53 @@ body{
   font-size: 48px;
   text-align: center;
 }
+.mdl-button--fab.mdl-button--colored:hover{
+	background: @app-yellow;
+}
+.mdl-button--fab.mdl-button--colored{
+	background: @app-yellow;
+	color: #000;
+}
 
+.secondary-fab,
+.primary-fab{
+	z-index: 10000;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+}
+
+.secondary-fab{
+	right: 80px;
+}
+
+.mdl-typography--light-heading{
+	font-weight: 300;
+}
+.mdl-transaction__date{
+	align-self: flex-start;
+	padding-top: 3px;
+}
 .App__Overlay{
 	opacity: 0;
 	transition: opacity 150ms;
-	background: @app-yellow;
-	position: relative;
+	background: #323232;
+	position: fixed;
+	visibility: collapse;
 	overflow: hidden;
 	height: 100%;
 	width: 100%;
+	top: 0px;
+	left: 0px;
+	z-index: 9999;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	.mdl-card{
+	> .mdl-card{
 		width: 90%;
 		height: auto;
+		transition: transform 300ms;
+		transform: translateY(100%);
 	}
 	.mdl-card__supporting-text{
 		width: 100%;
@@ -165,7 +209,15 @@ body{
 }
 
 .App__Overlay--open{
+
+	visibility: visible;
+	
+	.mdl-card { 
+		transform: translateY(0%);
+	}
+	
 	opacity: 1;
+
 }
 
 .ListView{
@@ -185,6 +237,7 @@ body{
   flex-direction: column;
 }
 
+.AppTransaction--List,
 .AppUser-List{
 	padding: 8px;
 	.mdl-text{
@@ -197,6 +250,7 @@ body{
 	}
 }
 
+.AppTransaction--List,
 .AppUser-List,
 .AppUser-Header{
 	display: flex;
@@ -210,10 +264,46 @@ body{
 	border-bottom: 1px solid #f5f5f5;
 }
 
+.AppTransaction--List{
+	.debit{
+		color: green;
+	}
+	.credit{
+		color: red;
+	}
+}
+
+.AppTransaction--List .AppUser__UserImage,
 .AppUser-Header .AppUser__UserImage{
 	width: 64px;
 	height: 64px;
 	border-radius: 64px;
+}
+
+.clean-margins{
+	margin: 0px;
+}
+
+.card-swiper{
+	margin: 1.2em 0;
+	position: relative;
+	padding-bottom: 62.75%;
+
+	.card-account{
+		background: @app-yellow;
+		border-radius: 6px;
+		width: 100%;
+		height: 100%;
+		padding: 16px;
+	}
+
+	.swiper-container{
+		margin: 0px;
+		overflow: visible;
+		position: absolute;
+		width:100%;	
+		height: 100%;
+	}
 }
 
 .DrawerView{
@@ -232,7 +322,6 @@ body{
 	width: 100%;
 	z-index: 100;
 	top: 0px;
-	border: 1px solid #fff;
 	transition: transform 400ms;
 	-webkit-transition: -webkit-transform 400ms;
 }

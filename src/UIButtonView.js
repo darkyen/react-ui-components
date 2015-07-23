@@ -1,5 +1,6 @@
 import React from 'react';
 import componentHandler from 'material-design-lite';
+import classNames from 'classnames';
 
 class UIButtonView extends React.Component{
 	constructor(man){
@@ -17,7 +18,16 @@ class UIButtonView extends React.Component{
 	}
 
 	render(){
-		return 	<button {...this.props} className="mdl-button mdl-js-button">{this.props.children}</button>;
+		let {className, ripple, raised, colored, icon, mini, fab, ...props} = this.props
+		let cname = classNames("mdl-button mdl-js-button",{
+			'mdl-js-ripple-effect': ripple,
+			'mdl-button--mini-fab': mini,
+			'mdl-button--raised': raised,
+			'mdl-button--icon': icon,
+			'mdl-button--fab': fab,
+			'mdl-button--colored': colored
+		}, className);
+		return 	<button {...props} className={cname}>{this.props.children}</button>;
 	}
 }
 

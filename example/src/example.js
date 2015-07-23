@@ -11,12 +11,30 @@ import {
 	UILoader,
 	UICard
 } from 'react-ui-components';
-
+import {Locations, Location} from 'react-router-component';
 import DataSource from '../../src/lib/DataSource.js';
 import classNames from 'classnames';
 import 'whatwg-fetch';
 import _ from 'lodash';
 import Promise from 'bluebird';
+import Swiper from 'swiper';
+
+let _cards = [{
+	type: 'cc',
+	brand: 'Diners Club',
+	number: '**** - ****** - 1480',
+	name: 'Abhishek Hingnikar',
+},{
+	type: 'dc',
+	brand: 'MasterCard',
+	number: '**** - **** - **** - 5491',
+	name: 'Abhishek Hingnikar',
+},{
+	type: 'fs',
+	brand: 'Family Sharing',
+	number: '+91 9425 45 3046',
+	name: 'Pramod Hingnikar'
+}];
 
 class ContactsManager{
 	constructor(){
@@ -96,6 +114,47 @@ class ContactsManager{
 
 let cm = new ContactsManager();
 
+class Transactions extends DataSource{
+	constructor(props, list){
+		super(props);
+		console.log("Building");
+		if( !list && !localStorage.transactions ){
+			let transactions = [];
+			let all = cm.getAll();
+			let len = all.length();
+			let now = Date.now()
+			for( var i = 0; i < 40; i++ ){
+				now -= Math.random() * 360000;
+				transactions.push({
+					type: (Math.random() * 2) > 1 ? 'debit': 'credit',
+					amount: Math.random() * 1000,
+					otherParty: all.byIndex( ~~(Math.random() * len) ),
+					date: now
+				});
+			}
+			localStorage.transactions = JSON.stringify(transactions);
+		}
+		this._list = list || JSON.parse(localStorage.transactions);
+		this._list.sort(function(a, b){
+			return b.date - a.date;
+		});
+		this._max = this._list.length;
+	}
+	
+	getItemAtIndex(index){
+		return this._list[index];
+	}
+	
+	get length(){
+		return this._max;
+	}
+
+	createFiltered(fn){
+		let list = this._list.filter(fn);
+		return new Transactions({}, list);
+	}
+}
+
 class Recents extends DataSource{
 	constructor(props){
 		super(props);
@@ -145,7 +204,7 @@ class UIHeaderView extends React.Component{
 	render(){
 		return  <div className='HeaderView mdl-layout'>
 					<Layout horizontal={true} alignItems={'center'}>
-						<FixedCell>{this.props.primaryButton}</FixedCell>
+						<FixedCell className="header-button">{this.props.primaryButton}</FixedCell>
 						<FlexCell>
 							<h2 className="mdl-typography--title">{this.props.title}</h2>
 						</FlexCell>
@@ -154,6 +213,30 @@ class UIHeaderView extends React.Component{
 				</div>;
 	}
 }
+
+
+class UITransaction extends React.Component{
+	render(){
+		let info = this.props.data;
+		let k = classNames("mdl-text mdl-typography--headline", {
+			'credit': info.type === 'credit',
+			'debit' : info.type === 'debit'
+		});
+
+		return  <div className='AppTransaction--List'>
+					<Layout horizontal={true} alignItems={'center'}>
+						<FlexCell>
+							<h2 className="mdl-text mdl-typography--subhead">{info.otherParty.name}</h2>
+							<h2 className={k}>$ {info.amount.toFixed(2)}</h2>
+						</FlexCell>
+						<FixedCell className="mdl-transaction__date">
+							<div className="mdl-text mdl-typography--caption">{(new Date(info.date)).toString().substring(4, 10)}</div>
+						</FixedCell>
+					</Layout>
+				 </div>;
+	}
+}
+
 class UIContact extends React.Component{
 	render(){
 		let info = this.props.data;
@@ -170,6 +253,7 @@ class UIContact extends React.Component{
 				 </div>;
 	}
 }
+
 class UIPickerView extends React.Component{
 	
 	constructor(man){
@@ -207,6 +291,44 @@ class UIPickerView extends React.Component{
 	}
 }
 
+class Card extends React.Component{
+	render(){
+		let info = this.props.data;
+		return 	<div className='card-account mdl-shadow--2dp'>
+					<h6 className="mdl-typography--caption clean-margins">{info.brand}</h6>
+					<h4 className="mdl-typography--subhead clean-margins">{info.number}</h4>
+					<h4 className="mdl-typography--subhead clean-margins">{info.name}</h4>
+				</div>
+	}
+}
+
+class CardSwiper extends React.Component{
+	constructor(man){
+		super(man);
+	}
+	componentDidMount(){
+		let el = React.findDOMNode(this.refs.swiper);
+		this._scroller = new Swiper(el,{
+			slidesPerView: 1,
+			spaceBetween: 60								
+		});
+	}
+
+	render(){
+		return 	<div className="card-swiper">
+					<div ref="swiper" className='swiper-container'>
+						<div className='swiper-wrapper'>
+							{_cards.map( card => {
+								return 	<div className='swiper-slide'>
+											<Card data={card} />
+										</div>;
+							})}
+						</div>
+					</div>
+				</div>
+	}
+}
+
 class AppWidePaymentOverlay extends React.Component{
 	constructor(man){
 		super(man);
@@ -215,9 +337,9 @@ class AppWidePaymentOverlay extends React.Component{
 
 	componentDidMount(){
 		/* run the class after it this way */
-		setTimeout(t => this.setState({
-			opened: true
-		}), 10);
+		// setTimeout(t => this.setState({
+		// 	opened: true
+		// }), 10000);
 	}
 
 	render(){
@@ -225,19 +347,83 @@ class AppWidePaymentOverlay extends React.Component{
 			'App__Overlay--open': this.state.opened
 		});
 		let data = {
-			requestedBy: 'Microsoft',
-			amount: '$52.20',
-			reason: 'Azure Monthy Bill',
+			requestedBy: 'Hal Jordan',
+			amount: '$ 	22.20',
+			reason: 'Subway Due'
 		};
-		let stxt = <span>{data.requestedBy} is trying to charge you {data.amount} for {data.reason}</span>;
-		let actions = [<UIButtonView>Accept</UIButtonView>]
+		let stxt = 	<div>
+						<h3 className="mdl-typography--headline clean-margins">{data.requestedBy}</h3>
+						<h6 className="mdl-typography--caption clean-margins">{data.reason}</h6>
+						<CardSwiper />
+					</div>;
+/*						<h1 className="mdl-typography--light-heading">{data.amount}</h1>
+						<p className="mdl-typography--text-justify">Hey, you owe me money for the subway yesterday, I expect full cash back !</p>
+*/
+		let menuButtons = [
+			<UIButtonView ripple={true} icon={true}><i className="material-icons">credit_card</i></UIButtonView>,
+			<UIButtonView ripple={true} icon={true}><i className="material-icons">more_vert</i></UIButtonView>
+		]
+		let actions = [<UIButtonView ripple={true}>Pay Now</UIButtonView>, <UIButtonView ripple={true}>Remind Later</UIButtonView>]
 		return 	<div className={cname}>
 					<UICard 
-						titleText={'Payment Request'} 	
+						menuButtons={menuButtons}
 						supportingText={stxt}
 						actions={actions}
 					></UICard>
 				</div>
+	}
+}
+
+class TransactionHistoryView extends React.Component{
+
+	constructor(man){
+		super(man);
+		this._history = new Transactions();
+		this._historyDebits = this._history.createFiltered(function(tr){
+			return tr.type === 'debit';
+		});
+
+		this._historyCredits = this._history.createFiltered(function(tr){
+			return tr.type === 'credit';
+		});
+	}
+
+	render(){
+		return  <div className="full--height">
+					<UITabsView className="App__Transactions">
+						<UIScrollView 
+						  title={'All'}
+			              dataSource={this._history} 
+			              elementRenderer={UITransaction}
+			              elementHeight={80}
+						/>
+						<UIScrollView 
+						  title={'Debits'}
+			              dataSource={this._historyDebits} 
+			              elementRenderer={UITransaction}
+			              elementHeight={80}
+						/>
+						<UIScrollView 
+						  title={'Credits'}
+			              dataSource={this._historyCredits} 
+			              elementRenderer={UITransaction}
+			              elementHeight={80}
+						/>
+					</UITabsView>
+					<UIButtonView 
+						fab={true} 
+						raised={true}
+						colored={true}
+						ripple={true} 
+					className="primary-fab"><i className="material-icons">add</i></UIButtonView>
+				</div>
+	}
+}
+
+class UIAccountsView extends React.Component{
+	render(){
+		return 	<div className="accounts">
+				</div>;
 	}
 }
 
@@ -254,19 +440,22 @@ class App extends React.Component{
 		});
 	}
 	render () {
-		let primaryButton = <UIButtonView onClick={e => this.toggleDrawer(e)}><i className="material-icons header-icon">menu</i></UIButtonView>;
+		let primaryButton = <UIButtonView icon={true} onClick={e => this.toggleDrawer(e)}><i className="material-icons header-icon">menu</i></UIButtonView>;
 		let links = [{
-			name: 'Pay',
-			link: "/pay/",
+			name: 'Home',
+			link: '/#/'
 		},{
-			name: 'Request',
-			link: '/charge/'
+			name: 'Bills',
+			link: '/#/bills/'
 		},{
 			name: 'Accounts',
-			link: '/accounts/'
+			link: '/#/accounts/'
 		},{
-			name: 'Track',
-			link: '/'
+			name: 'Requests',
+			link: '/#/requests/'
+		},{
+			name: 'Invite',
+			link: '/#/invite/'			
 		}];
 
 		let header = <div className='AppUser-Header'>
@@ -280,7 +469,28 @@ class App extends React.Component{
 							</FlexCell>
 						</Layout>
 					 </div>;
-		return <AppWidePaymentOverlay></AppWidePaymentOverlay>;			 
+
+		return 	<UIDrawerView navOpen={this.state.navOpen} links={links} header={header}>
+					<Layout vertical={true}>
+						<FixedCell className="header">
+							<UIHeaderView 
+								primaryButton={primaryButton}
+								title="Home"
+							/>
+						</FixedCell>
+						<FlexCell fillFix={true}>
+							<Locations hash>
+								<Location path="/" handler={TransactionHistoryView}></Location>
+								<Location path="/pay/" handler={UIPickerView}></Location>
+								<Location path="/charge/" handler={UIPickerView}></Location>
+								<Location path="/accounts/" handler={UIAccountsView}></Location>
+							</Locations>
+						</FlexCell>
+					</Layout>
+					<AppWidePaymentOverlay></AppWidePaymentOverlay>
+				</UIDrawerView>;
+
+		// return <AppWidePaymentOverlay></AppWidePaymentOverlay>;			 
 		// return  <UIDrawerView navOpen={this.state.navOpen} links={links} header={header}>
 		// 			<Layout vertical={true}>
 		// 				<FixedCell>
