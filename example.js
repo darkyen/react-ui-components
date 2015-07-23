@@ -530,7 +530,16 @@ var AppWidePaymentOverlay = (function (_React$Component7) {
 
 	_createClass(AppWidePaymentOverlay, [{
 		key: 'componentDidMount',
-		value: function componentDidMount() {}
+		value: function componentDidMount() {
+			var _this2 = this;
+
+			/* run the class after it this way */
+			setTimeout(function (t) {
+				return _this2.setState({
+					opened: true
+				});
+			}, 5000);
+		}
 	}, {
 		key: 'render',
 		value: function render() {
@@ -555,11 +564,17 @@ var AppWidePaymentOverlay = (function (_React$Component7) {
 					{ className: 'mdl-typography--caption clean-margins' },
 					data.reason
 				),
-				_react2['default'].createElement(CardSwiper, null)
+				_react2['default'].createElement(
+					'h1',
+					{ className: 'mdl-typography--light-heading' },
+					data.amount
+				),
+				_react2['default'].createElement(
+					'p',
+					{ className: 'mdl-typography--text-justify' },
+					'Hey, you owe me money for the subway yesterday, I expect full cash back !'
+				)
 			);
-			/*						<h1 className="mdl-typography--light-heading">{data.amount}</h1>
-   						<p className="mdl-typography--text-justify">Hey, you owe me money for the subway yesterday, I expect full cash back !</p>
-   */
 			var menuButtons = [_react2['default'].createElement(
 				_reactUiComponents.UIButtonView,
 				{ ripple: true, icon: true },
@@ -708,12 +723,12 @@ var App = (function (_React$Component10) {
 	}, {
 		key: 'render',
 		value: function render() {
-			var _this2 = this;
+			var _this3 = this;
 
 			var primaryButton = _react2['default'].createElement(
 				_reactUiComponents.UIButtonView,
 				{ icon: true, onClick: function (e) {
-						return _this2.toggleDrawer(e);
+						return _this3.toggleDrawer(e);
 					} },
 				_react2['default'].createElement(
 					'i',
@@ -817,11 +832,6 @@ var App = (function (_React$Component10) {
 })(_react2['default'].Component);
 
 _react2['default'].render(_react2['default'].createElement(App, null), document.getElementById('container'));
-
-/* run the class after it this way */
-// setTimeout(t => this.setState({
-// 	opened: true
-// }), 10000);
 
 },{"../../src/lib/DataSource.js":64,"bluebird":2,"classnames":undefined,"lodash":3,"react":undefined,"react-router-component":7,"react-ui-components":undefined,"swiper":62,"whatwg-fetch":63}],2:[function(require,module,exports){
 (function (process,global){
