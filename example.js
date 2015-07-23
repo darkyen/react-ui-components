@@ -798,7 +798,7 @@ var App = (function (_React$Component10) {
 						null,
 						_react2['default'].createElement(
 							'h2',
-							{ className: 'mdl-text mdl-typography--title' },
+							{ className: 'mdl-text mdl-typography--title foo' },
 							'Ruben Jennings'
 						),
 						_react2['default'].createElement(
