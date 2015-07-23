@@ -17305,6 +17305,8 @@ var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_ag
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
@@ -17316,6 +17318,10 @@ var _react2 = _interopRequireDefault(_react);
 var _materialDesignLite = require('material-design-lite');
 
 var _materialDesignLite2 = _interopRequireDefault(_materialDesignLite);
+
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
 
 var UIButtonView = (function (_React$Component) {
 	function UIButtonView(man) {
@@ -17341,14 +17347,29 @@ var UIButtonView = (function (_React$Component) {
 	}, {
 		key: 'render',
 		value: function render() {
+			var _props = this.props;
+			var className = _props.className;
+			var ripple = _props.ripple;
+			var raised = _props.raised;
+			var colored = _props.colored;
+			var icon = _props.icon;
+			var mini = _props.mini;
+			var fab = _props.fab;
+
+			var props = _objectWithoutProperties(_props, ['className', 'ripple', 'raised', 'colored', 'icon', 'mini', 'fab']);
+
+			var cname = (0, _classnames2['default'])('mdl-button mdl-js-button', {
+				'mdl-js-ripple-effect': ripple,
+				'mdl-button--mini-fab': mini,
+				'mdl-button--raised': raised,
+				'mdl-button--icon': icon,
+				'mdl-button--fab': fab,
+				'mdl-button--colored': colored
+			}, className);
 			return _react2['default'].createElement(
 				'button',
-				_extends({}, this.props, { className: 'mdl-button mdl-js-button' }),
-				_react2['default'].createElement(
-					'i',
-					{ className: 'material-icons header-icon' },
-					'menu'
-				)
+				_extends({}, props, { className: cname }),
+				this.props.children
 			);
 		}
 	}]);
@@ -17359,7 +17380,143 @@ var UIButtonView = (function (_React$Component) {
 exports['default'] = UIButtonView;
 module.exports = exports['default'];
 
-},{"material-design-lite":3,"react":undefined}],7:[function(require,module,exports){
+},{"classnames":undefined,"material-design-lite":3,"react":undefined}],7:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _lodash = require('lodash');
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _materialDesignLite = require('material-design-lite');
+
+var _materialDesignLite2 = _interopRequireDefault(_materialDesignLite);
+
+var Textfield = (function (_React$Component) {
+  function Textfield(man) {
+    _classCallCheck(this, Textfield);
+
+    _get(Object.getPrototypeOf(Textfield.prototype), 'constructor', this).call(this, man);
+  }
+
+  _inherits(Textfield, _React$Component);
+
+  _createClass(Textfield, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var el = _react2['default'].findDOMNode(this);
+      _materialDesignLite2['default'].upgradeElement(el);
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      var el = _react2['default'].findDOMnode(this);
+      _materialDesignLite2['default'].downgradeElements(el);
+    }
+  }, {
+    key: 'render',
+
+    // shouldComponentUpdate(){
+    //  // return false;
+    // }
+
+    value: function render() {
+      var _props = this.props;
+      var key = _props.key;
+      var className = _props.className;
+      var titleText = _props.titleText;
+      var actions = _props.actions;
+      var supportingText = _props.supportingText;
+      var menuButtons = _props.menuButtons;
+
+      var props = _objectWithoutProperties(_props, ['key', 'className', 'titleText', 'actions', 'supportingText', 'menuButtons']);
+
+      var title = {};
+      var menu = {};
+      var supportingComp = {};
+      var actionsComp = {};
+      var cname = (0, _classnames2['default'])('mdl-card mdl-shadow--2dp demo-card-wide', className);
+      if (titleText) {
+        title = _react2['default'].createElement(
+          'div',
+          { className: 'mdl-card__title' },
+          _react2['default'].createElement(
+            'h2',
+            { className: 'mdl-card__title-text' },
+            titleText
+          )
+        );
+      }
+
+      if (actions) {
+        actions = !Array.isArray(actions) ? [actions] : actions;
+        actionsComp = _react2['default'].createElement(
+          'div',
+          { className: 'mdl-card__actions mdl-card--border' },
+          actions
+        );
+      }
+
+      if (supportingText) {
+        supportingComp = _react2['default'].createElement(
+          'div',
+          { className: 'mdl-card__supporting-text' },
+          supportingText
+        );
+      }
+
+      if (menuButtons) {
+        menuButtons = !Array.isArray(menuButtons) ? [menuButtons] : menuButtons;
+        menu = _react2['default'].createElement(
+          'div',
+          { className: 'mdl-card__menu' },
+          menuButtons
+        );
+      }
+
+      return _react2['default'].createElement(
+        'div',
+        _extends({ className: cname }, props),
+        title,
+        supportingComp,
+        actionsComp,
+        menu
+      );
+    }
+  }]);
+
+  return Textfield;
+})(_react2['default'].Component);
+
+exports['default'] = Textfield;
+module.exports = exports['default'];
+
+},{"classnames":undefined,"lodash":2,"material-design-lite":3,"react":undefined}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -17477,7 +17634,7 @@ DrawerView.propTypes = {
 exports['default'] = DrawerView;
 module.exports = exports['default'];
 
-},{"react":undefined}],8:[function(require,module,exports){
+},{"react":undefined}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -17577,7 +17734,7 @@ var FixedCell = (function (_React$Component3) {
 		value: function render() {
 			return _react2['default'].createElement(
 				'div',
-				{ className: 'Cell-Fixed' },
+				{ className: 'Cell-Fixed ' + this.props.className },
 				this.props.children
 			);
 		}
@@ -17589,7 +17746,71 @@ var FixedCell = (function (_React$Component3) {
 exports['default'] = { Layout: Layout, FixedCell: FixedCell, FlexCell: FlexCell };
 module.exports = exports['default'];
 
-},{"classnames":undefined,"react":undefined}],9:[function(require,module,exports){
+},{"classnames":undefined,"react":undefined}],10:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+	value: true
+});
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _materialDesignLite = require('material-design-lite');
+
+var _materialDesignLite2 = _interopRequireDefault(_materialDesignLite);
+
+var UILoader = (function (_React$Component) {
+	function UILoader(man) {
+		_classCallCheck(this, UILoader);
+
+		_get(Object.getPrototypeOf(UILoader.prototype), 'constructor', this).call(this, man);
+	}
+
+	_inherits(UILoader, _React$Component);
+
+	_createClass(UILoader, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			var el = _react2['default'].findDOMNode(this);
+			_materialDesignLite2['default'].upgradeElement(el);
+		}
+	}, {
+		key: 'componentWillUnmount',
+		value: function componentWillUnmount() {
+			var el = _react2['default'].findDOMnode(this);
+			_materialDesignLite2['default'].downgradeElements(el);
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var cn = (0, _classnames2['default'])('mdl-spinner mdl-js-spinner is-active', this.props.className);
+			return _react2['default'].createElement('div', { className: cn });
+		}
+	}]);
+
+	return UILoader;
+})(_react2['default'].Component);
+
+exports['default'] = UILoader;
+module.exports = exports['default'];
+
+},{"classnames":undefined,"material-design-lite":3,"react":undefined}],11:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -17632,8 +17853,7 @@ var UIScrollViewElement = (function (_React$Component) {
 
 		_get(Object.getPrototypeOf(UIScrollViewElement.prototype), 'constructor', this).call(this, props);
 		this.state = {};
-
-		if (props.element instanceof _es6Promise.Promise) {
+		if (props.data instanceof _es6Promise.Promise) {
 			this.state.isPromised = true;
 			props.data.then(function (data) {
 				return _this.setState({ data: data });
@@ -17653,6 +17873,10 @@ var UIScrollViewElement = (function (_React$Component) {
 				order: this.props.order,
 				WebkitOrder: this.props.order
 			};
+
+			if (this.state.isPromised && !this.state.data) {
+				return _react2['default'].createElement('div', { className: 'ListView--Element', style: styling });
+			}
 
 			return _react2['default'].createElement(
 				'div',
@@ -17743,14 +17967,22 @@ var UIScrollView = (function (_React$Component2) {
 			var inViewPort = Math.ceil(viewPortHeight / elementHeight);
 			var outOfViewPort = inViewPort;
 			var startPoint = Math.max(Math.floor(scrollTop / elementHeight) - outOfViewPort, 0);
-			var totalElements = inViewPort + outOfViewPort + outOfViewPort;
-			var endPoint = startPoint + totalElements;
 			var length = this.props.dataSource.length;
+
+			var totalElements = inViewPort + outOfViewPort + outOfViewPort;
+
+			if (totalElements >= length) {
+				totalElements = length - 1;
+			}
+
+			var endPoint = startPoint + totalElements;
+
 			if (endPoint >= length) {
-				startPoint -= outOfViewPort;
 				endPoint = length - 1;
+				startPoint = endPoint - totalElements;
 			}
 			// run updates via batching.
+			console.log(startPoint, endPoint, inViewPort, totalElements, scrollTop);
 			return { startPoint: startPoint, endPoint: endPoint, inViewPort: inViewPort, totalElements: totalElements, scrollTop: scrollTop };
 		}
 	}, {
@@ -17782,11 +18014,10 @@ var UIScrollView = (function (_React$Component2) {
 						var startPoint = goingUp ? newRange.startPoint : newRange.endPoint;
 						var length = dataSource.length;
 						var noop = function noop(s) {};
-
 						var mapData = function mapData(element, index) {
 							var itemIndex = goingUp ? startPoint + index : startPoint - index;
-							if (length < itemIndex) {
-								return element.node = '';
+							if (itemIndex > newRange.endPoint) {
+								console.error('OUT OF BOUND');
 							};
 							element.node = _react2['default'].createElement(UIScrollViewElement, {
 								key: element.i, order: itemIndex,
@@ -17920,7 +18151,7 @@ var UIScrollView = (function (_React$Component2) {
 exports['default'] = { UIScrollView: UIScrollView, UIScrollViewElement: UIScrollViewElement };
 module.exports = exports['default'];
 
-},{"./lib/Ring":13,"./lib/SmartScroll":14,"es6-promise":1,"react":undefined}],10:[function(require,module,exports){
+},{"./lib/Ring":15,"./lib/SmartScroll":16,"es6-promise":1,"react":undefined}],12:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -18191,7 +18422,7 @@ var UITabsView = (function (_React$Component2) {
 exports['default'] = MDLSwiperTabsView;
 module.exports = exports['default'];
 
-},{"./UILayout.js":8,"./lib/Ring.js":13,"./lib/SmartScroll.js":14,"classnames":undefined,"material-design-lite":3,"react":undefined,"swiper":5}],11:[function(require,module,exports){
+},{"./UILayout.js":9,"./lib/Ring.js":15,"./lib/SmartScroll.js":16,"classnames":undefined,"material-design-lite":3,"react":undefined,"swiper":5}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -18290,7 +18521,7 @@ var Textfield = (function (_React$Component) {
 exports['default'] = Textfield;
 module.exports = exports['default'];
 
-},{"classnames":undefined,"lodash":2,"material-design-lite":3,"react":undefined}],12:[function(require,module,exports){
+},{"classnames":undefined,"lodash":2,"material-design-lite":3,"react":undefined}],14:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -18350,7 +18581,7 @@ var EventEmitter = (function () {
 exports["default"] = EventEmitter;
 module.exports = exports["default"];
 
-},{}],13:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 /* 
     @class : Ring
      @desc  : A circular linked list like data structure
@@ -18514,7 +18745,7 @@ var Ring = (function () {
 exports["default"] = Ring;
 module.exports = exports["default"];
 
-},{}],14:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -18655,7 +18886,7 @@ var SmartScroll = (function (_EventEmitter) {
 exports['default'] = SmartScroll;
 module.exports = exports['default'];
 
-},{"./EventEmitter":12}],"react-ui-components":[function(require,module,exports){
+},{"./EventEmitter":14}],"react-ui-components":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -18684,6 +18915,14 @@ var _UIButtonView = require('./UIButtonView');
 
 var _UIButtonView2 = _interopRequireDefault(_UIButtonView);
 
+var _UILoader = require('./UILoader');
+
+var _UILoader2 = _interopRequireDefault(_UILoader);
+
+var _UICard = require('./UICard');
+
+var _UICard2 = _interopRequireDefault(_UICard);
+
 exports['default'] = {
 	UIDrawerView: _UIDrawerView2['default'],
 	UIScrollView: _UIScrollView.UIScrollView,
@@ -18693,8 +18932,10 @@ exports['default'] = {
 	FixedCell: _UILayoutJs.FixedCell,
 	FlexCell: _UILayoutJs.FlexCell,
 	UITextField: _UITextField2['default'],
-	UIButtonView: _UIButtonView2['default']
+	UIButtonView: _UIButtonView2['default'],
+	UILoader: _UILoader2['default'],
+	UICard: _UICard2['default']
 };
 module.exports = exports['default'];
 
-},{"./UIButtonView":6,"./UIDrawerView":7,"./UILayout.js":8,"./UIScrollView":9,"./UITabsView.js":10,"./UITextField":11}]},{},[]);
+},{"./UIButtonView":6,"./UICard":7,"./UIDrawerView":8,"./UILayout.js":9,"./UILoader":10,"./UIScrollView":11,"./UITabsView.js":12,"./UITextField":13}]},{},[]);
