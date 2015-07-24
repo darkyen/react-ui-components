@@ -724,14 +724,14 @@ var TransactionHistoryView = (function (_React$Component9) {
 		key: 'openPayView',
 		value: function openPayView(e) {
 			setTimeout(function (t) {
-				window.top.location.hash = '/pay/who';
+				window.location.hash = '/pay/who';
 			}, 200);
 		}
 	}, {
 		key: 'openChargeView',
 		value: function openChargeView(e) {
 			setTimeout(function (t) {
-				window.top.location.hash = '/charge/who';
+				window.location.hash = '/charge/who';
 			}, 200);
 		}
 	}, {
@@ -1249,7 +1249,7 @@ var AccountsRoute = _react2['default'].createClass({
 		);
 		var accounts = _react2['default'].createElement(
 			'div',
-			{ title: 'Accounts', className: 'scroll-container' },
+			{ title: 'Your Accounts', className: 'scroll-container' },
 			_react2['default'].createElement(
 				'div',
 				{ className: 'scroll-wrapper' },
@@ -1313,7 +1313,7 @@ var AccountsRoute = _react2['default'].createClass({
 				{ className: 'header' },
 				_react2['default'].createElement(UIHeaderView, {
 					primaryButton: primaryButton,
-					title: 'Settings'
+					title: 'Accounts'
 				})
 			),
 			_react2['default'].createElement(
