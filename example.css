@@ -10751,6 +10751,9 @@ button.swiper-pagination-bullet {
 .caption-helper {
   line-height: 1.5;
 }
+.mdl-text-normal-case {
+  text-transform: none !important;
+}
 body {
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -10981,6 +10984,9 @@ body {
 .AppTransaction--List .mdl-text,
 .AppUser-List .mdl-text {
   text-transform: capitalize;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .AppTransaction--List .AppUser__UserImage,
 .AppUser-List .AppUser__UserImage {
@@ -11003,10 +11009,13 @@ body {
   margin: 5px 10px;
 }
 .AppTransaction--List .debit {
-  color: green;
+  color: red;
 }
 .AppTransaction--List .credit {
-  color: red;
+  color: green;
+}
+.micro-margins {
+  margin: 8px 0;
 }
 .AppTransaction--List .AppUser__UserImage,
 .AppUser-Header .AppUser__UserImage {
@@ -11018,9 +11027,9 @@ body {
   margin: 0px;
 }
 .card-account {
-  padding: 16px;
+  height: 110px;
+  padding: 0px 16px;
   width: 100%;
-  height: 100%;
   border-bottom: 1px solid #f5f5f5;
 }
 .card-swiper {

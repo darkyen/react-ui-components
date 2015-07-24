@@ -121,7 +121,7 @@ var Transactions = (function (_DataSource) {
 		console.log('Building');
 
 		if (!list && !localStorage.transactions) {
-			localStorage.transactions = '[{"type":"debit","amount":461.86710172332823,"otherParty":{"id":96,"name":"grace stanley","phone":"(149)-796-1047","photo":"http://api.randomuser.me/portraits/thumb/women/6.jpg","times":14},"date":1437605285609.6768},{"type":"debit","amount":129.49005723930895,"otherParty":{"id":80,"name":"regina harvey","phone":"(766)-376-1623","photo":"http://api.randomuser.me/portraits/thumb/women/15.jpg","times":1},"date":1437605011293.2256},{"type":"debit","amount":941.0061126109213,"otherParty":{"id":99,"name":"genesis lane","phone":"(159)-249-3500","photo":"http://api.randomuser.me/portraits/thumb/women/71.jpg","times":71},"date":1437604693786.6177},{"type":"credit","amount":835.8593205921352,"otherParty":{"id":84,"name":"gertrude hale","phone":"(150)-318-9140","photo":"http://api.randomuser.me/portraits/thumb/women/29.jpg","times":51},"date":1437604497226.1711},{"type":"debit","amount":903.6051542498171,"otherParty":{"id":10,"name":"amelia stephens","phone":"(941)-379-9646","photo":"http://api.randomuser.me/portraits/thumb/women/71.jpg","times":0},"date":1437604159173.9873},{"type":"credit","amount":976.9100451376289,"otherParty":{"id":24,"name":"juanita miller","phone":"(248)-981-1622","photo":"http://api.randomuser.me/portraits/thumb/women/38.jpg","times":81},"date":1437603830394.213},{"type":"credit","amount":578.8237643428147,"otherParty":{"id":22,"name":"vicki rodriguez","phone":"(414)-704-2026","photo":"http://api.randomuser.me/portraits/thumb/women/77.jpg","times":44},"date":1437603770872.0662},{"type":"credit","amount":637.3056101147085,"otherParty":{"id":74,"name":"joann lambert","phone":"(611)-979-2265","photo":"http://api.randomuser.me/portraits/thumb/women/69.jpg","times":81},"date":1437603428685.7708},{"type":"credit","amount":216.3495139684528,"otherParty":{"id":54,"name":"marilyn wright","phone":"(356)-960-4788","photo":"http://api.randomuser.me/portraits/thumb/women/71.jpg","times":36},"date":1437603250373.03},{"type":"debit","amount":354.93542277254164,"otherParty":{"id":88,"name":"maxine washington","phone":"(333)-449-5918","photo":"http://api.randomuser.me/portraits/thumb/women/93.jpg","times":67},"date":1437603125222.4243},{"type":"credit","amount":866.9181764125824,"otherParty":{"id":15,"name":"joanne hawkins","phone":"(182)-481-4731","photo":"http://api.randomuser.me/portraits/thumb/women/62.jpg","times":82},"date":1437602912331.5881},{"type":"credit","amount":909.8146038595587,"otherParty":{"id":62,"name":"samuel campbell","phone":"(448)-670-9379","photo":"http://api.randomuser.me/portraits/thumb/men/13.jpg","times":99},"date":1437602891543.3796},{"type":"debit","amount":819.2366370931268,"otherParty":{"id":0,"name":"sylvia barnett","phone":"(163)-509-6398","photo":"http://api.randomuser.me/portraits/thumb/women/59.jpg","times":10},"date":1437602591292.311},{"type":"credit","amount":357.34879365190864,"otherParty":{"id":14,"name":"arnold marshall","phone":"(176)-479-7933","photo":"http://api.randomuser.me/portraits/thumb/men/91.jpg","times":94},"date":1437602351666.477},{"type":"debit","amount":252.89428723044693,"otherParty":{"id":3,"name":"michael willis","phone":"(361)-904-5049","photo":"http://api.randomuser.me/portraits/thumb/men/24.jpg","times":73},"date":1437602169888.5754},{"type":"credit","amount":253.29603953287005,"otherParty":{"id":69,"name":"ben carter","phone":"(204)-161-1339","photo":"http://api.randomuser.me/portraits/thumb/men/78.jpg","times":83},"date":1437601963743.619},{"type":"credit","amount":612.6538210082799,"otherParty":{"id":51,"name":"allan obrien","phone":"(171)-227-9764","photo":"http://api.randomuser.me/portraits/thumb/men/66.jpg","times":73},"date":1437601899640.646},{"type":"debit","amount":742.7546645049006,"otherParty":{"id":49,"name":"billy steward","phone":"(656)-478-2160","photo":"http://api.randomuser.me/portraits/thumb/men/60.jpg","times":37},"date":1437601801123.2522},{"type":"debit","amount":84.47643439285457,"otherParty":{"id":32,"name":"craig howard","phone":"(337)-439-2079","photo":"http://api.randomuser.me/portraits/thumb/men/2.jpg","times":74},"date":1437601484321.332},{"type":"debit","amount":666.8707912322134,"otherParty":{"id":58,"name":"soham daniels","phone":"(722)-943-2920","photo":"http://api.randomuser.me/portraits/thumb/men/46.jpg","times":32},"date":1437601365025.2737},{"type":"credit","amount":306.2956784851849,"otherParty":{"id":94,"name":"jessie rice","phone":"(578)-132-7487","photo":"http://api.randomuser.me/portraits/thumb/men/76.jpg","times":75},"date":1437601008117.826},{"type":"debit","amount":58.044189820066094,"otherParty":{"id":20,"name":"jimmy stevens","phone":"(884)-870-5557","photo":"http://api.randomuser.me/portraits/thumb/men/50.jpg","times":98},"date":1437600737413.267},{"type":"credit","amount":728.337103035301,"otherParty":{"id":58,"name":"soham daniels","phone":"(722)-943-2920","photo":"http://api.randomuser.me/portraits/thumb/men/46.jpg","times":32},"date":1437600640411.4468},{"type":"credit","amount":10.843419469892979,"otherParty":{"id":29,"name":"gabriel stone","phone":"(809)-740-9786","photo":"http://api.randomuser.me/portraits/thumb/men/89.jpg","times":76},"date":1437600385917.8804},{"type":"credit","amount":440.2645779773593,"otherParty":{"id":9,"name":"theresa black","phone":"(445)-422-4467","photo":"http://api.randomuser.me/portraits/thumb/women/62.jpg","times":98},"date":1437600030565.8142},{"type":"debit","amount":853.4978309180588,"otherParty":{"id":20,"name":"jimmy stevens","phone":"(884)-870-5557","photo":"http://api.randomuser.me/portraits/thumb/men/50.jpg","times":98},"date":1437599777817.126},{"type":"debit","amount":922.4825156852603,"otherParty":{"id":79,"name":"frederick fowler","phone":"(235)-103-3754","photo":"http://api.randomuser.me/portraits/thumb/men/19.jpg","times":46},"date":1437599692166.071},{"type":"debit","amount":851.1212901212275,"otherParty":{"id":61,"name":"stacy cox","phone":"(792)-320-4288","photo":"http://api.randomuser.me/portraits/thumb/women/22.jpg","times":38},"date":1437599503603.6067},{"type":"credit","amount":859.8041143268347,"otherParty":{"id":47,"name":"ellen hopkins","phone":"(362)-479-6457","photo":"http://api.randomuser.me/portraits/thumb/women/17.jpg","times":62},"date":1437599370460.5447},{"type":"credit","amount":277.67331805080175,"otherParty":{"id":83,"name":"ellen newman","phone":"(538)-296-2379","photo":"http://api.randomuser.me/portraits/thumb/women/82.jpg","times":6},"date":1437599207629.329},{"type":"debit","amount":395.27168800123036,"otherParty":{"id":97,"name":"sara cole","phone":"(322)-988-1552","photo":"http://api.randomuser.me/portraits/thumb/women/5.jpg","times":55},"date":1437598914381.6199},{"type":"debit","amount":839.2991169821471,"otherParty":{"id":54,"name":"marilyn wright","phone":"(356)-960-4788","photo":"http://api.randomuser.me/portraits/thumb/women/71.jpg","times":36},"date":1437598895440.198},{"type":"debit","amount":979.7775207553059,"otherParty":{"id":78,"name":"gail ross","phone":"(410)-819-9188","photo":"http://api.randomuser.me/portraits/thumb/women/7.jpg","times":24},"date":1437598568372.3032},{"type":"debit","amount":292.40330099128187,"otherParty":{"id":14,"name":"arnold marshall","phone":"(176)-479-7933","photo":"http://api.randomuser.me/portraits/thumb/men/91.jpg","times":94},"date":1437598248366.388},{"type":"credit","amount":549.9195540323853,"otherParty":{"id":55,"name":"alyssa cole","phone":"(473)-226-3276","photo":"http://api.randomuser.me/portraits/thumb/women/64.jpg","times":75},"date":1437598222139.2961},{"type":"debit","amount":874.0450751502067,"otherParty":{"id":41,"name":"bobby smith","phone":"(677)-375-1726","photo":"http://api.randomuser.me/portraits/thumb/men/5.jpg","times":60},"date":1437598170989.9458},{"type":"debit","amount":949.0999355912209,"otherParty":{"id":66,"name":"jackson shaw","phone":"(214)-145-4974","photo":"http://api.randomuser.me/portraits/thumb/men/97.jpg","times":19},"date":1437598111587.4202},{"type":"credit","amount":529.9695588182658,"otherParty":{"id":72,"name":"heidi young","phone":"(328)-439-2170","photo":"http://api.randomuser.me/portraits/thumb/women/12.jpg","times":52},"date":1437597989822.8438},{"type":"credit","amount":89.04353436082602,"otherParty":{"id":34,"name":"erika steeves","phone":"(378)-370-2464","photo":"http://api.randomuser.me/portraits/thumb/women/7.jpg","times":20},"date":1437597897912.1812},{"type":"credit","amount":849.2108890786767,"otherParty":{"id":2,"name":"brianna perry","phone":"(444)-777-9715","photo":"http://api.randomuser.me/portraits/thumb/women/20.jpg","times":87},"date":1437597560446.863}]';
+			localStorage.transactions = '[{"type":"debit","amount":14.2,"reason":"Monthy bill for Google Apps for Business http://smartbuyers.com/","otherParty":{"id":96,"name":"Google Apps","photo":"http://api.randomuser.me/portraits/thumb/women/6.jpg","times":14},"date":1437605285609.6768},{"type":"debit","amount":461.86710172332823,"otherParty":{"id":96,"name":"grace stanley","phone":"(149)-796-1047","photo":"http://api.randomuser.me/portraits/thumb/women/6.jpg","times":14},"date":1437605285609.6768},{"type":"debit","amount":129.49005723930895,"otherParty":{"id":80,"name":"regina harvey","phone":"(766)-376-1623","photo":"http://api.randomuser.me/portraits/thumb/women/15.jpg","times":1},"date":1437605011293.2256},{"type":"debit","amount":941.0061126109213,"otherParty":{"id":99,"name":"genesis lane","phone":"(159)-249-3500","photo":"http://api.randomuser.me/portraits/thumb/women/71.jpg","times":71},"date":1437604693786.6177},{"type":"credit","amount":835.8593205921352,"otherParty":{"id":84,"name":"gertrude hale","phone":"(150)-318-9140","photo":"http://api.randomuser.me/portraits/thumb/women/29.jpg","times":51},"date":1437604497226.1711},{"type":"debit","amount":903.6051542498171,"otherParty":{"id":10,"name":"amelia stephens","phone":"(941)-379-9646","photo":"http://api.randomuser.me/portraits/thumb/women/71.jpg","times":0},"date":1437604159173.9873},{"type":"credit","amount":976.9100451376289,"otherParty":{"id":24,"name":"juanita miller","phone":"(248)-981-1622","photo":"http://api.randomuser.me/portraits/thumb/women/38.jpg","times":81},"date":1437603830394.213},{"type":"credit","amount":578.8237643428147,"otherParty":{"id":22,"name":"vicki rodriguez","phone":"(414)-704-2026","photo":"http://api.randomuser.me/portraits/thumb/women/77.jpg","times":44},"date":1437603770872.0662},{"type":"credit","amount":637.3056101147085,"otherParty":{"id":74,"name":"joann lambert","phone":"(611)-979-2265","photo":"http://api.randomuser.me/portraits/thumb/women/69.jpg","times":81},"date":1437603428685.7708},{"type":"credit","amount":216.3495139684528,"otherParty":{"id":54,"name":"marilyn wright","phone":"(356)-960-4788","photo":"http://api.randomuser.me/portraits/thumb/women/71.jpg","times":36},"date":1437603250373.03},{"type":"debit","amount":354.93542277254164,"otherParty":{"id":88,"name":"maxine washington","phone":"(333)-449-5918","photo":"http://api.randomuser.me/portraits/thumb/women/93.jpg","times":67},"date":1437603125222.4243},{"type":"credit","amount":866.9181764125824,"otherParty":{"id":15,"name":"joanne hawkins","phone":"(182)-481-4731","photo":"http://api.randomuser.me/portraits/thumb/women/62.jpg","times":82},"date":1437602912331.5881},{"type":"credit","amount":909.8146038595587,"otherParty":{"id":62,"name":"samuel campbell","phone":"(448)-670-9379","photo":"http://api.randomuser.me/portraits/thumb/men/13.jpg","times":99},"date":1437602891543.3796},{"type":"debit","amount":819.2366370931268,"otherParty":{"id":0,"name":"sylvia barnett","phone":"(163)-509-6398","photo":"http://api.randomuser.me/portraits/thumb/women/59.jpg","times":10},"date":1437602591292.311},{"type":"credit","amount":357.34879365190864,"otherParty":{"id":14,"name":"arnold marshall","phone":"(176)-479-7933","photo":"http://api.randomuser.me/portraits/thumb/men/91.jpg","times":94},"date":1437602351666.477},{"type":"debit","amount":252.89428723044693,"otherParty":{"id":3,"name":"michael willis","phone":"(361)-904-5049","photo":"http://api.randomuser.me/portraits/thumb/men/24.jpg","times":73},"date":1437602169888.5754},{"type":"credit","amount":253.29603953287005,"otherParty":{"id":69,"name":"ben carter","phone":"(204)-161-1339","photo":"http://api.randomuser.me/portraits/thumb/men/78.jpg","times":83},"date":1437601963743.619},{"type":"credit","amount":612.6538210082799,"otherParty":{"id":51,"name":"allan obrien","phone":"(171)-227-9764","photo":"http://api.randomuser.me/portraits/thumb/men/66.jpg","times":73},"date":1437601899640.646},{"type":"debit","amount":742.7546645049006,"otherParty":{"id":49,"name":"billy steward","phone":"(656)-478-2160","photo":"http://api.randomuser.me/portraits/thumb/men/60.jpg","times":37},"date":1437601801123.2522},{"type":"debit","amount":84.47643439285457,"otherParty":{"id":32,"name":"craig howard","phone":"(337)-439-2079","photo":"http://api.randomuser.me/portraits/thumb/men/2.jpg","times":74},"date":1437601484321.332},{"type":"debit","amount":666.8707912322134,"otherParty":{"id":58,"name":"soham daniels","phone":"(722)-943-2920","photo":"http://api.randomuser.me/portraits/thumb/men/46.jpg","times":32},"date":1437601365025.2737},{"type":"credit","amount":306.2956784851849,"otherParty":{"id":94,"name":"jessie rice","phone":"(578)-132-7487","photo":"http://api.randomuser.me/portraits/thumb/men/76.jpg","times":75},"date":1437601008117.826},{"type":"debit","amount":58.044189820066094,"otherParty":{"id":20,"name":"jimmy stevens","phone":"(884)-870-5557","photo":"http://api.randomuser.me/portraits/thumb/men/50.jpg","times":98},"date":1437600737413.267},{"type":"credit","amount":728.337103035301,"otherParty":{"id":58,"name":"soham daniels","phone":"(722)-943-2920","photo":"http://api.randomuser.me/portraits/thumb/men/46.jpg","times":32},"date":1437600640411.4468},{"type":"credit","amount":10.843419469892979,"otherParty":{"id":29,"name":"gabriel stone","phone":"(809)-740-9786","photo":"http://api.randomuser.me/portraits/thumb/men/89.jpg","times":76},"date":1437600385917.8804},{"type":"credit","amount":440.2645779773593,"otherParty":{"id":9,"name":"theresa black","phone":"(445)-422-4467","photo":"http://api.randomuser.me/portraits/thumb/women/62.jpg","times":98},"date":1437600030565.8142},{"type":"debit","amount":853.4978309180588,"otherParty":{"id":20,"name":"jimmy stevens","phone":"(884)-870-5557","photo":"http://api.randomuser.me/portraits/thumb/men/50.jpg","times":98},"date":1437599777817.126},{"type":"debit","amount":922.4825156852603,"otherParty":{"id":79,"name":"frederick fowler","phone":"(235)-103-3754","photo":"http://api.randomuser.me/portraits/thumb/men/19.jpg","times":46},"date":1437599692166.071},{"type":"debit","amount":851.1212901212275,"otherParty":{"id":61,"name":"stacy cox","phone":"(792)-320-4288","photo":"http://api.randomuser.me/portraits/thumb/women/22.jpg","times":38},"date":1437599503603.6067},{"type":"credit","amount":859.8041143268347,"otherParty":{"id":47,"name":"ellen hopkins","phone":"(362)-479-6457","photo":"http://api.randomuser.me/portraits/thumb/women/17.jpg","times":62},"date":1437599370460.5447},{"type":"credit","amount":277.67331805080175,"otherParty":{"id":83,"name":"ellen newman","phone":"(538)-296-2379","photo":"http://api.randomuser.me/portraits/thumb/women/82.jpg","times":6},"date":1437599207629.329},{"type":"debit","amount":395.27168800123036,"otherParty":{"id":97,"name":"sara cole","phone":"(322)-988-1552","photo":"http://api.randomuser.me/portraits/thumb/women/5.jpg","times":55},"date":1437598914381.6199},{"type":"debit","amount":839.2991169821471,"otherParty":{"id":54,"name":"marilyn wright","phone":"(356)-960-4788","photo":"http://api.randomuser.me/portraits/thumb/women/71.jpg","times":36},"date":1437598895440.198},{"type":"debit","amount":979.7775207553059,"otherParty":{"id":78,"name":"gail ross","phone":"(410)-819-9188","photo":"http://api.randomuser.me/portraits/thumb/women/7.jpg","times":24},"date":1437598568372.3032},{"type":"debit","amount":292.40330099128187,"otherParty":{"id":14,"name":"arnold marshall","phone":"(176)-479-7933","photo":"http://api.randomuser.me/portraits/thumb/men/91.jpg","times":94},"date":1437598248366.388},{"type":"credit","amount":549.9195540323853,"otherParty":{"id":55,"name":"alyssa cole","phone":"(473)-226-3276","photo":"http://api.randomuser.me/portraits/thumb/women/64.jpg","times":75},"date":1437598222139.2961},{"type":"debit","amount":874.0450751502067,"otherParty":{"id":41,"name":"bobby smith","phone":"(677)-375-1726","photo":"http://api.randomuser.me/portraits/thumb/men/5.jpg","times":60},"date":1437598170989.9458},{"type":"debit","amount":949.0999355912209,"otherParty":{"id":66,"name":"jackson shaw","phone":"(214)-145-4974","photo":"http://api.randomuser.me/portraits/thumb/men/97.jpg","times":19},"date":1437598111587.4202},{"type":"credit","amount":529.9695588182658,"otherParty":{"id":72,"name":"heidi young","phone":"(328)-439-2170","photo":"http://api.randomuser.me/portraits/thumb/women/12.jpg","times":52},"date":1437597989822.8438},{"type":"credit","amount":89.04353436082602,"otherParty":{"id":34,"name":"erika steeves","phone":"(378)-370-2464","photo":"http://api.randomuser.me/portraits/thumb/women/7.jpg","times":20},"date":1437597897912.1812},{"type":"credit","amount":849.2108890786767,"otherParty":{"id":2,"name":"brianna perry","phone":"(444)-777-9715","photo":"http://api.randomuser.me/portraits/thumb/women/20.jpg","times":87},"date":1437597560446.863}]';
 		}
 
 		this._list = list || JSON.parse(localStorage.transactions);
@@ -159,65 +159,77 @@ var Accounts = {
 		type: 'bank',
 		brand: 'CITI Bank',
 		number: '**** ******* 9489',
-		name: 'Felicia Jennings'
+		name: 'Felicia Jennings',
+		spent: 22.42,
+		limit: 100
 	}, {
 		type: 'cc',
 		brand: 'MasterCard',
 		number: '**** **** **** 6999',
-		name: 'Ruben K. Jennings'
+		name: 'Ruben K. Jennings',
+		spent: 80.23,
+		limit: 2000
 	}],
 	banks: [{
 		type: 'bank',
 		brand: 'HSBC',
 		number: '**** ******* 6664',
-		name: 'Ruben K. Jennings'
+		name: 'Ruben K. Jennings',
+		limit: 500,
+		spent: 18
 	}, {
 		type: 'bank',
 		brand: 'CITI Bank',
 		number: '**** ******* 4666',
-		name: 'Ruben K. Jennings'
+		name: 'Ruben K. Jennings',
+		limit: 500,
+		spent: 25
 	}],
 	cards: [{
 		type: 'cc',
 		brand: 'Visa',
+		'default': true,
 		number: '**** **** **** 2835',
-		name: 'Ruben K. Jennings'
+		name: 'Ruben K. Jennings',
+		limit: 5000,
+		spent: 2000,
+		expiring: '1 / 18'
 	}, {
 		type: 'cc',
 		brand: 'MasterCard',
 		number: '**** **** **** 6999',
-		name: 'Ruben K. Jennings'
+		name: 'Ruben K. Jennings',
+		limit: 2000,
+		spent: 180.23,
+		expiring: '7 / 22'
 	}, {
 		type: 'cc',
 		brand: 'MasterCard',
 		number: '**** **** **** 5139',
-		name: 'Ruben K. Jennings'
+		name: 'Ruben K. Jennings',
+		limit: 10000,
+		spent: 0,
+		expiring: '8 / 16'
 	}],
 	familySharingOn: true,
 	family: [{
-		role: 'admin',
+		role: 'peer',
 		meta: {
-			name: 'Felicia Jennings',
-			phone: '(125)-544-2926',
-			photo: 'https://randomuser.me/api/portraits/med/women/3.jpg'
+			name: 'Felicia Jennings'
 		},
-		qouta: null,
-		spent: 300.00
+		qouta: 200,
+		spent: 30.00
 	}, {
 		role: 'peer',
 		meta: {
-			name: 'Cathy Jennings',
-			photo: 'https://randomuser.me/api/portraits/women/93.jpg',
-			phone: '(791)-583-2149'
+			name: 'Cathy Jennings'
 		},
 		qouta: 140.00,
 		spent: 40.23
 	}, {
 		role: 'peer',
 		meta: {
-			name: 'Harry Jennings',
-			photo: 'https://randomuser.me/api/portraits/lego/5.jpg',
-			phone: '(586)-322-4012'
+			name: 'Harry Jennings'
 		},
 		qouta: 40.00,
 		spent: 10.00
@@ -365,7 +377,7 @@ var UITransaction = (function (_React$Component3) {
 		key: 'render',
 		value: function render() {
 			var info = this.props.data;
-			var k = (0, _classnames2['default'])('mdl-text mdl-typography--headline', {
+			var k = (0, _classnames2['default'])('mdl-text mdl-typography--subhead', {
 				'credit': info.type === 'credit',
 				'debit': info.type === 'debit'
 			});
@@ -385,18 +397,23 @@ var UITransaction = (function (_React$Component3) {
 							info.otherParty.name
 						),
 						_react2['default'].createElement(
-							'h2',
-							{ className: k },
-							'$ ',
-							info.amount.toFixed(2)
+							'div',
+							{ className: 'mdl-text mdl-text-normal-case mdl-typography--caption' },
+							info.reason || 'Friendly Transfer'
 						)
 					),
 					_react2['default'].createElement(
 						_reactUiComponents.FixedCell,
-						{ className: 'mdl-transaction__date' },
+						null,
 						_react2['default'].createElement(
-							'div',
-							{ className: 'mdl-text mdl-typography--caption' },
+							'h2',
+							{ className: k },
+							'$ ',
+							info.amount.toFixed(2)
+						),
+						_react2['default'].createElement(
+							'p',
+							{ className: 'mdl-text mdl-typography--caption-color-contrast mdl-typography--text-right' },
 							new Date(info.date).toString().substring(4, 10)
 						)
 					)
@@ -529,19 +546,51 @@ var UIAccount = (function (_React$Component6) {
 				'div',
 				{ className: 'card-account' },
 				_react2['default'].createElement(
-					'h6',
-					{ className: 'mdl-typography--caption-color-contrast clean-margins' },
-					info.brand
-				),
-				_react2['default'].createElement(
-					'h4',
-					{ className: 'mdl-typography--subhead clean-margins' },
-					info.number
-				),
-				_react2['default'].createElement(
-					'h4',
-					{ className: 'mdl-typography--subhead clean-margins' },
-					info.name
+					_reactUiComponents.Layout,
+					{ horizontal: true, alignItems: 'center' },
+					_react2['default'].createElement(
+						_reactUiComponents.FlexCell,
+						null,
+						_react2['default'].createElement(
+							'h4',
+							{ className: 'mdl-typography--caption-color-contrast micro-margins' },
+							info.brand + (info['default'] ? ' - Default Payment Method ' : '')
+						),
+						_react2['default'].createElement(
+							'h4',
+							{ className: 'mdl-typography--subhead micro-margins' },
+							'Ending ',
+							info.number.split(' ').pop()
+						),
+						_react2['default'].createElement(
+							'h4',
+							{ className: 'mdl-typography--caption micro-margins' },
+							info.name
+						)
+					),
+					_react2['default'].createElement(
+						_reactUiComponents.FixedCell,
+						{ className: 'mdl-typography--text-right' },
+						_react2['default'].createElement(
+							'h4',
+							{ className: 'mdl-typography--caption-color-contrast micro-margins' },
+							'Valid ',
+							info.expiring || 'Forever'
+						),
+						_react2['default'].createElement(
+							'h4',
+							{ className: 'mdl-typography--subhead micro-margins' },
+							'$ ',
+							info.spent.toFixed(2)
+						),
+						_react2['default'].createElement(
+							'h4',
+							{ className: 'mdl-typography--caption-color-contrast micro-margins' },
+							'$ ',
+							(info.limit - info.spent).toFixed(2),
+							' left'
+						)
+					)
 				)
 			);
 		}
@@ -699,58 +748,13 @@ var TransactionHistoryView = (function (_React$Component9) {
 		this._historyCredits = this._history.createFiltered(function (tr) {
 			return tr.type === 'credit';
 		});
-		this.state = {
-			isFabContainerOpen: false
-		};
 	}
 
 	_inherits(TransactionHistoryView, _React$Component9);
 
 	_createClass(TransactionHistoryView, [{
-		key: 'componentDidMount',
-		value: function componentDidMount() {
-			this.setState({
-				hasMounted: true
-			});
-		}
-	}, {
-		key: 'componentWillUnmount',
-		value: function componentWillUnmount() {
-			this.setState({
-				hasMounted: false
-			});
-		}
-	}, {
-		key: 'openPayView',
-		value: function openPayView(e) {
-			setTimeout(function (t) {
-				window.location.hash = '/pay/who';
-			}, 200);
-		}
-	}, {
-		key: 'openChargeView',
-		value: function openChargeView(e) {
-			setTimeout(function (t) {
-				window.location.hash = '/charge/who';
-			}, 200);
-		}
-	}, {
-		key: 'toggleFabContainer',
-		value: function toggleFabContainer(e) {
-			this.setState({
-				isFabContainerOpen: !this.state.isFabContainerOpen
-			});
-		}
-	}, {
 		key: 'render',
 		value: function render() {
-			var _this2 = this;
-
-			var cnamefab = (0, _classnames2['default'])('fab-container home-fab', {
-				'fab-container--open': this.state.isFabContainerOpen,
-				'fab-container--ready': this.state.hasMounted
-			});
-
 			return _react2['default'].createElement(
 				'div',
 				{ className: 'full--height' },
@@ -775,55 +779,6 @@ var TransactionHistoryView = (function (_React$Component9) {
 						elementRenderer: UITransaction,
 						elementHeight: 80
 					})
-				),
-				_react2['default'].createElement(
-					'div',
-					{ className: cnamefab },
-					_react2['default'].createElement(
-						_reactUiComponents.UIButtonView,
-						{
-							className: 'secondary-fab--2',
-							fab: true, raised: true, mini: true, onClick: function (e) {
-								return _this2.openPayView(e);
-							}
-						},
-						_react2['default'].createElement(
-							'i',
-							{ className: 'material-icons' },
-							'call_made'
-						)
-					),
-					_react2['default'].createElement(
-						_reactUiComponents.UIButtonView,
-						{
-							className: 'secondary-fab--1',
-							fab: true, raised: true, mini: true, onClick: function (e) {
-								return _this2.openChargeView(e);
-							}
-						},
-						_react2['default'].createElement(
-							'i',
-							{ className: 'material-icons' },
-							'call_received'
-						)
-					),
-					_react2['default'].createElement(
-						_reactUiComponents.UIButtonView,
-						{
-							onClick: function (e) {
-								return _this2.toggleFabContainer(e);
-							},
-							fab: true,
-							raised: true,
-							colored: true,
-							ripple: true,
-							className: 'primary-fab' },
-						_react2['default'].createElement(
-							'i',
-							{ className: 'material-icons' },
-							'close'
-						)
-					)
 				)
 			);
 		}
@@ -873,10 +828,10 @@ var App = _react2['default'].createClass({
 	},
 
 	componentDidMount: function componentDidMount() {
-		var _this3 = this;
+		var _this2 = this;
 
 		AppActions.registerToggleListener(function () {
-			return _this3.toggleDrawer();
+			return _this2.toggleDrawer();
 		});
 	},
 
@@ -895,17 +850,20 @@ var App = _react2['default'].createClass({
 	render: function render() {
 		var links = [{
 			name: 'Home',
-			path: '/home'
+			path: '/home',
+			badge: localStorage.transactionsLeft
 		}, {
 			name: 'Scout',
 			path: '/scout'
 		}, {
-			name: 'Invoices',
-			path: '/invoices',
-			badge: 5
+			name: 'History',
+			path: '/history'
 		}, {
-			name: 'Settings',
-			path: '/settings'
+			name: 'Accounts',
+			path: '/accounts'
+		}, {
+			name: 'Sharing',
+			path: '/sharing'
 		}, {
 			name: 'Invite',
 			path: '/invite'
@@ -977,7 +935,7 @@ var TransactionsRoute = (function (_React$Component11) {
 					{ className: 'header' },
 					_react2['default'].createElement(UIHeaderView, {
 						primaryButton: primaryButton,
-						title: 'Home'
+						title: 'History'
 					})
 				),
 				_react2['default'].createElement(
@@ -997,14 +955,14 @@ var PaymentsRoute = _react2['default'].createClass({
 
 	mixins: [_reactRouter.Navigation],
 	render: function render() {
-		var _this4 = this;
+		var _this3 = this;
 
 		var primaryButton = _react2['default'].createElement(
 			_reactUiComponents.UIButtonView,
 			{
 				icon: true,
 				onClick: function (back) {
-					return _this4.goBack();
+					return _this3.goBack();
 				}
 			},
 			_react2['default'].createElement(
@@ -1038,14 +996,14 @@ var ChargeRoute = _react2['default'].createClass({
 
 	mixins: [_reactRouter.Navigation],
 	render: function render() {
-		var _this5 = this;
+		var _this4 = this;
 
 		var primaryButton = _react2['default'].createElement(
 			_reactUiComponents.UIButtonView,
 			{
 				icon: true,
 				onClick: function (back) {
-					return _this5.goBack();
+					return _this4.goBack();
 				}
 			},
 			_react2['default'].createElement(
@@ -1137,7 +1095,50 @@ var ScoutRoute = _react2['default'].createClass({
 var InvoiceRoute = _react2['default'].createClass({
 	displayName: 'InvoiceRoute',
 
+	getInitialState: function getInitialState() {
+		return {
+			hasMounted: false
+		};
+	},
+
+	componentDidMount: function componentDidMount() {
+		this.setState({
+			hasMounted: true
+		});
+	},
+
+	componentWillUnmount: function componentWillUnmount() {
+		this.setState({
+			hasMounted: false
+		});
+	},
+
+	openPayView: function openPayView(e) {
+		setTimeout(function (t) {
+			window.location.hash = '/pay/who';
+		}, 200);
+	},
+
+	openChargeView: function openChargeView(e) {
+		setTimeout(function (t) {
+			window.location.hash = '/charge/who';
+		}, 200);
+	},
+
+	toggleFabContainer: function toggleFabContainer(e) {
+		this.setState({
+			isFabContainerOpen: !this.state.isFabContainerOpen
+		});
+	},
+
 	render: function render() {
+		var _this5 = this;
+
+		var cnamefab = (0, _classnames2['default'])('fab-container home-fab', {
+			'fab-container--open': this.state.isFabContainerOpen,
+			'fab-container--ready': this.state.hasMounted
+		});
+
 		var primaryButton = _react2['default'].createElement(
 			_reactUiComponents.UIButtonView,
 			{
@@ -1158,13 +1159,62 @@ var InvoiceRoute = _react2['default'].createClass({
 				{ className: 'header' },
 				_react2['default'].createElement(UIHeaderView, {
 					primaryButton: primaryButton,
-					title: 'Invoices'
+					title: 'Home'
 				})
 			),
 			_react2['default'].createElement(
 				_reactUiComponents.FlexCell,
 				{ fillFix: true },
-				this.props.children
+				this.props.children,
+				_react2['default'].createElement(
+					'div',
+					{ className: cnamefab },
+					_react2['default'].createElement(
+						_reactUiComponents.UIButtonView,
+						{
+							className: 'secondary-fab--2',
+							fab: true, raised: true, mini: true, onClick: function (e) {
+								return _this5.openPayView(e);
+							}
+						},
+						_react2['default'].createElement(
+							'i',
+							{ className: 'material-icons' },
+							'call_made'
+						)
+					),
+					_react2['default'].createElement(
+						_reactUiComponents.UIButtonView,
+						{
+							className: 'secondary-fab--1',
+							fab: true, raised: true, mini: true, onClick: function (e) {
+								return _this5.openChargeView(e);
+							}
+						},
+						_react2['default'].createElement(
+							'i',
+							{ className: 'material-icons' },
+							'call_received'
+						)
+					),
+					_react2['default'].createElement(
+						_reactUiComponents.UIButtonView,
+						{
+							onClick: function (e) {
+								return _this5.toggleFabContainer(e);
+							},
+							fab: true,
+							raised: true,
+							colored: true,
+							ripple: true,
+							className: 'primary-fab' },
+						_react2['default'].createElement(
+							'i',
+							{ className: 'material-icons' },
+							'close'
+						)
+					)
+				)
 			)
 		);
 	}
@@ -1192,11 +1242,6 @@ var UIFamilyContact = (function (_React$Component12) {
 					_reactUiComponents.Layout,
 					{ horizontal: true, alignItems: 'center' },
 					_react2['default'].createElement(
-						_reactUiComponents.FixedCell,
-						null,
-						_react2['default'].createElement('img', { className: 'AppUser__UserImage', src: info.photo })
-					),
-					_react2['default'].createElement(
 						_reactUiComponents.FlexCell,
 						null,
 						_react2['default'].createElement(
@@ -1206,9 +1251,23 @@ var UIFamilyContact = (function (_React$Component12) {
 						),
 						_react2['default'].createElement(
 							'h2',
-							{ className: 'mdl-text mdl-typography--title' },
+							{ className: 'mdl-text mdl-typography--caption-color-contrast' },
+							data.role === 'admin' ? 'Admin, Shares Card' : 'Member'
+						)
+					),
+					_react2['default'].createElement(
+						_reactUiComponents.FixedCell,
+						{ className: 'mdl-typography--text-right' },
+						_react2['default'].createElement(
+							'h2',
+							{ className: 'mdl-text mdl-typography--subhead' },
 							'$',
 							data.spent.toFixed(2)
+						),
+						_react2['default'].createElement(
+							'h2',
+							{ className: 'mdl-text mdl-typography--caption-color-contrast mdl-text-normal-case' },
+							data.role === 'admin' ? '.' : '$' + (data.qouta - data.spent).toFixed(2) + ' left'
 						)
 					)
 				)
@@ -1218,6 +1277,107 @@ var UIFamilyContact = (function (_React$Component12) {
 
 	return UIFamilyContact;
 })(_react2['default'].Component);
+
+var SharingRoute = _react2['default'].createClass({
+	displayName: 'SharingRoute',
+
+	getInitialState: function getInitialState() {
+		return {
+			hasMounted: true
+		};
+	},
+	componentDidMount: function componentDidMount() {
+		this.setState({
+			hasMounted: true
+		});
+	},
+
+	render: function render() {
+		var primaryButton = _react2['default'].createElement(
+			_reactUiComponents.UIButtonView,
+			{
+				icon: true,
+				onClick: AppActions.toggleDrawer
+			},
+			_react2['default'].createElement(
+				'i',
+				{ className: 'material-icons header-icon' },
+				'menu'
+			)
+		);
+
+		var cnamefab = (0, _classnames2['default'])('fab-container', {
+			'fab-container--ready': this.state.hasMounted
+		});
+
+		var accounts = _react2['default'].createElement(
+			'div',
+			{ title: 'Accounts', className: 'scroll-container' },
+			_react2['default'].createElement(
+				'div',
+				{ className: 'scroll-wrapper' },
+				Accounts.sharedSources.map(function (sharedSource) {
+					return _react2['default'].createElement(UIAccount, { data: sharedSource });
+				})
+			)
+		);
+
+		var fam = _react2['default'].createElement(
+			'div',
+			{ title: 'People', className: 'scroll-container' },
+			_react2['default'].createElement(
+				'div',
+				{ className: 'scroll-wrapper' },
+				Accounts.family.map(function (familyMem) {
+					return _react2['default'].createElement(UIFamilyContact, { data: familyMem });
+				})
+			)
+		);
+
+		return _react2['default'].createElement(
+			_reactUiComponents.Layout,
+			{ vertical: true },
+			_react2['default'].createElement(
+				_reactUiComponents.FixedCell,
+				{ className: 'header' },
+				_react2['default'].createElement(UIHeaderView, {
+					primaryButton: primaryButton,
+					title: 'Family & Sharing'
+				})
+			),
+			_react2['default'].createElement(
+				_reactUiComponents.FlexCell,
+				{ fillFix: true },
+				_react2['default'].createElement(
+					_reactUiComponents.UITabsView,
+					{ options: {
+							slidesPerView: 1
+						} },
+					fam,
+					accounts
+				),
+				_react2['default'].createElement(
+					'div',
+					{ className: cnamefab },
+					_react2['default'].createElement(
+						_reactUiComponents.UIButtonView,
+						{
+							fab: true,
+							raised: true,
+							colored: true,
+							ripple: true,
+							className: 'primary-fab' },
+						_react2['default'].createElement(
+							'i',
+							{ className: 'material-icons' },
+							'person_add'
+						)
+					)
+				)
+			)
+		);
+	}
+});
 
 var AccountsRoute = _react2['default'].createClass({
 	displayName: 'AccountsRoute',
@@ -1247,25 +1407,12 @@ var AccountsRoute = _react2['default'].createClass({
 				'menu'
 			)
 		);
-		var accounts = _react2['default'].createElement(
+		var cards = _react2['default'].createElement(
 			'div',
-			{ title: 'Your Accounts', className: 'scroll-container' },
+			{ title: 'Cards', className: 'scroll-container' },
 			_react2['default'].createElement(
 				'div',
 				{ className: 'scroll-wrapper' },
-				_react2['default'].createElement(
-					'h3',
-					{ className: 'mdl-typography--caption-color-contrast micro-labels clean-margins' },
-					'Bank Accounts'
-				),
-				Accounts.banks.map(function (cardData) {
-					return _react2['default'].createElement(UIAccount, { data: cardData });
-				}),
-				_react2['default'].createElement(
-					'h3',
-					{ className: 'mdl-typography--caption-color-contrast micro-labels clean-margins' },
-					'Cards'
-				),
 				Accounts.cards.map(function (cardData) {
 					return _react2['default'].createElement(UIAccount, { data: cardData });
 				})
@@ -1276,29 +1423,15 @@ var AccountsRoute = _react2['default'].createClass({
 		// 	return <UIAccount data={sharedSource}/>
 		// })}
 
-		var family = _react2['default'].createElement(
+		var banks = _react2['default'].createElement(
 			'div',
-			{ title: 'family sharing', className: 'scroll-container' },
+			{ title: 'Banks', className: 'scroll-container' },
 			_react2['default'].createElement(
 				'div',
 				{ className: 'scroll-wrapper' },
-				_react2['default'].createElement(
-					'h3',
-					{ className: 'mdl-typography--caption-color-contrast micro-labels clean-margins' },
-					'People'
-				),
-				Accounts.family.map(function (memberData) {
-					return _react2['default'].createElement(UIFamilyContact, { data: memberData });
-				}),
-				_react2['default'].createElement(
-					'div',
-					{ className: 'padded-caption' },
-					_react2['default'].createElement(
-						'p',
-						{ className: 'mdl-typography--caption-color-contrast caption-helper mdl-typography--text-center ' },
-						'Family sharing allows you to share cards with your loved ones its quick & simple, and all transactions being made on your accounts will notify you !'
-					)
-				)
+				Accounts.banks.map(function (cardData) {
+					return _react2['default'].createElement(UIAccount, { data: cardData });
+				})
 			)
 		);
 		var cnamefab = (0, _classnames2['default'])('fab-container', {
@@ -1324,8 +1457,8 @@ var AccountsRoute = _react2['default'].createClass({
 					{ options: {
 							slidesPerView: 1
 						} },
-					accounts,
-					family
+					cards,
+					banks
 				),
 				_react2['default'].createElement(
 					'div',
@@ -1356,20 +1489,13 @@ var routes = _react2['default'].createElement(
 	_react2['default'].createElement(
 		_reactRouter.Route,
 		{ path: '/', component: App },
-		_react2['default'].createElement(_reactRouter.Route, { path: 'home', components: TransactionsRoute }),
-		_react2['default'].createElement(
-			_reactRouter.Route,
-			{ path: 'pay', component: PaymentsRoute },
-			_react2['default'].createElement(_reactRouter.Route, { path: 'who', component: UIPickerView })
-		),
-		_react2['default'].createElement(
-			_reactRouter.Route,
-			{ path: 'charge', component: ChargeRoute },
-			_react2['default'].createElement(_reactRouter.Route, { path: 'who', component: UIPickerView })
-		),
+		_react2['default'].createElement(_reactRouter.Route, { path: 'history', components: TransactionsRoute }),
+		_react2['default'].createElement(_reactRouter.Route, { path: 'pay', component: PaymentsRoute }),
+		_react2['default'].createElement(_reactRouter.Route, { path: 'charge', component: ChargeRoute }),
 		_react2['default'].createElement(_reactRouter.Route, { path: 'scout', component: ScoutRoute }),
-		_react2['default'].createElement(_reactRouter.Route, { path: 'invoices', component: InvoiceRoute }),
-		_react2['default'].createElement(_reactRouter.Route, { path: 'accounts', component: AccountsRoute })
+		_react2['default'].createElement(_reactRouter.Route, { path: 'home', component: InvoiceRoute }),
+		_react2['default'].createElement(_reactRouter.Route, { path: 'accounts', component: AccountsRoute }),
+		_react2['default'].createElement(_reactRouter.Route, { path: 'sharing', component: SharingRoute })
 	)
 );
 
