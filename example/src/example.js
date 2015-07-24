@@ -428,7 +428,7 @@ class TransactionHistoryView extends React.Component{
 	openPayView(e){
 		setTimeout(
 			t => {
-				window.top.location.hash = '/pay/who';
+				window.location.hash = '/pay/who';
 			}, 200
 		);
 	}
@@ -436,7 +436,7 @@ class TransactionHistoryView extends React.Component{
 	openChargeView(e){
 		setTimeout(
 			t => {
-				window.top.location.hash = '/charge/who';
+				window.location.hash = '/charge/who';
 			}, 200
 		);
 	}
@@ -547,8 +547,11 @@ const App = React.createClass({
 			path: '/invoices',
 			badge: 5,
 		},{
-			name: 'Settings',
-			path: '/settings'
+			name: 'Accounts',
+			path: '/accounts'
+		},{
+			name: 'Sharing',
+			path: '/sharing'
 		},{
 			name: 'Invite',
 			path: '/invite'
@@ -690,12 +693,78 @@ class UIFamilyContact extends React.Component{
 						</FixedCell>
 						<FlexCell>
 							<h2 className="mdl-text mdl-typography--subhead">{info.name}</h2>
-							<h2 className="mdl-text mdl-typography--title">${data.spent.toFixed(2) + (data.qouta ? (' / $' + data.qouta.toFixed(2)) : '')}</h2>
+							<h2 className="mdl-text mdl-typography--title">${data.spent.toFixed(2)}</h2>
 						</FlexCell>
 					</Layout>
 				 </div>;
 	}
 }
+
+let SharingRoute = React.createClass({
+	getInitialState(){
+		return {
+			hasMounted: true
+		}
+	},
+	componentDidMount(){
+		this.setState({
+			hasMounted: true
+		});
+	},
+
+	render(){
+		let primaryButton = <UIButtonView 
+						icon={true} 
+						onClick={AppActions.toggleDrawer}
+					><i className="material-icons header-icon">menu</i></UIButtonView>;
+
+
+		let cnamefab = classNames("fab-container", {
+			'fab-container--ready': this.state.hasMounted
+		});
+
+		let accounts =	<div title={"Accounts"} className="scroll-container">
+						<div className="scroll-wrapper">
+							{Accounts.sharedSources.map( sharedSource => {
+								return <UIAccount data={sharedSource}/>
+							})}
+						</div>
+					</div>;
+
+		let fam  =  <div title={"People"} className="scroll-container">
+						<div className="scroll-wrapper">
+							{Accounts.family.map( familyMem => {
+								return <UIFamilyContact data={familyMem}/>
+							})}
+						</div>
+					</div>;
+
+		return <Layout vertical={true}>
+					<FixedCell className="header">
+						<UIHeaderView 
+							primaryButton={primaryButton}
+							title="Family & Sharing"
+						/>
+					</FixedCell>
+					<FlexCell fillFix={true}>
+						<UITabsView options={{
+							slidesPerView: 1
+						}}>
+							{fam}
+							{accounts}
+						</UITabsView>
+						<div className={cnamefab}>
+							<UIButtonView 
+								fab={true} 
+								raised={true}
+								colored={true}
+								ripple={true} 
+							className="primary-fab"><i className="material-icons">playlist_add</i></UIButtonView>
+						</div>
+					</FlexCell>
+				</Layout>;	
+	}
+});
 
 let AccountsRoute = React.createClass({
 	getInitialState(){
@@ -715,31 +784,25 @@ let AccountsRoute = React.createClass({
 								icon={true} 
 								onClick={AppActions.toggleDrawer}
 							><i className="material-icons header-icon">menu</i></UIButtonView>;
-		let accounts = 	<div title={'Accounts'} className="scroll-container">
+		let cards = 	<div title={'Cards'} className="scroll-container">
 							<div className="scroll-wrapper">
-								<h3 className="mdl-typography--caption-color-contrast micro-labels clean-margins">Bank Accounts</h3>
-								{Accounts.banks.map( cardData => {
-									return <UIAccount data={cardData}/>
-								})}
-								<h3 className="mdl-typography--caption-color-contrast micro-labels clean-margins">Cards</h3>
 								{Accounts.cards.map( cardData => {
 									return <UIAccount data={cardData}/>
 								})}
 							</div>
 						</div>;
+								// <h3 className="mdl-typography--caption-color-contrast micro-labels clean-margins">Shared Accounts</h3>
+								// {Accounts.sharedSources.map( sharedSource => {
+								// 	return <UIAccount data={sharedSource}/>
+								// })}
 
-		let family =	<div title={"family sharing"} className="scroll-container">
-							<div className="scroll-wrapper">
-								<h3 className="mdl-typography--caption-color-contrast micro-labels clean-margins">Shared Accounts</h3>
-								{Accounts.sharedSources.map( sharedSource => {
-									return <UIAccount data={sharedSource}/>
-								})}
-								<h3 className="mdl-typography--caption-color-contrast micro-labels clean-margins">People</h3>
-								{Accounts.family.map( memberData => {
-									return 	<UIFamilyContact data={memberData} />
-								})}
-							</div>
-						</div>;
+		let banks =	<div title={"Banks"} className="scroll-container">
+						<div className="scroll-wrapper">
+							{Accounts.banks.map( cardData => {
+								return <UIAccount data={cardData}/>
+							})}
+						</div>
+					</div>;
 		let cnamefab = classNames("fab-container", {
 			'fab-container--ready': this.state.hasMounted
 		});
@@ -748,15 +811,15 @@ let AccountsRoute = React.createClass({
 					<FixedCell className="header">
 						<UIHeaderView 
 							primaryButton={primaryButton}
-							title="Settings"
+							title="Accounts"
 						/>
 					</FixedCell>
 					<FlexCell fillFix={true}>
 						<UITabsView options={{
 							slidesPerView: 1
 						}}>
-							{accounts}
-							{family}
+							{cards}
+							{banks}
 						</UITabsView>
 						<div className={cnamefab}>
 							<UIButtonView 
@@ -785,6 +848,7 @@ let routes = 	<Router history={history}>
 						</Route>
 						<Route path="invoices" component={InvoiceRoute} />
 						<Route path="accounts" component={AccountsRoute} />
+						<Route path="sharing" component={SharingRoute} />
 					</Route>
 			 	</Router>
 
