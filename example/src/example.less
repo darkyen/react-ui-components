@@ -47,7 +47,9 @@
 .caption-helper{
 	line-height: 1.5;
 }
-
+.mdl-text-normal-case{
+	text-transform: none !important;
+}
 body{
 	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 	font-size: 14px;
@@ -319,6 +321,9 @@ body{
 	padding: 8px;
 	.mdl-text{
 		text-transform: capitalize;
+		white-space: nowrap;
+	  	overflow: hidden;
+	  	text-overflow: ellipsis;
 	}
 
 	.AppUser__UserImage{
