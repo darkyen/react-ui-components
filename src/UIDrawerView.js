@@ -1,4 +1,6 @@
 import React from 'react';
+import {Link} from 'react-router';
+import classNames from 'classnames';
 
 if (!Object.assign) {
     Object.defineProperty(Object, 'assign', {
@@ -46,8 +48,15 @@ class DrawerView extends React.Component{
                             {this.props.header}
                         </div>
                         <ul className='DrawerView--NavLinks'>
-                            {this.props.links.map(link => {
-                                return <li className="DrawerView--NavLink mdl-typography--subhead"><a className="Link--Native" href={link.href}>{link.name}</a></li>
+                            {this.props.links.map((link, idx) => {
+                                let k = {};
+                                if( link.badge ){
+                                    k = <span className="mdl-badge" data-badge={link.badge}></span>;
+                                }
+                                return  <li key={idx} className="DrawerView--NavLink mdl-typography--subhead">
+                                            <Link className={'Link--Native'} to={link.path}>{link.name}</Link>
+                                            {k}
+                                        </li>;
                             })}
                         </ul>
                     </div>

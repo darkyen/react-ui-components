@@ -14,7 +14,7 @@ class Textfield extends React.Component {
 	}
 
 	componentWillUnmount(){
-		let el = React.findDOMnode(this);
+		let el = React.findDOMNode(this);
 		componentHandler.downgradeElements(el);
 	}
 

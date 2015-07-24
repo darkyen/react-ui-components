@@ -28,8 +28,7 @@ class MDLSwiperTabsView extends React.Component{
 	}
 
 	componentWillUnmount(){
-		let element = React.findDOMNode(this.refs.swipeContainer);
-		this.swiper.destroy();
+		// this.swiper.destroy();
 	}
 	
 	updateMagicLinePosition(e){

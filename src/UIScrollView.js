@@ -121,7 +121,7 @@ class UIScrollView extends React.Component{
 			startPoint  =  endPoint - totalElements;
 		}
 		// run updates via batching.
-		console.log(startPoint, endPoint, inViewPort, totalElements, scrollTop);
+		// console.log(startPoint, endPoint, inViewPort, totalElements, scrollTop);
 		return {startPoint, endPoint, inViewPort, totalElements, scrollTop};
 	}
 	

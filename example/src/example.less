@@ -140,9 +140,20 @@ body{
 *{
   box-sizing: border-box;
 }
+.noop{
+
+}
 
 .full--height{
 	height: 100%;
+}
+.padded-container{
+	padding: 0px 16px;
+}
+
+.micro-labels{
+	padding: 8px 16px;
+	background: #eee;
 }
 
 .Number{
@@ -163,18 +174,54 @@ body{
 	color: #000;
 }
 
-.secondary-fab,
-.primary-fab{
-	z-index: 10000;
-	position: fixed;
+.fab-container{
+	z-index: 100;
+	position: absolute;
 	bottom: 10px;
 	right: 10px;
+	transition: transform 220ms;
+	transform: translateY(400px);
+
+	.primary-fab, .secondary-fab--1, .secondary-fab--2{
+		transition: transform 120ms;
+		position:absolute;
+		bottom: 5px;
+		right: 5px;
+	}
+
+	.secondary-fab--1, .secondary-fab--2{
+		background: #d8d8d8;
+		bottom: 13px;
+		right:  13px;
+	}
+
+}
+.home-fab{
+	.primary-fab i{
+		transition: transform 50ms;
+		transform: translate(-12px, -12px) rotateZ(-45deg);
+	}
 }
 
-.secondary-fab{
-	right: 80px;
+.fab-container--ready{
+	transform: translateY(0);
 }
 
+.fab-container--open{
+	.secondary-fab--1{
+		transform: translateY(-56px);
+	}
+
+	.secondary-fab--2{
+		transform: translateY(-106px);
+	}
+}
+
+.home-fab.fab-container--open{
+	.primary-fab i{
+		transform: translate(-12px, -12px);
+	}
+}
 .mdl-typography--light-heading{
 	font-weight: 300;
 }
@@ -193,7 +240,7 @@ body{
 	width: 100%;
 	top: 0px;
 	left: 0px;
-	z-index: 9999;
+	z-index: 9999999;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -237,6 +284,16 @@ body{
   flex-direction: column;
 }
 
+.App__PayChargeSheet{
+	background: @app-yellow;
+	position: absolute;
+	z-index:100;
+	min-height: 40px; 
+	width: 100%;
+	bottom: 0px;
+	left: 0px;
+}
+
 .AppTransaction--List,
 .AppUser-List{
 	padding: 8px;
@@ -247,6 +304,8 @@ body{
 	.AppUser__UserImage{
 		width: 56px;
 		height: 56px;
+		margin-left: 5px;
+		border-radius: 56px;
 	}
 }
 
@@ -284,18 +343,17 @@ body{
 	margin: 0px;
 }
 
+.card-account{
+	padding: 16px;
+	width: 100%;
+	height: 100%;
+	border-bottom: 1px solid #f5f5f5;
+}
+
 .card-swiper{
 	margin: 1.2em 0;
 	position: relative;
 	padding-bottom: 62.75%;
-
-	.card-account{
-		background: @app-yellow;
-		border-radius: 6px;
-		width: 100%;
-		height: 100%;
-		padding: 16px;
-	}
 
 	.swiper-container{
 		margin: 0px;
@@ -311,6 +369,11 @@ body{
 	overflow: hidden;
 	height: 100%;
 	width: 100%;
+
+	.swiper-slide{
+		transform-style: flat; 
+	}
+
 }
 
 .DrawerView--Nav,
@@ -330,9 +393,6 @@ body{
 	.DrawerView--Contents{
 		transform: translateY(5%) translateX(55%) scale(0.65);
 		-webkit-transform: translateY(5%) translateX(55%) scale(0.65);
-	}
-	.swiper-slide{
-		transform-style: flat; 
 	}
 }
 
@@ -384,6 +444,7 @@ body{
 
 .DrawerView--NavLink > .Link--Native{
 	color: #000;
+	text-decoration: none;
 }
 
 .DrawerView{
