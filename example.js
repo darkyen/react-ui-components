@@ -1208,7 +1208,7 @@ var UIFamilyContact = (function (_React$Component12) {
 							'h2',
 							{ className: 'mdl-text mdl-typography--title' },
 							'$',
-							data.spent.toFixed(2) + (data.qouta ? ' / $' + data.qouta.toFixed(2) : '')
+							data.spent.toFixed(2)
 						)
 					)
 				)
@@ -1271,6 +1271,10 @@ var AccountsRoute = _react2['default'].createClass({
 				})
 			)
 		);
+		// <h3 className="mdl-typography--caption-color-contrast micro-labels clean-margins">Shared Accounts</h3>
+		// {Accounts.sharedSources.map( sharedSource => {
+		// 	return <UIAccount data={sharedSource}/>
+		// })}
 
 		var family = _react2['default'].createElement(
 			'div',
@@ -1281,19 +1285,20 @@ var AccountsRoute = _react2['default'].createClass({
 				_react2['default'].createElement(
 					'h3',
 					{ className: 'mdl-typography--caption-color-contrast micro-labels clean-margins' },
-					'Shared Accounts'
-				),
-				Accounts.sharedSources.map(function (sharedSource) {
-					return _react2['default'].createElement(UIAccount, { data: sharedSource });
-				}),
-				_react2['default'].createElement(
-					'h3',
-					{ className: 'mdl-typography--caption-color-contrast micro-labels clean-margins' },
 					'People'
 				),
 				Accounts.family.map(function (memberData) {
 					return _react2['default'].createElement(UIFamilyContact, { data: memberData });
-				})
+				}),
+				_react2['default'].createElement(
+					'div',
+					{ className: 'padded-caption' },
+					_react2['default'].createElement(
+						'p',
+						{ className: 'mdl-typography--caption-color-contrast caption-helper mdl-typography--text-center ' },
+						'Family sharing allows you to share cards with your loved ones its quick & simple, and all transactions being made on your accounts will notify you !'
+					)
+				)
 			)
 		);
 		var cnamefab = (0, _classnames2['default'])('fab-container', {
