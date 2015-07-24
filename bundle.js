@@ -20405,10 +20405,11 @@ var FlexCell = (function (_React$Component2) {
 	_createClass(FlexCell, [{
 		key: 'render',
 		value: function render() {
+			var cname = 'Cell-Flex ' + this.props.className;
 			if (this.props.fillFix === true) {
 				return _react2['default'].createElement(
 					'div',
-					{ className: 'Cell-Flex' },
+					{ className: cname },
 					_react2['default'].createElement(
 						'div',
 						{ className: 'flex-fill-fix' },
@@ -20418,7 +20419,7 @@ var FlexCell = (function (_React$Component2) {
 			}
 			return _react2['default'].createElement(
 				'div',
-				{ className: 'Cell-Flex' },
+				{ className: cname },
 				this.props.children
 			);
 		}
