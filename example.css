@@ -5,8 +5,8 @@
 */
 /**
  * material-design-lite - Material Design Components in CSS, JS and HTML
- * @version v1.0.0
- * @license Apache-2
+ * @version v1.0.1
+ * @license Apache-2.0
  * @copyright 2015 Google, Inc.
  * @link https://github.com/google/material-design-lite
  */
@@ -56,8 +56,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*------------------------------------*\
-    $CONTENTS
+/*------------------------------------*    $CONTENTS
 \*------------------------------------*/
 /**
  * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
@@ -240,8 +239,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*------------------------------------*\
-    $CONTENTS
+/*------------------------------------*    $CONTENTS
 \*------------------------------------*/
 /**
  * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
@@ -595,20 +593,22 @@ a,
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 /*
- * Make body take up the entire screen
+ * Make html take up the entire screen
+ * Then set touch-action to avoid touch delay on mobile IE
  */
 html {
   width: 100%;
   height: 100%;
-}
-body {
-  width: 100%;
-  min-height: 100%;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
 }
 /*
+* Make body take up the entire screen
 * Remove body margin so layout containers don't cause extra overflow.
 */
 body {
+  width: 100%;
+  min-height: 100%;
   margin: 0;
 }
 /*
@@ -655,8 +655,7 @@ main {
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*------------------------------------*\
-    $CONTENTS
+/*------------------------------------*    $CONTENTS
 \*------------------------------------*/
 /**
  * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
@@ -796,7 +795,7 @@ main {
 /* Animations */
 html,
 body {
-  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-family: "Helvetica", "Arial", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
@@ -812,15 +811,15 @@ p {
   padding: 0;
 }
 /**
-* Styles for HTML elements
-*/
+  * Styles for HTML elements
+  */
 h1 small,
 h2 small,
 h3 small,
 h4 small,
 h5 small,
 h6 small {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 56px;
   font-weight: 400;
   line-height: 1.35;
@@ -829,7 +828,7 @@ h6 small {
   font-size: 0.6em;
 }
 h1 {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 56px;
   font-weight: 400;
   line-height: 1.35;
@@ -838,7 +837,7 @@ h1 {
   margin-bottom: 24px;
 }
 h2 {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 45px;
   font-weight: 400;
   line-height: 48px;
@@ -846,7 +845,7 @@ h2 {
   margin-bottom: 24px;
 }
 h3 {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 34px;
   font-weight: 400;
   line-height: 40px;
@@ -854,7 +853,7 @@ h3 {
   margin-bottom: 24px;
 }
 h4 {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 24px;
   font-weight: 400;
   line-height: 32px;
@@ -863,7 +862,7 @@ h4 {
   margin-bottom: 16px;
 }
 h5 {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1;
@@ -872,7 +871,7 @@ h5 {
   margin-bottom: 16px;
 }
 h6 {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -892,7 +891,7 @@ a {
   font-weight: 500;
 }
 blockquote {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   position: relative;
   font-size: 24px;
   font-weight: 300;
@@ -933,14 +932,14 @@ ol {
  * Class Name Styles
  */
 .mdl-typography--display-4 {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 112px;
   font-weight: 300;
   line-height: 1;
   letter-spacing: -0.04em;
 }
 .mdl-typography--display-4-color-contrast {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 112px;
   font-weight: 300;
   line-height: 1;
@@ -948,14 +947,14 @@ ol {
   opacity: 0.54;
 }
 .mdl-typography--display-3 {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 56px;
   font-weight: 400;
   line-height: 1.35;
   letter-spacing: -0.02em;
 }
 .mdl-typography--display-3-color-contrast {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 56px;
   font-weight: 400;
   line-height: 1.35;
@@ -963,40 +962,40 @@ ol {
   opacity: 0.54;
 }
 .mdl-typography--display-2 {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 45px;
   font-weight: 400;
   line-height: 48px;
 }
 .mdl-typography--display-2-color-contrast {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 45px;
   font-weight: 400;
   line-height: 48px;
   opacity: 0.54;
 }
 .mdl-typography--display-1 {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 34px;
   font-weight: 400;
   line-height: 40px;
 }
 .mdl-typography--display-1-color-contrast {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 34px;
   font-weight: 400;
   line-height: 40px;
   opacity: 0.54;
 }
 .mdl-typography--headline {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 24px;
   font-weight: 400;
   line-height: 32px;
   -moz-osx-font-smoothing: grayscale;
 }
 .mdl-typography--headline-color-contrast {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 24px;
   font-weight: 400;
   line-height: 32px;
@@ -1004,14 +1003,14 @@ ol {
   opacity: 0.87;
 }
 .mdl-typography--title {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1;
   letter-spacing: 0.02em;
 }
 .mdl-typography--title-color-contrast {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1;
@@ -1019,14 +1018,14 @@ ol {
   opacity: 0.87;
 }
 .mdl-typography--subhead {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0.04em;
 }
 .mdl-typography--subhead-color-contrast {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -1060,14 +1059,14 @@ ol {
   opacity: 0.87;
 }
 .mdl-typography--body-2-force-preferred-font {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 24px;
   letter-spacing: 0;
 }
 .mdl-typography--body-2-force-preferred-font-color-contrast {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 24px;
@@ -1075,14 +1074,14 @@ ol {
   opacity: 0.87;
 }
 .mdl-typography--body-1-force-preferred-font {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0;
 }
 .mdl-typography--body-1-force-preferred-font-color-contrast {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
@@ -1096,7 +1095,7 @@ ol {
   letter-spacing: 0;
 }
 .mdl-typography--caption-force-preferred-font {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 12px;
   font-weight: 400;
   line-height: 1;
@@ -1110,7 +1109,7 @@ ol {
   opacity: 0.54;
 }
 .mdl-typography--caption-force-preferred-font-color-contrast {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 12px;
   font-weight: 400;
   line-height: 1;
@@ -1118,14 +1117,14 @@ ol {
   opacity: 0.54;
 }
 .mdl-typography--menu {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 1;
   letter-spacing: 0;
 }
 .mdl-typography--menu-color-contrast {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 1;
@@ -1133,7 +1132,7 @@ ol {
   opacity: 0.87;
 }
 .mdl-typography--button {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 14px;
   font-weight: 500;
   text-transform: uppercase;
@@ -1141,7 +1140,7 @@ ol {
   letter-spacing: 0;
 }
 .mdl-typography--button-color-contrast {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 14px;
   font-weight: 500;
   text-transform: uppercase;
@@ -1221,8 +1220,7 @@ ol {
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*------------------------------------*\
-    $CONTENTS
+/*------------------------------------*    $CONTENTS
 \*------------------------------------*/
 /**
  * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
@@ -3052,195 +3050,7 @@ ol {
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*------------------------------------*\
-    $CONTENTS
-\*------------------------------------*/
-/**
- * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
- * -----Typography
- * -----Colors
- * -----Textfield
- * -----Switch
- * -----Spinner
- * -----Radio
- * -----Menu
- * -----List
- * -----Layout
- * -----Icon toggles
- * -----Footer
- * -----Column
- * -----Checkbox
- * -----Card
- * -----Button
- * -----Animation
- * -----Progress
- * -----Badge
- * -----Shadows
- * -----Grid
- * -----Data table
- */
-/* ==========  TYPOGRAPHY  ========== */
-/* We're splitting fonts into "preferred" and "performance" in order to optimize
-   page loading. For important text, such as the body, we want it to load
-   immediately and not wait for the web font load, whereas for other sections,
-   such as headers and titles, we're OK with things taking a bit longer to load.
-   We do have some optional classes and parameters in the mixins, in case you
-   definitely want to make sure you're using the preferred font and don't mind
-   the performance hit.
-   We should be able to improve on this once CSS Font Loading L3 becomes more
-   widely available.
-*/
-/* ==========  COLORS  ========== */
-/**
-*
-* Material design color palettes.
-* @see http://www.google.com/design/spec/style/color.html
-*
-**/
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/* ==========  Color Palettes  ========== */
-/* colors.scss */
-/* ==========  Color & Themes  ========== */
-/* ==========  Typography  ========== */
-/* ==========  Components  ========== */
-/* ==========  Standard Buttons  ========== */
-/* ==========  Icon Toggles  ========== */
-/* ==========  Radio Buttons  ========== */
-/* ==========  Ripple effect  ========== */
-/* ==========  Layout  ========== */
-/* ==========  Content Tabs  ========== */
-/* ==========  Checkboxes  ========== */
-/* ==========  Switches  ========== */
-/* ==========  Spinner  ========== */
-/* ==========  Text fields  ========== */
-/* ==========  Card  ========== */
-/* ==========  Sliders ========== */
-/* ========== Progress ========== */
-/* ==========  List ========== */
-/* ==========  Item ========== */
-/* ==========  Dropdown menu ========== */
-/* ==========  Tooltips  ========== */
-/* ==========  Footer  ========== */
-/* TEXTFIELD */
-/* SWITCH */
-/* SPINNER */
-/* RADIO */
-/* MENU */
-/* LIST */
-/* ICONS */
-/* ICON TOGGLE */
-/* FOOTER */
-/*mega-footer*/
-/**************
- *
- * Sizes
- *
- *************/
-/*mini-footer*/
-/**************
- *
- * Sizes
- *
- *************/
-/* COLUMN LAYOUT */
-/* CHECKBOX */
-/* CARD */
-/* Card dimensions */
-/* Cover image */
-/* BUTTON */
-/**
- *
- * Dimensions
- *
- */
-/* ANIMATION */
-/* PROGRESS */
-/* BADGE */
-/* SHADOWS */
-/* GRID */
-/* DATA TABLE */
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/* Typography */
-/* Shadows */
-/* Animations */
-.mdl-shadow--2dp {
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-}
-.mdl-shadow--3dp {
-  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
-}
-.mdl-shadow--4dp {
-  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-}
-.mdl-shadow--6dp {
-  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
-}
-.mdl-shadow--8dp {
-  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
-}
-.mdl-shadow--16dp {
-  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
-}
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/*------------------------------------*\
-    $CONTENTS
+/*------------------------------------*    $CONTENTS
 \*------------------------------------*/
 /**
  * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
@@ -3412,8 +3222,7 @@ ol {
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*------------------------------------*\
-    $CONTENTS
+/*------------------------------------*    $CONTENTS
 \*------------------------------------*/
 /**
  * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
@@ -3579,8 +3388,7 @@ ol {
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*------------------------------------*\
-    $CONTENTS
+/*------------------------------------*    $CONTENTS
 \*------------------------------------*/
 /**
  * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
@@ -3726,9 +3534,9 @@ ol {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-align-content: space-between;
-  -ms-flex-line-pack: justify;
-  align-content: space-between;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
@@ -3736,8 +3544,8 @@ ol {
   position: absolute;
   top: -11px;
   right: -24px;
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
-  font-weight: 400;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 600;
   font-size: 12px;
   width: 22px;
   height: 22px;
@@ -3784,8 +3592,7 @@ ol {
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*------------------------------------*\
-    $CONTENTS
+/*------------------------------------*    $CONTENTS
 \*------------------------------------*/
 /**
  * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
@@ -3934,7 +3741,7 @@ ol {
   min-width: 64px;
   padding: 0 8px;
   display: inline-block;
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 14px;
   font-weight: 500;
   text-transform: uppercase;
@@ -3963,16 +3770,14 @@ ol {
 .mdl-button:active {
   background-color: rgba(158, 158, 158, 0.4);
 }
-.mdl-button[disabled][disabled] {
-  color: rgba(0, 0, 0, 0.26);
-  cursor: auto;
-  background-color: transparent;
-}
 .mdl-button.mdl-button--colored {
   color: #3f51b5;
 }
 .mdl-button.mdl-button--colored:focus:not(:active) {
   background-color: rgba(0, 0, 0, 0.12);
+}
+input.mdl-button[type="submit"] {
+  -webkit-appearance: none;
 }
 .mdl-button--raised {
   background: rgba(158, 158, 158, 0.2);
@@ -4001,11 +3806,6 @@ ol {
 }
 .mdl-button--raised.mdl-button--colored .mdl-ripple {
   background: #ffffff;
-}
-.mdl-button--raised[disabled][disabled] {
-  background-color: rgba(0, 0, 0, 0.12);
-  color: rgba(0, 0, 0, 0.26);
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 .mdl-button--fab {
   border-radius: 50%;
@@ -4063,11 +3863,6 @@ ol {
 }
 .mdl-button--fab.mdl-button--colored .mdl-ripple {
   background: #ffffff;
-}
-.mdl-button--fab[disabled][disabled] {
-  background-color: rgba(0, 0, 0, 0.12);
-  color: rgba(0, 0, 0, 0.26);
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 .mdl-button--icon {
   border-radius: 50%;
@@ -4140,6 +3935,26 @@ ol {
   color: #ffffff;
   background-color: #ff4081;
 }
+.mdl-button[disabled][disabled] {
+  color: rgba(0, 0, 0, 0.26);
+  cursor: auto;
+  background-color: transparent;
+}
+.mdl-button--fab[disabled][disabled] {
+  background-color: rgba(0, 0, 0, 0.12);
+  color: rgba(0, 0, 0, 0.26);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+.mdl-button--raised[disabled][disabled] {
+  background-color: rgba(0, 0, 0, 0.12);
+  color: rgba(0, 0, 0, 0.26);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+.mdl-button--colored[disabled][disabled] {
+  background-color: rgba(0, 0, 0, 0.12);
+  color: rgba(0, 0, 0, 0.26);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
 /**
  * Copyright 2015 Google Inc. All Rights Reserved.
  *
@@ -4170,8 +3985,7 @@ ol {
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*------------------------------------*\
-    $CONTENTS
+/*------------------------------------*    $CONTENTS
 \*------------------------------------*/
 /**
  * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
@@ -4302,6 +4116,7 @@ ol {
   -ms-flex-direction: column;
   flex-direction: column;
   font-size: 16px;
+  font-weight: 400;
   min-height: 200px;
   overflow: hidden;
   width: 330px;
@@ -4372,7 +4187,7 @@ ol {
   margin: 0;
 }
 .mdl-card__supporting-text {
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(0, 0, 0, 0.54);
   font-size: 13px;
   line-height: 18px;
   overflow: hidden;
@@ -4431,8 +4246,7 @@ ol {
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*------------------------------------*\
-    $CONTENTS
+/*------------------------------------*    $CONTENTS
 \*------------------------------------*/
 /**
  * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
@@ -4726,8 +4540,7 @@ ol {
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*------------------------------------*\
-    $CONTENTS
+/*------------------------------------*    $CONTENTS
 \*------------------------------------*/
 /**
  * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
@@ -4975,8 +4788,7 @@ ol {
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*------------------------------------*\
-    $CONTENTS
+/*------------------------------------*    $CONTENTS
 \*------------------------------------*/
 /**
  * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
@@ -5121,38 +4933,48 @@ ol {
 }
 .mdl-mega-footer--top-section:after,
 .mdl-mega-footer--middle-section:after,
-.mdl-mega-footer--bottom-section:after {
+.mdl-mega-footer--bottom-section:after,
+.mdl-mega-footer__top-section:after,
+.mdl-mega-footer__middle-section:after,
+.mdl-mega-footer__bottom-section:after {
   content: '';
   display: block;
   clear: both;
 }
-.mdl-mega-footer--left-section {
+.mdl-mega-footer--left-section,
+.mdl-mega-footer__left-section {
   margin-bottom: 16px;
 }
-.mdl-mega-footer--right-section {
+.mdl-mega-footer--right-section,
+.mdl-mega-footer__right-section {
   margin-bottom: 16px;
 }
-.mdl-mega-footer--right-section a {
+.mdl-mega-footer--right-section a,
+.mdl-mega-footer__right-section a {
   display: block;
   margin-bottom: 16px;
   color: inherit;
   text-decoration: none;
 }
 @media screen and (min-width: 760px) {
-  .mdl-mega-footer--left-section {
+  .mdl-mega-footer--left-section,
+  .mdl-mega-footer__left-section {
     float: left;
   }
-  .mdl-mega-footer--right-section {
+  .mdl-mega-footer--right-section,
+  .mdl-mega-footer__right-section {
     float: right;
   }
-  .mdl-mega-footer--right-section a {
+  .mdl-mega-footer--right-section a,
+  .mdl-mega-footer__right-section a {
     display: inline-block;
     margin-left: 16px;
     line-height: 36px;
     vertical-align: middle;
   }
 }
-.mdl-mega-footer--social-btn {
+.mdl-mega-footer--social-btn,
+.mdl-mega-footer__social-btn {
   width: 36px;
   height: 36px;
   padding: 0;
@@ -5160,46 +4982,59 @@ ol {
   background-color: #9e9e9e;
   border: none;
 }
-.mdl-mega-footer--drop-down-section {
+.mdl-mega-footer--drop-down-section,
+.mdl-mega-footer__drop-down-section {
   display: block;
   position: relative;
 }
 @media screen and (min-width: 760px) {
-  .mdl-mega-footer--drop-down-section {
+  .mdl-mega-footer--drop-down-section,
+  .mdl-mega-footer__drop-down-section {
     width: 33%;
   }
   .mdl-mega-footer--drop-down-section:nth-child(1),
-  .mdl-mega-footer--drop-down-section:nth-child(2) {
+  .mdl-mega-footer--drop-down-section:nth-child(2),
+  .mdl-mega-footer__drop-down-section:nth-child(1),
+  .mdl-mega-footer__drop-down-section:nth-child(2) {
     float: left;
   }
-  .mdl-mega-footer--drop-down-section:nth-child(3) {
+  .mdl-mega-footer--drop-down-section:nth-child(3),
+  .mdl-mega-footer__drop-down-section:nth-child(3) {
     float: right;
   }
-  .mdl-mega-footer--drop-down-section:nth-child(3):after {
+  .mdl-mega-footer--drop-down-section:nth-child(3):after,
+  .mdl-mega-footer__drop-down-section:nth-child(3):after {
     clear: right;
   }
-  .mdl-mega-footer--drop-down-section:nth-child(4) {
+  .mdl-mega-footer--drop-down-section:nth-child(4),
+  .mdl-mega-footer__drop-down-section:nth-child(4) {
     clear: right;
     float: right;
   }
-  .mdl-mega-footer--middle-section:after {
+  .mdl-mega-footer--middle-section:after,
+  .mdl-mega-footer__middle-section:after {
     content: '';
     display: block;
     clear: both;
   }
-  .mdl-mega-footer--bottom-section {
+  .mdl-mega-footer--bottom-section,
+  .mdl-mega-footer__bottom-section {
     padding-top: 0;
   }
 }
 @media screen and (min-width: 1024px) {
   .mdl-mega-footer--drop-down-section,
   .mdl-mega-footer--drop-down-section:nth-child(3),
-  .mdl-mega-footer--drop-down-section:nth-child(4) {
+  .mdl-mega-footer--drop-down-section:nth-child(4),
+  .mdl-mega-footer__drop-down-section,
+  .mdl-mega-footer__drop-down-section:nth-child(3),
+  .mdl-mega-footer__drop-down-section:nth-child(4) {
     width: 24%;
     float: left;
   }
 }
-.mdl-mega-footer--heading-checkbox {
+.mdl-mega-footer--heading-checkbox,
+.mdl-mega-footer__heading-checkbox {
   position: absolute;
   width: 100%;
   height: 55.8px;
@@ -5210,18 +5045,26 @@ ol {
   z-index: 1;
   opacity: 0;
 }
-.mdl-mega-footer--heading-checkbox ~ .mdl-mega-footer--heading:after {
+.mdl-mega-footer--heading-checkbox ~ .mdl-mega-footer--heading:after,
+.mdl-mega-footer--heading-checkbox ~ .mdl-mega-footer__heading:after,
+.mdl-mega-footer__heading-checkbox ~ .mdl-mega-footer--heading:after,
+.mdl-mega-footer__heading-checkbox ~ .mdl-mega-footer__heading:after {
   font-family: 'Material Icons';
   content: '\E5CE';
 }
-.mdl-mega-footer--heading-checkbox:checked ~ ul {
+.mdl-mega-footer--heading-checkbox:checked ~ ul,
+.mdl-mega-footer__heading-checkbox:checked ~ ul {
   display: none;
 }
-.mdl-mega-footer--heading-checkbox:checked ~ .mdl-mega-footer--heading:after {
+.mdl-mega-footer--heading-checkbox:checked ~ .mdl-mega-footer--heading:after,
+.mdl-mega-footer--heading-checkbox:checked ~ .mdl-mega-footer__heading:after,
+.mdl-mega-footer__heading-checkbox:checked ~ .mdl-mega-footer--heading:after,
+.mdl-mega-footer__heading-checkbox:checked ~ .mdl-mega-footer__heading:after {
   font-family: 'Material Icons';
   content: '\E5CF';
 }
-.mdl-mega-footer--heading {
+.mdl-mega-footer--heading,
+.mdl-mega-footer__heading {
   position: relative;
   width: 100%;
   padding-right: 39.8px;
@@ -5235,7 +5078,8 @@ ol {
   overflow: hidden;
   color: #e0e0e0;
 }
-.mdl-mega-footer--heading:after {
+.mdl-mega-footer--heading:after,
+.mdl-mega-footer__heading:after {
   content: '';
   position: absolute;
   top: 0;
@@ -5245,44 +5089,57 @@ ol {
   height: 23.8px;
   background-size: cover;
 }
-.mdl-mega-footer--link-list {
+.mdl-mega-footer--link-list,
+.mdl-mega-footer__link-list {
   list-style: none;
   margin: 0;
   padding: 0;
   margin-bottom: 32px;
 }
-.mdl-mega-footer--link-list:after {
+.mdl-mega-footer--link-list:after,
+.mdl-mega-footer__link-list:after {
   clear: both;
   display: block;
   content: '';
 }
-.mdl-mega-footer--link-list li {
+.mdl-mega-footer--link-list li,
+.mdl-mega-footer__link-list li {
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0;
   line-height: 20px;
 }
-.mdl-mega-footer--link-list a {
+.mdl-mega-footer--link-list a,
+.mdl-mega-footer__link-list a {
   color: inherit;
   text-decoration: none;
   white-space: nowrap;
 }
 @media screen and (min-width: 760px) {
-  .mdl-mega-footer--heading-checkbox {
+  .mdl-mega-footer--heading-checkbox,
+  .mdl-mega-footer__heading-checkbox {
     display: none;
   }
-  .mdl-mega-footer--heading-checkbox ~ .mdl-mega-footer--heading:after {
+  .mdl-mega-footer--heading-checkbox ~ .mdl-mega-footer--heading:after,
+  .mdl-mega-footer--heading-checkbox ~ .mdl-mega-footer__heading:after,
+  .mdl-mega-footer__heading-checkbox ~ .mdl-mega-footer--heading:after,
+  .mdl-mega-footer__heading-checkbox ~ .mdl-mega-footer__heading:after {
     background-image: none;
   }
-  .mdl-mega-footer--heading-checkbox:checked ~ ul {
+  .mdl-mega-footer--heading-checkbox:checked ~ ul,
+  .mdl-mega-footer__heading-checkbox:checked ~ ul {
     display: block;
   }
-  .mdl-mega-footer--heading-checkbox:checked ~ .mdl-mega-footer--heading:after {
+  .mdl-mega-footer--heading-checkbox:checked ~ .mdl-mega-footer--heading:after,
+  .mdl-mega-footer--heading-checkbox:checked ~ .mdl-mega-footer__heading:after,
+  .mdl-mega-footer__heading-checkbox:checked ~ .mdl-mega-footer--heading:after,
+  .mdl-mega-footer__heading-checkbox:checked ~ .mdl-mega-footer__heading:after {
     content: '';
   }
 }
-.mdl-mega-footer--bottom-section {
+.mdl-mega-footer--bottom-section,
+.mdl-mega-footer__bottom-section {
   padding-top: 16px;
   margin-bottom: 16px;
 }
@@ -5290,7 +5147,8 @@ ol {
   margin-bottom: 16px;
   color: white;
 }
-.mdl-mega-footer--bottom-section .mdl-mega-footer--link-list li {
+.mdl-mega-footer--bottom-section .mdl-mega-footer--link-list li,
+.mdl-mega-footer__bottom-section .mdl-mega-footer__link-list li {
   float: left;
   margin-bottom: 0;
   margin-right: 16px;
@@ -5332,8 +5190,7 @@ ol {
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*------------------------------------*\
-    $CONTENTS
+/*------------------------------------*    $CONTENTS
 \*------------------------------------*/
 /**
  * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
@@ -5476,7 +5333,8 @@ ol {
 .mdl-mini-footer .mdl-logo {
   line-height: 36px;
 }
-.mdl-mini-footer--link-list {
+.mdl-mini-footer--link-list,
+.mdl-mini-footer__link-list {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5488,35 +5346,41 @@ ol {
   margin: 0;
   padding: 0;
 }
-.mdl-mini-footer--link-list li {
+.mdl-mini-footer--link-list li,
+.mdl-mini-footer__link-list li {
   margin-bottom: 0;
   margin-right: 16px;
 }
 @media screen and (min-width: 760px) {
-  .mdl-mini-footer--link-list li {
+  .mdl-mini-footer--link-list li,
+  .mdl-mini-footer__link-list li {
     line-height: 36px;
   }
 }
-.mdl-mini-footer--link-list a {
+.mdl-mini-footer--link-list a,
+.mdl-mini-footer__link-list a {
   color: inherit;
   text-decoration: none;
   white-space: nowrap;
 }
-.mdl-mini-footer--left-section {
+.mdl-mini-footer--left-section,
+.mdl-mini-footer__left-section {
   display: inline-block;
   -webkit-box-ordinal-group: 1;
   -webkit-order: 0;
   -ms-flex-order: 0;
   order: 0;
 }
-.mdl-mini-footer--right-section {
+.mdl-mini-footer--right-section,
+.mdl-mini-footer__right-section {
   display: inline-block;
   -webkit-box-ordinal-group: 2;
   -webkit-order: 1;
   -ms-flex-order: 1;
   order: 1;
 }
-.mdl-mini-footer--social-btn {
+.mdl-mini-footer--social-btn,
+.mdl-mini-footer__social-btn {
   width: 36px;
   height: 36px;
   padding: 0;
@@ -5554,8 +5418,7 @@ ol {
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*------------------------------------*\
-    $CONTENTS
+/*------------------------------------*    $CONTENTS
 \*------------------------------------*/
 /**
  * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
@@ -5789,8 +5652,7 @@ ol {
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*------------------------------------*\
-    $CONTENTS
+/*------------------------------------*    $CONTENTS
 \*------------------------------------*/
 /**
  * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
@@ -6046,7 +5908,6 @@ ol {
   text-decoration: none;
   cursor: pointer;
   height: 48px;
-  width: 100%;
   line-height: 48px;
   white-space: nowrap;
   opacity: 0;
@@ -6127,8 +5988,7 @@ ol {
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*------------------------------------*\
-    $CONTENTS
+/*------------------------------------*    $CONTENTS
 \*------------------------------------*/
 /**
  * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
@@ -6281,8 +6141,8 @@ ol {
   .mdl-progress:not(.mdl-progress__indeterminate):not(.mdl-progress__indeterminate) > .auxbar {
     background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), -webkit-linear-gradient(left, #3f51b5, #3f51b5);
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), linear-gradient(to right, #3f51b5, #3f51b5);
-    -webkit-mask: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+Cjxzdmcgd2lkdGg9IjEyIiBoZWlnaHQ9IjQiIHZpZXdQb3J0PSIwIDAgMTIgNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxlbGxpcHNlIGN4PSIyIiBjeT0iMiIgcng9IjIiIHJ5PSIyIj4KICAgIDxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9ImN4IiBmcm9tPSIyIiB0bz0iLTEwIiBkdXI9IjAuNnMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiAvPgogIDwvZWxsaXBzZT4KICA8ZWxsaXBzZSBjeD0iMTQiIGN5PSIyIiByeD0iMiIgcnk9IjIiIGNsYXNzPSJsb2FkZXIiPgogICAgPGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iY3giIGZyb209IjE0IiB0bz0iMiIgZHVyPSIwLjZzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgLz4KICA8L2VsbGlwc2U+Cjwvc3ZnPgo=');
-    mask: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+Cjxzdmcgd2lkdGg9IjEyIiBoZWlnaHQ9IjQiIHZpZXdQb3J0PSIwIDAgMTIgNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxlbGxpcHNlIGN4PSIyIiBjeT0iMiIgcng9IjIiIHJ5PSIyIj4KICAgIDxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9ImN4IiBmcm9tPSIyIiB0bz0iLTEwIiBkdXI9IjAuNnMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiAvPgogIDwvZWxsaXBzZT4KICA8ZWxsaXBzZSBjeD0iMTQiIGN5PSIyIiByeD0iMiIgcnk9IjIiIGNsYXNzPSJsb2FkZXIiPgogICAgPGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iY3giIGZyb209IjE0IiB0bz0iMiIgZHVyPSIwLjZzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgLz4KICA8L2VsbGlwc2U+Cjwvc3ZnPgo=');
+    -webkit-mask: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+Cjxzdmcgd2lkdGg9IjEyIiBoZWlnaHQ9IjQiIHZpZXdQb3J0PSIwIDAgMTIgNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxlbGxpcHNlIGN4PSIyIiBjeT0iMiIgcng9IjIiIHJ5PSIyIj4KICAgIDxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9ImN4IiBmcm9tPSIyIiB0bz0iLTEwIiBkdXI9IjAuNnMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiAvPgogIDwvZWxsaXBzZT4KICA8ZWxsaXBzZSBjeD0iMTQiIGN5PSIyIiByeD0iMiIgcnk9IjIiIGNsYXNzPSJsb2FkZXIiPgogICAgPGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iY3giIGZyb209IjE0IiB0bz0iMiIgZHVyPSIwLjZzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgLz4KICA8L2VsbGlwc2U+Cjwvc3ZnPgo=");
+    mask: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+Cjxzdmcgd2lkdGg9IjEyIiBoZWlnaHQ9IjQiIHZpZXdQb3J0PSIwIDAgMTIgNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxlbGxpcHNlIGN4PSIyIiBjeT0iMiIgcng9IjIiIHJ5PSIyIj4KICAgIDxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9ImN4IiBmcm9tPSIyIiB0bz0iLTEwIiBkdXI9IjAuNnMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiAvPgogIDwvZWxsaXBzZT4KICA8ZWxsaXBzZSBjeD0iMTQiIGN5PSIyIiByeD0iMiIgcnk9IjIiIGNsYXNzPSJsb2FkZXIiPgogICAgPGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iY3giIGZyb209IjE0IiB0bz0iMiIgZHVyPSIwLjZzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgLz4KICA8L2VsbGlwc2U+Cjwvc3ZnPgo=");
   }
 }
 .mdl-progress:not(.mdl-progress__indeterminate) > .auxbar {
@@ -6406,8 +6266,7 @@ ol {
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*------------------------------------*\
-    $CONTENTS
+/*------------------------------------*    $CONTENTS
 \*------------------------------------*/
 /**
  * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
@@ -6577,6 +6436,7 @@ ol {
   overflow-y: auto;
   overflow-x: hidden;
   position: relative;
+  -webkit-overflow-scrolling: touch;
 }
 .mdl-layout.is-small-screen .mdl-layout--large-screen-only {
   display: none;
@@ -6592,7 +6452,7 @@ ol {
 .mdl-layout-title {
   display: block;
   position: relative;
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1;
@@ -6660,7 +6520,7 @@ ol {
   line-height: 64px;
   padding-left: 40px;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1024px) {
   .mdl-layout__drawer > .mdl-layout-title {
     line-height: 56px;
     padding-left: 16px;
@@ -6687,7 +6547,7 @@ ol {
   margin: 0;
   color: #757575;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1024px) {
   .mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
     padding: 16px 16px;
   }
@@ -6699,7 +6559,7 @@ ol {
   background-color: #000000;
   color: #3f51b5;
 }
-@media screen and (min-width: 851px) {
+@media screen and (min-width: 1025px) {
   .mdl-layout--fixed-drawer > .mdl-layout__drawer {
     -webkit-transform: translateX(0);
     -ms-transform: translateX(0);
@@ -6732,18 +6592,18 @@ ol {
   color: #ffffff;
   background-color: inherit;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1024px) {
   .mdl-layout__header .mdl-layout__drawer-button {
     margin: 4px;
   }
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1024px) {
   .mdl-layout__drawer-button {
     margin: 4px;
     color: rgba(0, 0, 0, 0.5);
   }
 }
-@media screen and (min-width: 851px) {
+@media screen and (min-width: 1025px) {
   .mdl-layout--fixed-drawer > .mdl-layout__drawer-button {
     display: none;
   }
@@ -6786,7 +6646,7 @@ ol {
   -webkit-transition-property: max-height, box-shadow;
   transition-property: max-height, box-shadow;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1024px) {
   .mdl-layout__header {
     min-height: 56px;
   }
@@ -6805,7 +6665,7 @@ ol {
   z-index: 3;
   display: block;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1024px) {
   .mdl-layout__header > .mdl-layout-icon {
     left: 16px;
     top: 12px;
@@ -6817,7 +6677,7 @@ ol {
 .mdl-layout__header.is-compact {
   max-height: 64px;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1024px) {
   .mdl-layout__header.is-compact {
     max-height: 56px;
   }
@@ -6825,12 +6685,12 @@ ol {
 .mdl-layout__header.is-compact.has-tabs {
   height: 112px;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1024px) {
   .mdl-layout__header.is-compact.has-tabs {
     min-height: 104px;
   }
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1024px) {
   .mdl-layout__header {
     display: none;
   }
@@ -6886,7 +6746,7 @@ ol {
   margin: 0;
   padding: 0 40px 0 80px;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1024px) {
   .mdl-layout__header-row {
     height: 56px;
     padding: 0 16px 0 72px;
@@ -6914,7 +6774,7 @@ ol {
   -ms-flex-align: center;
   align-items: center;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1024px) {
   .mdl-layout__header-row .mdl-navigation {
     height: 56px;
   }
@@ -6925,7 +6785,7 @@ ol {
   line-height: 64px;
   padding: 0 24px;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1024px) {
   .mdl-layout__header-row .mdl-navigation__link {
     line-height: 56px;
     padding: 0 16px;
@@ -6961,6 +6821,7 @@ ol {
   -ms-flex-positive: 1;
   flex-grow: 1;
   z-index: 1;
+  -webkit-overflow-scrolling: touch;
 }
 .mdl-layout--fixed-drawer > .mdl-layout__content {
   margin-left: 240px;
@@ -6968,7 +6829,7 @@ ol {
 .mdl-layout__container.has-scrolling-header .mdl-layout__content {
   overflow: visible;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1024px) {
   .mdl-layout--fixed-drawer > .mdl-layout__content {
     margin-left: 0;
   }
@@ -6993,7 +6854,7 @@ ol {
 .mdl-layout__tab-bar::-webkit-scrollbar {
   display: none;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1024px) {
   .mdl-layout__tab-bar {
     width: calc(40%);
     padding: 0 0 0 60px;
@@ -7041,7 +6902,7 @@ ol {
   -ms-user-select: none;
   user-select: none;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1024px) {
   .mdl-layout__tab-bar-button {
     display: none;
     width: 60px;
@@ -7086,7 +6947,7 @@ ol {
   color: rgba(255, 255, 255, 0.6);
   overflow: hidden;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1024px) {
   .mdl-layout__tab {
     padding: 0 12px 0 12px;
   }
@@ -7168,8 +7029,7 @@ ol {
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*------------------------------------*\
-    $CONTENTS
+/*------------------------------------*    $CONTENTS
 \*------------------------------------*/
 /**
  * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
@@ -7447,8 +7307,7 @@ ol {
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*------------------------------------*\
-    $CONTENTS
+/*------------------------------------*    $CONTENTS
 \*------------------------------------*/
 /**
  * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
@@ -7698,21 +7557,15 @@ _:-ms-input-placeholder,
   left: 6px;
 }
 .mdl-slider.is-upgraded.is-lowest-value:focus:not(:active)::-webkit-slider-thumb {
-  border: 1.8px solid rgba(0, 0, 0, 0.26);
-  -webkit-transform: scale(1.33);
-  transform: scale(1.33);
-  box-shadow: none;
+  box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.12);
+  background: rgba(0, 0, 0, 0.12);
 }
 .mdl-slider.is-upgraded.is-lowest-value:focus:not(:active)::-moz-range-thumb {
-  border: 1.8px solid rgba(0, 0, 0, 0.26);
-  transform: scale(1.33);
-  box-shadow: none;
-}
-.mdl-slider.is-upgraded.is-lowest-value:focus:not(:active) ~ .mdl-slider__background-flex > .mdl-slider__background-upper {
-  left: 8px;
+  box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.12);
+  background: rgba(0, 0, 0, 0.12);
 }
 .mdl-slider.is-upgraded.is-lowest-value:active::-webkit-slider-thumb {
-  border: 1.5px solid rgba(0, 0, 0, 0.26);
+  border: 1.6px solid rgba(0, 0, 0, 0.26);
   -webkit-transform: scale(1.5);
   transform: scale(1.5);
 }
@@ -7727,9 +7580,9 @@ _:-ms-input-placeholder,
   background: radial-gradient(circle closest-side, transparent 0%, transparent 66.67%, rgba(0, 0, 0, 0.26) 66.67%, rgba(0, 0, 0, 0.26) 100%);
 }
 .mdl-slider.is-upgraded.is-lowest-value:focus:not(:active)::-ms-thumb {
-  -ms-transform: scale(0.5);
-  transform: scale(0.5);
-  background: radial-gradient(circle closest-side, transparent 0%, transparent 75%, rgba(0, 0, 0, 0.26) 75%, rgba(0, 0, 0, 0.26) 100%);
+  background: radial-gradient(circle closest-side, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.12) 25%, rgba(0, 0, 0, 0.26) 25%, rgba(0, 0, 0, 0.26) 37.5%, rgba(0, 0, 0, 0.12) 37.5%, rgba(0, 0, 0, 0.12) 100%);
+  -ms-transform: scale(1);
+  transform: scale(1);
 }
 .mdl-slider.is-upgraded.is-lowest-value:active::-ms-thumb {
   -ms-transform: scale(0.5625);
@@ -7741,9 +7594,6 @@ _:-ms-input-placeholder,
 }
 .mdl-slider.is-upgraded.is-lowest-value::-ms-fill-upper {
   margin-left: 6px;
-}
-.mdl-slider.is-upgraded.is-lowest-value:focus:not(:active)::-ms-fill-upper {
-  margin-left: 8px;
 }
 .mdl-slider.is-upgraded.is-lowest-value:active::-ms-fill-upper {
   margin-left: 9px;
@@ -7902,8 +7752,7 @@ _:-ms-input-placeholder,
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*------------------------------------*\
-    $CONTENTS
+/*------------------------------------*    $CONTENTS
 \*------------------------------------*/
 /**
  * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
@@ -8469,8 +8318,7 @@ _:-ms-input-placeholder,
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*------------------------------------*\
-    $CONTENTS
+/*------------------------------------*    $CONTENTS
 \*------------------------------------*/
 /**
  * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
@@ -8733,8 +8581,8 @@ _:-ms-input-placeholder,
   cursor: pointer;
   overflow: hidden;
   -webkit-mask-image: -webkit-radial-gradient(circle, white, black);
-  -webkit-transition-duration: 0.4s;
-  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.40s;
+  transition-duration: 0.40s;
   -webkit-transition-timing-function: step-end;
   transition-timing-function: step-end;
   -webkit-transition-property: left;
@@ -8783,8 +8631,7 @@ _:-ms-input-placeholder,
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*------------------------------------*\
-    $CONTENTS
+/*------------------------------------*    $CONTENTS
 \*------------------------------------*/
 /**
  * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
@@ -9041,8 +8888,7 @@ _:-ms-input-placeholder,
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*------------------------------------*\
-    $CONTENTS
+/*------------------------------------*    $CONTENTS
 \*------------------------------------*/
 /**
  * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
@@ -9186,6 +9032,7 @@ _:-ms-input-placeholder,
   display: inline-block;
   box-sizing: border-box;
   width: 300px;
+  max-width: 100%;
   margin: 0;
   padding: 20px 0;
 }
@@ -9207,7 +9054,7 @@ _:-ms-input-placeholder,
 .mdl-textfield__input {
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-  display: block;
+  display: inline-block;
   font-size: 16px;
   margin: 0;
   padding: 4px 0;
@@ -9344,8 +9191,7 @@ _:-ms-input-placeholder,
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*------------------------------------*\
-    $CONTENTS
+/*------------------------------------*    $CONTENTS
 \*------------------------------------*/
 /**
  * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
@@ -9561,8 +9407,193 @@ _:-ms-input-placeholder,
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*------------------------------------*\
-    $CONTENTS
+/*------------------------------------*    $CONTENTS
+\*------------------------------------*/
+/**
+ * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
+ * -----Typography
+ * -----Colors
+ * -----Textfield
+ * -----Switch
+ * -----Spinner
+ * -----Radio
+ * -----Menu
+ * -----List
+ * -----Layout
+ * -----Icon toggles
+ * -----Footer
+ * -----Column
+ * -----Checkbox
+ * -----Card
+ * -----Button
+ * -----Animation
+ * -----Progress
+ * -----Badge
+ * -----Shadows
+ * -----Grid
+ * -----Data table
+ */
+/* ==========  TYPOGRAPHY  ========== */
+/* We're splitting fonts into "preferred" and "performance" in order to optimize
+   page loading. For important text, such as the body, we want it to load
+   immediately and not wait for the web font load, whereas for other sections,
+   such as headers and titles, we're OK with things taking a bit longer to load.
+   We do have some optional classes and parameters in the mixins, in case you
+   definitely want to make sure you're using the preferred font and don't mind
+   the performance hit.
+   We should be able to improve on this once CSS Font Loading L3 becomes more
+   widely available.
+*/
+/* ==========  COLORS  ========== */
+/**
+*
+* Material design color palettes.
+* @see http://www.google.com/design/spec/style/color.html
+*
+**/
+/**
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/* ==========  Color Palettes  ========== */
+/* colors.scss */
+/* ==========  Color & Themes  ========== */
+/* ==========  Typography  ========== */
+/* ==========  Components  ========== */
+/* ==========  Standard Buttons  ========== */
+/* ==========  Icon Toggles  ========== */
+/* ==========  Radio Buttons  ========== */
+/* ==========  Ripple effect  ========== */
+/* ==========  Layout  ========== */
+/* ==========  Content Tabs  ========== */
+/* ==========  Checkboxes  ========== */
+/* ==========  Switches  ========== */
+/* ==========  Spinner  ========== */
+/* ==========  Text fields  ========== */
+/* ==========  Card  ========== */
+/* ==========  Sliders ========== */
+/* ========== Progress ========== */
+/* ==========  List ========== */
+/* ==========  Item ========== */
+/* ==========  Dropdown menu ========== */
+/* ==========  Tooltips  ========== */
+/* ==========  Footer  ========== */
+/* TEXTFIELD */
+/* SWITCH */
+/* SPINNER */
+/* RADIO */
+/* MENU */
+/* LIST */
+/* ICONS */
+/* ICON TOGGLE */
+/* FOOTER */
+/*mega-footer*/
+/**************
+ *
+ * Sizes
+ *
+ *************/
+/*mini-footer*/
+/**************
+ *
+ * Sizes
+ *
+ *************/
+/* COLUMN LAYOUT */
+/* CHECKBOX */
+/* CARD */
+/* Card dimensions */
+/* Cover image */
+/* BUTTON */
+/**
+ *
+ * Dimensions
+ *
+ */
+/* ANIMATION */
+/* PROGRESS */
+/* BADGE */
+/* SHADOWS */
+/* GRID */
+/* DATA TABLE */
+/**
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/* Typography */
+/* Shadows */
+/* Animations */
+.mdl-shadow--2dp {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+.mdl-shadow--3dp {
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+}
+.mdl-shadow--4dp {
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+.mdl-shadow--6dp {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+.mdl-shadow--8dp {
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+}
+.mdl-shadow--16dp {
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+/**
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*------------------------------------*    $CONTENTS
 \*------------------------------------*/
 /**
  * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
@@ -10049,37 +10080,37 @@ _:-ms-input-placeholder,
   }
   .mdl-cell {
     margin: 8px;
-    width: calc(17.33333%);
+    width: calc(17.33333333%);
   }
   .mdl-grid--no-spacing > .mdl-cell {
-    width: 33.33333%;
+    width: 33.3333333333%;
   }
   .mdl-cell--hide-desktop {
     display: none !important;
   }
   .mdl-cell--1-col {
-    width: calc(-7.66667%);
+    width: calc(-7.66666667%);
   }
   .mdl-grid--no-spacing > .mdl-cell--1-col {
-    width: 8.33333%;
+    width: 8.3333333333%;
   }
   .mdl-cell--1-col-desktop.mdl-cell--1-col-desktop {
-    width: calc(-7.66667%);
+    width: calc(-7.66666667%);
   }
   .mdl-grid--no-spacing > .mdl-cell--1-col-desktop.mdl-cell--1-col-desktop {
-    width: 8.33333%;
+    width: 8.3333333333%;
   }
   .mdl-cell--2-col {
-    width: calc(0.66667%);
+    width: calc(0.66666667%);
   }
   .mdl-grid--no-spacing > .mdl-cell--2-col {
-    width: 16.66667%;
+    width: 16.6666666667%;
   }
   .mdl-cell--2-col-desktop.mdl-cell--2-col-desktop {
-    width: calc(0.66667%);
+    width: calc(0.66666667%);
   }
   .mdl-grid--no-spacing > .mdl-cell--2-col-desktop.mdl-cell--2-col-desktop {
-    width: 16.66667%;
+    width: 16.6666666667%;
   }
   .mdl-cell--3-col {
     width: calc(9%);
@@ -10094,28 +10125,28 @@ _:-ms-input-placeholder,
     width: 25%;
   }
   .mdl-cell--4-col {
-    width: calc(17.33333%);
+    width: calc(17.33333333%);
   }
   .mdl-grid--no-spacing > .mdl-cell--4-col {
-    width: 33.33333%;
+    width: 33.3333333333%;
   }
   .mdl-cell--4-col-desktop.mdl-cell--4-col-desktop {
-    width: calc(17.33333%);
+    width: calc(17.33333333%);
   }
   .mdl-grid--no-spacing > .mdl-cell--4-col-desktop.mdl-cell--4-col-desktop {
-    width: 33.33333%;
+    width: 33.3333333333%;
   }
   .mdl-cell--5-col {
-    width: calc(25.66667%);
+    width: calc(25.66666667%);
   }
   .mdl-grid--no-spacing > .mdl-cell--5-col {
-    width: 41.66667%;
+    width: 41.6666666667%;
   }
   .mdl-cell--5-col-desktop.mdl-cell--5-col-desktop {
-    width: calc(25.66667%);
+    width: calc(25.66666667%);
   }
   .mdl-grid--no-spacing > .mdl-cell--5-col-desktop.mdl-cell--5-col-desktop {
-    width: 41.66667%;
+    width: 41.6666666667%;
   }
   .mdl-cell--6-col {
     width: calc(34%);
@@ -10130,28 +10161,28 @@ _:-ms-input-placeholder,
     width: 50%;
   }
   .mdl-cell--7-col {
-    width: calc(42.33333%);
+    width: calc(42.33333333%);
   }
   .mdl-grid--no-spacing > .mdl-cell--7-col {
-    width: 58.33333%;
+    width: 58.3333333333%;
   }
   .mdl-cell--7-col-desktop.mdl-cell--7-col-desktop {
-    width: calc(42.33333%);
+    width: calc(42.33333333%);
   }
   .mdl-grid--no-spacing > .mdl-cell--7-col-desktop.mdl-cell--7-col-desktop {
-    width: 58.33333%;
+    width: 58.3333333333%;
   }
   .mdl-cell--8-col {
-    width: calc(50.66667%);
+    width: calc(50.66666667%);
   }
   .mdl-grid--no-spacing > .mdl-cell--8-col {
-    width: 66.66667%;
+    width: 66.6666666667%;
   }
   .mdl-cell--8-col-desktop.mdl-cell--8-col-desktop {
-    width: calc(50.66667%);
+    width: calc(50.66666667%);
   }
   .mdl-grid--no-spacing > .mdl-cell--8-col-desktop.mdl-cell--8-col-desktop {
-    width: 66.66667%;
+    width: 66.6666666667%;
   }
   .mdl-cell--9-col {
     width: calc(59%);
@@ -10166,28 +10197,28 @@ _:-ms-input-placeholder,
     width: 75%;
   }
   .mdl-cell--10-col {
-    width: calc(67.33333%);
+    width: calc(67.33333333%);
   }
   .mdl-grid--no-spacing > .mdl-cell--10-col {
-    width: 83.33333%;
+    width: 83.3333333333%;
   }
   .mdl-cell--10-col-desktop.mdl-cell--10-col-desktop {
-    width: calc(67.33333%);
+    width: calc(67.33333333%);
   }
   .mdl-grid--no-spacing > .mdl-cell--10-col-desktop.mdl-cell--10-col-desktop {
-    width: 83.33333%;
+    width: 83.3333333333%;
   }
   .mdl-cell--11-col {
-    width: calc(75.66667%);
+    width: calc(75.66666667%);
   }
   .mdl-grid--no-spacing > .mdl-cell--11-col {
-    width: 91.66667%;
+    width: 91.6666666667%;
   }
   .mdl-cell--11-col-desktop.mdl-cell--11-col-desktop {
-    width: calc(75.66667%);
+    width: calc(75.66666667%);
   }
   .mdl-grid--no-spacing > .mdl-cell--11-col-desktop.mdl-cell--11-col-desktop {
-    width: 91.66667%;
+    width: 91.6666666667%;
   }
   .mdl-cell--12-col {
     width: calc(84%);
@@ -10802,6 +10833,13 @@ body {
 .full--height {
   height: 100%;
 }
+.padded-container {
+  padding: 0px 16px;
+}
+.micro-labels {
+  padding: 8px 16px;
+  background: #eee;
+}
 .Number {
   transform: rotateZ(0deg);
   height: 120px;
@@ -10819,15 +10857,43 @@ body {
   background: #f9db00;
   color: #000;
 }
-.secondary-fab,
-.primary-fab {
-  z-index: 10000;
-  position: fixed;
+.fab-container {
+  z-index: 100;
+  position: absolute;
   bottom: 10px;
   right: 10px;
+  transition: transform 220ms;
+  transform: translateY(400px);
 }
-.secondary-fab {
-  right: 80px;
+.fab-container .primary-fab,
+.fab-container .secondary-fab--1,
+.fab-container .secondary-fab--2 {
+  transition: transform 120ms;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+.fab-container .secondary-fab--1,
+.fab-container .secondary-fab--2 {
+  background: #d8d8d8;
+  bottom: 13px;
+  right: 13px;
+}
+.home-fab .primary-fab i {
+  transition: transform 50ms;
+  transform: translate(-12px, -12px) rotateZ(-45deg);
+}
+.fab-container--ready {
+  transform: translateY(0);
+}
+.fab-container--open .secondary-fab--1 {
+  transform: translateY(-56px);
+}
+.fab-container--open .secondary-fab--2 {
+  transform: translateY(-106px);
+}
+.home-fab.fab-container--open .primary-fab i {
+  transform: translate(-12px, -12px);
 }
 .mdl-typography--light-heading {
   font-weight: 300;
@@ -10883,6 +10949,15 @@ body {
   -webkit-flex-direction: column;
   flex-direction: column;
 }
+.App__PayChargeSheet {
+  background: #f9db00;
+  position: absolute;
+  z-index: 100;
+  min-height: 40px;
+  width: 100%;
+  bottom: 0px;
+  left: 0px;
+}
 .AppTransaction--List,
 .AppUser-List {
   padding: 8px;
@@ -10895,6 +10970,8 @@ body {
 .AppUser-List .AppUser__UserImage {
   width: 56px;
   height: 56px;
+  margin-left: 5px;
+  border-radius: 56px;
 }
 .AppTransaction--List,
 .AppUser-List,
@@ -10924,17 +11001,16 @@ body {
 .clean-margins {
   margin: 0px;
 }
+.card-account {
+  padding: 16px;
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid #f5f5f5;
+}
 .card-swiper {
   margin: 1.2em 0;
   position: relative;
   padding-bottom: 62.75%;
-}
-.card-swiper .card-account {
-  background: #f9db00;
-  border-radius: 6px;
-  width: 100%;
-  height: 100%;
-  padding: 16px;
 }
 .card-swiper .swiper-container {
   margin: 0px;
@@ -11028,6 +11104,7 @@ body {
 }
 .DrawerView--NavLink > .Link--Native {
   color: #000;
+  text-decoration: none;
 }
 .DrawerView .DrawerView--NavLink,
 .DrawerView .DrawerView--NavMast {
