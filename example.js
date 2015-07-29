@@ -311,27 +311,37 @@ var UIBaseHeaderView = (function (_React$Component) {
 	_createClass(UIBaseHeaderView, [{
 		key: 'render',
 		value: function render() {
+			var pbView = {},
+			    sbView = {};
+			if (this.props.primaryButton) {
+				pbView = _react2['default'].createElement(
+					_reactUiComponents.FixedCell,
+					{ className: 'header-button' },
+					this.props.primaryButton
+				);
+			}
+
+			if (this.props.secondaryButtons) {
+				sbView = _react2['default'].createElement(
+					_reactUiComponents.FixedCell,
+					{ className: 'header-button' },
+					this.props.secondaryButtons
+				);
+			}
+
 			return _react2['default'].createElement(
 				'div',
 				{ className: 'HeaderView mdl-layout' },
 				_react2['default'].createElement(
 					_reactUiComponents.Layout,
 					{ horizontal: true, alignItems: 'center' },
-					_react2['default'].createElement(
-						_reactUiComponents.FixedCell,
-						{ className: 'header-button' },
-						this.props.primaryButton
-					),
+					pbView,
 					_react2['default'].createElement(
 						_reactUiComponents.FlexCell,
 						null,
 						this.props.children
 					),
-					_react2['default'].createElement(
-						_reactUiComponents.FixedCell,
-						{ className: 'header-button' },
-						this.props.secondaryButtons
-					)
+					sbView
 				)
 			);
 		}
@@ -632,11 +642,11 @@ var CardSwiper = (function (_React$Component7) {
 					_react2['default'].createElement(
 						'div',
 						{ className: 'swiper-wrapper' },
-						_cards.map(function (card) {
+						Accounts.cards.map(function (card) {
 							return _react2['default'].createElement(
 								'div',
 								{ className: 'swiper-slide' },
-								_react2['default'].createElement(Card, { data: card })
+								_react2['default'].createElement(UIAccount, { data: card })
 							);
 						})
 					)
@@ -660,7 +670,16 @@ var AppWidePaymentOverlay = (function (_React$Component8) {
 
 	_createClass(AppWidePaymentOverlay, [{
 		key: 'componentDidMount',
-		value: function componentDidMount() {}
+		value: function componentDidMount() {
+			var _this2 = this;
+
+			/* run the class after it this way */
+			setTimeout(function (t) {
+				return _this2.setState({
+					opened: true
+				});
+			}, 5000);
+		}
 	}, {
 		key: 'render',
 		value: function render() {
@@ -812,10 +831,10 @@ var App = _react2['default'].createClass({
 	},
 
 	componentDidMount: function componentDidMount() {
-		var _this2 = this;
+		var _this3 = this;
 
 		AppActions.registerToggleListener(function () {
-			return _this2.toggleDrawer();
+			return _this3.toggleDrawer();
 		});
 	},
 
@@ -960,14 +979,14 @@ var PaymentsRoute = _react2['default'].createClass({
 
 	mixins: [_reactRouter.Navigation],
 	render: function render() {
-		var _this3 = this;
+		var _this4 = this;
 
 		var primaryButton = _react2['default'].createElement(
 			_reactUiComponents.UIButtonView,
 			{
 				icon: true,
 				onClick: function (back) {
-					return _this3.goBack();
+					return _this4.goBack();
 				}
 			},
 			_react2['default'].createElement(
@@ -1001,14 +1020,14 @@ var ChargeRoute = _react2['default'].createClass({
 
 	mixins: [_reactRouter.Navigation],
 	render: function render() {
-		var _this4 = this;
+		var _this5 = this;
 
 		var primaryButton = _react2['default'].createElement(
 			_reactUiComponents.UIButtonView,
 			{
 				icon: true,
 				onClick: function (back) {
-					return _this4.goBack();
+					return _this5.goBack();
 				}
 			},
 			_react2['default'].createElement(
@@ -1037,6 +1056,98 @@ var ChargeRoute = _react2['default'].createClass({
 	}
 });
 
+var Shops = {
+	scoutResults: [{
+		itemName: 'Chocolate Cake',
+		sellerName: 'Oven Classics',
+		price: 45.54,
+		howFar: '400m'
+	}, {
+		itemName: 'Chocolate Cake',
+		sellerName: 'Errands Bakery',
+		price: 55.45,
+		howFar: '1.6km'
+	}, {
+		itemName: 'Chocolate Cake',
+		sellerName: 'German Bakery',
+		price: 55.99,
+		howFar: '800m'
+	}, {
+		itemName: 'Chocolate Cake',
+		sellerName: '7 Seasons',
+		price: 52.15,
+		howFar: '768m'
+	}, {
+		itemName: 'Chocolate Cake',
+		sellerName: '4 11 Bakery',
+		price: 55.27,
+		howFar: '2.8km'
+
+	}, {
+		itemName: 'Special Chocolate Cake',
+		sellerName: 'Food Delight',
+		price: 67.00,
+		howFar: '5.8km'
+	}]
+};
+
+var UIScoutResult = (function (_React$Component11) {
+	function UIScoutResult() {
+		_classCallCheck(this, UIScoutResult);
+
+		_get(Object.getPrototypeOf(UIScoutResult.prototype), 'constructor', this).apply(this, arguments);
+	}
+
+	_inherits(UIScoutResult, _React$Component11);
+
+	_createClass(UIScoutResult, [{
+		key: 'render',
+		value: function render() {
+			var info = this.props.data;
+			return _react2['default'].createElement(
+				'div',
+				{ className: 'ui-scout-result' },
+				_react2['default'].createElement(
+					_reactUiComponents.Layout,
+					{ horizontal: true, alignItems: 'center' },
+					_react2['default'].createElement(
+						_reactUiComponents.FlexCell,
+						null,
+						_react2['default'].createElement(
+							'h4',
+							{ className: 'mdl-typography--subhead micro-margins' },
+							info.itemName
+						),
+						_react2['default'].createElement(
+							'h4',
+							{ className: 'mdl-typography--caption-color-contrast micro-margins' },
+							info.sellerName
+						)
+					),
+					_react2['default'].createElement(
+						_reactUiComponents.FixedCell,
+						{ className: 'mdl-typography--text-right' },
+						_react2['default'].createElement(
+							'h4',
+							{ className: 'mdl-typography--subhead micro-margins' },
+							'$ ',
+							info.price.toFixed(2)
+						),
+						_react2['default'].createElement(
+							'h4',
+							{ className: 'mdl-typography--caption-color-contrast micro-margins' },
+							info.howFar,
+							' away'
+						)
+					)
+				)
+			);
+		}
+	}]);
+
+	return UIScoutResult;
+})(_react2['default'].Component);
+
 var ScoutRoute = _react2['default'].createClass({
 	displayName: 'ScoutRoute',
 
@@ -1058,7 +1169,7 @@ var ScoutRoute = _react2['default'].createClass({
 			_react2['default'].createElement(
 				'i',
 				{ className: 'material-icons header-icon' },
-				'search'
+				'close'
 			)
 		);
 		var moreButton = _react2['default'].createElement(
@@ -1070,7 +1181,7 @@ var ScoutRoute = _react2['default'].createClass({
 				'more_vert'
 			)
 		);
-		var secondaryButtons = [searchButton, moreButton];
+		var secondaryButtons = [searchButton];
 
 		return _react2['default'].createElement(
 			_reactUiComponents.Layout,
@@ -1079,19 +1190,37 @@ var ScoutRoute = _react2['default'].createClass({
 				_reactUiComponents.FixedCell,
 				{ className: 'header' },
 				_react2['default'].createElement(
-					UIHeaderView,
+					UIBaseHeaderView,
 					{
-						title: 'Scout',
-						primaryButton: primaryButton,
 						secondaryButtons: secondaryButtons
 					},
-					'Scout'
+					_react2['default'].createElement(
+						'div',
+						{ className: 'search-demo' },
+						_react2['default'].createElement(
+							'h2',
+							{ className: 'mdl-typography--subhead' },
+							'Chocolate Ca',
+							_react2['default'].createElement(
+								'span',
+								{ className: 'light' },
+								'ke'
+							)
+						)
+					)
 				)
 			),
 			_react2['default'].createElement(
 				_reactUiComponents.FlexCell,
 				{ fillFix: true },
-				this.props.children
+				_react2['default'].createElement(
+					'h3',
+					{ className: 'mdl-typography--caption-color-contrast clean-margins micro-labels' },
+					'Results for Cake'
+				),
+				Shops.scoutResults.map(function (sharedSource) {
+					return _react2['default'].createElement(UIScoutResult, { data: sharedSource });
+				})
 			)
 		);
 	}
@@ -1137,7 +1266,7 @@ var HomeRoute = _react2['default'].createClass({
 	},
 
 	render: function render() {
-		var _this5 = this;
+		var _this6 = this;
 
 		var cnamefab = (0, _classnames2['default'])('fab-container home-fab', {
 			'fab-container--open': this.state.isFabContainerOpen,
@@ -1185,32 +1314,6 @@ var HomeRoute = _react2['default'].createClass({
 						{ className: 'scroll-wrapper' },
 						_react2['default'].createElement(
 							'div',
-							{ className: 'padded-container no-v-padding' },
-							_react2['default'].createElement(
-								_reactUiComponents.Layout,
-								{ horizontal: true },
-								_react2['default'].createElement(
-									_reactUiComponents.FlexCell,
-									null,
-									_react2['default'].createElement(
-										'h3',
-										{ className: 'mdl-typography--body-1  micro-margins' },
-										'Transactions'
-									)
-								),
-								_react2['default'].createElement(
-									_reactUiComponents.FixedCell,
-									{ className: 'mdl-typography--text-right' },
-									_react2['default'].createElement(
-										'h3',
-										{ className: 'mdl-typography--body-1-color-contrast micro-margins' },
-										'41'
-									)
-								)
-							)
-						),
-						_react2['default'].createElement(
-							'div',
 							{ className: 'spent-saved padded-container high-v-padding with-border' },
 							_react2['default'].createElement(
 								_reactUiComponents.Layout,
@@ -1221,7 +1324,7 @@ var HomeRoute = _react2['default'].createClass({
 									_react2['default'].createElement(
 										'h2',
 										{ className: 'mdl-typography--title micro-margins' },
-										'$ ',
+										'$',
 										spentRaised.spent.toFixed(2)
 									),
 									_react2['default'].createElement(
@@ -1236,7 +1339,7 @@ var HomeRoute = _react2['default'].createClass({
 									_react2['default'].createElement(
 										'h2',
 										{ className: 'mdl-typography--title micro-margins' },
-										'$ ',
+										'$',
 										spentRaised.gained.toFixed(2)
 									),
 									_react2['default'].createElement(
@@ -1249,57 +1352,9 @@ var HomeRoute = _react2['default'].createClass({
 						),
 						_react2['default'].createElement(
 							'div',
-							{ className: 'padded-container no-v-padding' },
-							_react2['default'].createElement(
-								_reactUiComponents.Layout,
-								{ horizontal: true },
-								_react2['default'].createElement(
-									_reactUiComponents.FlexCell,
-									null,
-									_react2['default'].createElement(
-										'h3',
-										{ className: 'mdl-typography--body-1  micro-margins' },
-										'Due Invoices'
-									)
-								),
-								_react2['default'].createElement(
-									_reactUiComponents.FixedCell,
-									{ className: 'mdl-typography--text-right' },
-									_react2['default'].createElement(
-										'h3',
-										{ className: 'mdl-typography--body-1-color-contrast micro-margins' },
-										'10'
-									)
-								)
-							)
-						),
-						_react2['default'].createElement(
-							'div',
-							{ className: 'padded-container no-v-padding' },
-							_react2['default'].createElement(
-								_reactUiComponents.Layout,
-								{ horizontal: true },
-								_react2['default'].createElement(
-									_reactUiComponents.FlexCell,
-									null,
-									_react2['default'].createElement(
-										'h3',
-										{ className: 'mdl-typography--body-1  micro-margins' },
-										'Transactions'
-									)
-								),
-								_react2['default'].createElement(
-									_reactUiComponents.FixedCell,
-									{ className: 'mdl-typography--text-right' },
-									_react2['default'].createElement(
-										'h3',
-										{ className: 'mdl-typography--body-1-color-contrast micro-margins' },
-										'41'
-									)
-								)
-							)
-						),
-						_react2['default'].createElement('div', { style: { minHeight: 20 } })
+							{ className: 'with-border' },
+							_react2['default'].createElement(CardSwiper, null)
+						)
 					)
 				),
 				_react2['default'].createElement(
@@ -1310,7 +1365,7 @@ var HomeRoute = _react2['default'].createClass({
 						{
 							className: 'secondary-fab--2',
 							fab: true, raised: true, mini: true, onClick: function (e) {
-								return _this5.openPayView(e);
+								return _this6.openPayView(e);
 							}
 						},
 						_react2['default'].createElement(
@@ -1324,7 +1379,7 @@ var HomeRoute = _react2['default'].createClass({
 						{
 							className: 'secondary-fab--1',
 							fab: true, raised: true, mini: true, onClick: function (e) {
-								return _this5.openChargeView(e);
+								return _this6.openChargeView(e);
 							}
 						},
 						_react2['default'].createElement(
@@ -1337,7 +1392,7 @@ var HomeRoute = _react2['default'].createClass({
 						_reactUiComponents.UIButtonView,
 						{
 							onClick: function (e) {
-								return _this5.toggleFabContainer(e);
+								return _this6.toggleFabContainer(e);
 							},
 							fab: true,
 							raised: true,
@@ -1356,14 +1411,14 @@ var HomeRoute = _react2['default'].createClass({
 	}
 });
 
-var UIFamilyContact = (function (_React$Component11) {
+var UIFamilyContact = (function (_React$Component12) {
 	function UIFamilyContact() {
 		_classCallCheck(this, UIFamilyContact);
 
 		_get(Object.getPrototypeOf(UIFamilyContact.prototype), 'constructor', this).apply(this, arguments);
 	}
 
-	_inherits(UIFamilyContact, _React$Component11);
+	_inherits(UIFamilyContact, _React$Component12);
 
 	_createClass(UIFamilyContact, [{
 		key: 'render',
@@ -1515,6 +1570,203 @@ var SharingRoute = _react2['default'].createClass({
 	}
 });
 
+var UIBill = (function (_React$Component13) {
+	function UIBill() {
+		_classCallCheck(this, UIBill);
+
+		_get(Object.getPrototypeOf(UIBill.prototype), 'constructor', this).apply(this, arguments);
+	}
+
+	_inherits(UIBill, _React$Component13);
+
+	_createClass(UIBill, [{
+		key: 'render',
+		value: function render() {
+			var info = this.props.data;
+			return _react2['default'].createElement(
+				'div',
+				{ className: 'mdl-bill' },
+				_react2['default'].createElement(
+					_reactUiComponents.Layout,
+					{ horizontal: true, alignItems: 'center' },
+					_react2['default'].createElement(
+						_reactUiComponents.FlexCell,
+						null,
+						_react2['default'].createElement(
+							'h4',
+							{ className: 'mdl-typography--subhead micro-margins' },
+							info.benificiary
+						),
+						_react2['default'].createElement(
+							'h4',
+							{ className: 'mdl-typography--caption-color-contrast micro-margins' },
+							info.reason
+						)
+					),
+					_react2['default'].createElement(
+						_reactUiComponents.FixedCell,
+						{ className: 'mdl-typography--text-right' },
+						_react2['default'].createElement(
+							'h4',
+							{ className: 'mdl-typography--subhead micro-margins' },
+							'$ ',
+							info.amount.toFixed(2)
+						),
+						_react2['default'].createElement(
+							'h4',
+							{ className: 'mdl-typography--caption-color-contrast micro-margins' },
+							info.paid ? 'Paid' : info.autopay ? 'Autopaid' : 'by ' + info.dueAt
+						)
+					)
+				)
+			);
+		}
+	}]);
+
+	return UIBill;
+})(_react2['default'].Component);
+
+var Bills = {
+
+	unpaid: [{
+		benificiary: 'Airtel',
+		reason: 'Monthly Bill',
+		amount: 19.47,
+		cycle: 'Monthly',
+		autopay: false,
+		dueAt: '31st July'
+	}, {
+		benificiary: 'Universal Library',
+		reason: 'Yearly Membership Fee',
+		cycle: 'Yearly',
+		autopay: true,
+		amount: 13.47
+	}, {
+		benificiary: 'Digital Ocean',
+		reason: 'Usage fee for June',
+		cycle: 'Monthly',
+		autopay: false,
+		dueAt: '31st July',
+		amount: 5.47
+	}],
+
+	paid: [{
+		benificiary: 'LIC India',
+		reason: 'Insurance premium',
+		cycle: 'Yearly',
+		autopay: true,
+		paid: true,
+		amount: 4.41
+	}, {
+		benificiary: 'Society Mingle',
+		reason: 'Society Development Fee',
+		cycle: 'Yearly',
+		autopay: true,
+		amount: 250.45,
+		paid: true
+	}]
+
+};
+
+var BillsRoute = _react2['default'].createClass({
+	displayName: 'BillsRoute',
+
+	getInitialState: function getInitialState() {
+		return {
+			hasMounted: false
+		};
+	},
+
+	componentDidMount: function componentDidMount() {
+		this.setState({
+			hasMounted: true
+		});
+	},
+
+	render: function render() {
+		var primaryButton = _react2['default'].createElement(
+			_reactUiComponents.UIButtonView,
+			{
+				icon: true,
+				onClick: AppActions.toggleDrawer
+			},
+			_react2['default'].createElement(
+				'i',
+				{ className: 'material-icons header-icon' },
+				'menu'
+			)
+		);
+		var cards = _react2['default'].createElement(
+			'div',
+			{ title: 'Cards', className: 'scroll-container' },
+			_react2['default'].createElement(
+				'div',
+				{ className: 'scroll-wrapper' },
+				_react2['default'].createElement(
+					'h3',
+					{ className: 'mdl-typography--caption-color-contrast clean-margins micro-labels' },
+					'Due'
+				),
+				Bills.unpaid.map(function (cardData) {
+					return _react2['default'].createElement(UIBill, { data: cardData });
+				}),
+				_react2['default'].createElement(
+					'h3',
+					{ className: 'mdl-typography--caption-color-contrast clean-margins micro-labels' },
+					'Paid'
+				),
+				Bills.paid.map(function (cardData) {
+					return _react2['default'].createElement(UIBill, { data: cardData });
+				}),
+				_react2['default'].createElement('div', { style: { minHeight: 200 } })
+			)
+		);
+		// <h3 className="mdl-typography--caption-color-contrast micro-labels clean-margins">Shared Accounts</h3>
+		// {Accounts.sharedSources.map( sharedSource => {
+		// 	return <UIAccount data={sharedSource}/>
+		// })}
+
+		var cnamefab = (0, _classnames2['default'])('fab-container', {
+			'fab-container--ready': this.state.hasMounted
+		});
+
+		return _react2['default'].createElement(
+			_reactUiComponents.Layout,
+			{ vertical: true },
+			_react2['default'].createElement(
+				_reactUiComponents.FixedCell,
+				{ className: 'header' },
+				_react2['default'].createElement(UIHeaderView, {
+					primaryButton: primaryButton,
+					title: 'Bills'
+				})
+			),
+			_react2['default'].createElement(
+				_reactUiComponents.FlexCell,
+				{ fillFix: true },
+				cards,
+				_react2['default'].createElement(
+					'div',
+					{ className: cnamefab },
+					_react2['default'].createElement(
+						_reactUiComponents.UIButtonView,
+						{
+							fab: true,
+							raised: true,
+							colored: true,
+							ripple: true,
+							className: 'primary-fab' },
+						_react2['default'].createElement(
+							'i',
+							{ className: 'material-icons' },
+							'add'
+						)
+					)
+				)
+			)
+		);
+	}
+});
 var AccountsRoute = _react2['default'].createClass({
 	displayName: 'AccountsRoute',
 
@@ -1624,6 +1876,7 @@ var routes = _react2['default'].createElement(
 		_react2['default'].createElement(_reactRouter.Route, { path: 'history', components: TransactionsRoute }),
 		_react2['default'].createElement(_reactRouter.Route, { path: 'pay', component: PaymentsRoute }),
 		_react2['default'].createElement(_reactRouter.Route, { path: 'charge', component: ChargeRoute }),
+		_react2['default'].createElement(_reactRouter.Route, { path: 'bills', component: BillsRoute }),
 		_react2['default'].createElement(_reactRouter.Route, { path: 'scout', component: ScoutRoute }),
 		_react2['default'].createElement(_reactRouter.Route, { path: 'home', component: HomeRoute }),
 		_react2['default'].createElement(_reactRouter.Route, { path: 'accounts', component: AccountsRoute }),
@@ -1632,11 +1885,6 @@ var routes = _react2['default'].createElement(
 );
 
 _react2['default'].render(routes, document.getElementById('container'));
-
-/* run the class after it this way */
-// setTimeout(t => this.setState({
-// 	opened: true
-// }), 5000);
 
 },{"../../src/lib/DataSource.js":37,"bluebird":2,"classnames":undefined,"lodash":3,"react":undefined,"react-router":26,"react-router/lib/HashHistory":8,"react-ui-components":undefined,"swiper":35,"whatwg-fetch":36}],2:[function(require,module,exports){
 (function (process,global){

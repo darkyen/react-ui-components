@@ -20354,6 +20354,8 @@ var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_ag
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
@@ -20378,13 +20380,20 @@ var Layout = (function (_React$Component) {
 	_createClass(Layout, [{
 		key: 'render',
 		value: function render() {
-			var cname = (0, _classnames2['default'])({ 'Vertical-Layout': this.props.vertical }, { 'Horizontal-Layout': this.props.horizontal });
+			var _props = this.props;
+			var alignItems = _props.alignItems;
+			var justifyContent = _props.justifyContent;
 
-			var styles = this.props;
+			var props = _objectWithoutProperties(_props, ['alignItems', 'justifyContent']);
+
+			alignItems = 'mdl-align-items-' + alignItems;
+			justifyContent = 'mdl-justify-content-' + justifyContent;
+
+			var cname = (0, _classnames2['default'])({ 'Vertical-Layout': this.props.vertical }, { 'Horizontal-Layout': this.props.horizontal }, justifyContent, alignItems);
 
 			return _react2['default'].createElement(
 				'div',
-				{ className: cname, style: styles },
+				{ className: cname },
 				this.props.children
 			);
 		}

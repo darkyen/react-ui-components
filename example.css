@@ -10757,6 +10757,15 @@ button.swiper-pagination-bullet {
 .mdl-text-normal-case {
   text-transform: none !important;
 }
+.mdl-align-items-center {
+  align-items: center;
+}
+.mdl-align-items-top {
+  align-items: top;
+}
+.mdl-align-items-bottom {
+  align-items: bottom;
+}
 body {
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -10919,9 +10928,34 @@ body {
   bottom: 13px;
   right: 13px;
 }
+.search-demo {
+  padding: 0px 16px;
+}
+.search-demo .light {
+  color: #d8d8d8;
+}
+.search-demo .pvt {
+  color: #000;
+  display: inline-block;
+  margin-right: 0.2em;
+}
+.mdl-bill,
+.ui-scout-result {
+  padding: 8px 16px;
+  border-bottom: 1px solid #f5f5f5;
+}
+.home-card-swiper {
+  padding-bottom: 67.50%;
+}
 .home-fab .primary-fab i {
   transition: transform 50ms;
   transform: translate(-12px, -12px) rotateZ(-45deg);
+}
+.mdl-card__supporting-text {
+  color: initial;
+}
+.mdl-card__supporting-text .mdl-typography--text-justify {
+  color: rgba(0, 0, 0, 0.54);
 }
 .fab-container--ready {
   transform: translateY(0);
