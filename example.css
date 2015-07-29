@@ -10748,9 +10748,6 @@ button.swiper-pagination-bullet {
     transform: rotate(360deg);
   }
 }
-* {
-  outline: 1px solid dashed;
-}
 .caption-helper {
   line-height: 1.5;
 }
