@@ -672,7 +672,7 @@ var AppWidePaymentOverlay = (function (_React$Component8) {
 		key: 'componentDidMount',
 		value: function componentDidMount() {
 			var _this2 = this;
-
+			return;
 			/* run the class after it this way */
 			setTimeout(function (t) {
 				return _this2.setState({
