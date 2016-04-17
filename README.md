@@ -8,7 +8,7 @@
 
 ## Demo & Examples
 
-Live demo: [darkyen00.github.io/react-ui-components](http://darkyen.github.io/react-ui-components/)
+Live demo: [darkyen00.github.io/react-ui-components](http://darkyen.github.io/react-ui-components/#/home/)
 
 To build the examples locally, run:
 
